@@ -226,10 +226,38 @@ p {
     font-weight: 600;
     font-size: 1.15rem;
     letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--text-primary);
 }
 
 .logo .dot {
     color: var(--accent);
+}
+
+.nav-links {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+@media (min-width: 900px) {
+    .nav-links {
+        display: flex;
+    }
 }
 
 .btn-nav, .btn-primary, .btn-secondary {
@@ -367,18 +395,8 @@ p {
     padding: var(--space-md);
 }
 
-@media (min-width: 900px) {
-    .split-layout {
-        grid-template-columns: 1fr 1px 1fr;
-        gap: var(--space-lg);
-        align-items: start;
-    }
-    .split-divider {
-        width: 1px;
-        height: 100%;
-        background: var(--border);
-        margin: 0 auto;
-    }
+.split-divider {
+    display: none;
 }
 
 .split-left, .split-right {
@@ -408,6 +426,43 @@ p {
     letter-spacing: 0.1em;
     color: var(--text-muted);
     font-weight: 600;
+}
+
+@media (min-width: 900px) {
+    .split-layout {
+        grid-template-columns: 1fr 1px 1fr;
+        grid-template-rows: auto auto 1fr;
+        gap: 0 var(--space-lg);
+        align-items: start;
+    }
+    .split-divider {
+        display: block;
+        grid-column: 2;
+        grid-row: 1 / -1;
+        width: 1px;
+        height: 100%;
+        background: var(--border);
+        margin: 0 auto;
+    }
+    .split-left, .split-right {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: 1 / -1;
+    }
+    .split-left h2, .split-right h2 {
+        margin-bottom: var(--space-sm);
+    }
+    .split-left p, .split-right p {
+        margin-bottom: 0;
+    }
+}
+
+@supports not (grid-template-rows: subgrid) {
+    @media (min-width: 900px) {
+        .split-left h2, .split-right h2 {
+            min-height: 4.8rem;
+        }
+    }
 }
 
 /* Tech Marquee */
@@ -464,23 +519,74 @@ p {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-secondary);
-    transition: var(--transition-smooth);
+    transition: color var(--transition-smooth), transform var(--transition-smooth);
     cursor: default;
 }
 .tech-item:hover {
     color: var(--text-primary);
+    transform: translateY(-2px);
 }
 .tech-icon {
     width: 36px;
     height: 36px;
     background-color: var(--text-secondary);
     -webkit-mask-size: contain;
+    mask-size: contain;
     -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
     -webkit-mask-position: center;
-    transition: background-color var(--transition-smooth);
+    mask-position: center;
+    transition: background-color var(--transition-smooth), background var(--transition-smooth), filter var(--transition-smooth);
 }
-.tech-item:hover .tech-icon {
-    background-color: var(--accent);
+
+/* Colores de marca personalizados en hover */
+.tech-item.tech-php:hover .tech-icon {
+    background-color: #777BB4;
+    filter: drop-shadow(0 0 10px rgba(119, 123, 180, 0.55));
+}
+.tech-item.tech-php:hover {
+    color: #c4c7eb;
+}
+
+.tech-item.tech-laravel:hover .tech-icon {
+    background-color: #FF2D20;
+    filter: drop-shadow(0 0 10px rgba(255, 45, 32, 0.55));
+}
+.tech-item.tech-laravel:hover {
+    color: #ff857d;
+}
+
+.tech-item.tech-cloudflare:hover .tech-icon {
+    background-color: #F38020;
+    filter: drop-shadow(0 0 10px rgba(243, 128, 32, 0.55));
+}
+.tech-item.tech-cloudflare:hover {
+    color: #ffaa5e;
+}
+
+.tech-item.tech-proxmox:hover .tech-icon {
+    background: linear-gradient(135deg, #FFB800 0%, #E57000 100%);
+    background-color: #E57000;
+    filter: drop-shadow(0 0 10px rgba(229, 112, 0, 0.55));
+}
+.tech-item.tech-proxmox:hover {
+    color: #ffbf66;
+}
+
+.tech-item.tech-nextcloud:hover .tech-icon {
+    background-color: #0082C9;
+    filter: drop-shadow(0 0 10px rgba(0, 130, 201, 0.55));
+}
+.tech-item.tech-nextcloud:hover {
+    color: #5ec4ff;
+}
+
+.tech-item.tech-linux:hover .tech-icon {
+    background-color: #FCC624;
+    filter: drop-shadow(0 0 10px rgba(252, 198, 36, 0.55));
+}
+.tech-item.tech-linux:hover {
+    color: #fde27e;
 }
 
 @keyframes marquee {
@@ -612,11 +718,12 @@ p {
     border-radius: 100px;
 }
 
-.timeline-content h4 {
+.timeline-content h4, .timeline-company {
     font-size: 0.95rem;
     color: var(--text-primary);
     font-weight: 400;
     margin-bottom: 0.5rem;
+    display: block;
 }
 
 .timeline-content p {
@@ -645,12 +752,13 @@ p {
     align-items: center;
 }
 
-.faq-question h3 {
+.faq-question h3, .faq-question .faq-title {
     margin-bottom: 0;
     font-size: 1.05rem;
     font-weight: 500;
     color: var(--text-primary);
     padding-right: var(--space-sm);
+    font-family: var(--font-heading);
 }
 
 .faq-item .icon {
@@ -711,11 +819,70 @@ p {
 }
 
 footer {
-    padding: 1.5rem 0;
-    text-align: center;
+    padding: 3.5rem 0 2rem;
     border-top: 1px solid var(--border);
     color: var(--text-muted);
+    font-size: 0.9rem;
+    background: rgba(3, 7, 18, 0.4);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    max-width: 320px;
+    line-height: 1.5;
+}
+
+.footer-col h4, .footer-col .footer-title {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-col ul a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-smooth);
+}
+
+.footer-col ul a:hover {
+    color: var(--text-primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
+    text-align: center;
     font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 /* =========================================

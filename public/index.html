@@ -9,9 +9,38 @@
       content="Desarrollo de software con conciencia de costo, riesgo y continuidad operativa."
     />
     <meta name="author" content="Sandra Puerto" />
+    <link rel="canonical" href="https://sandrapuerto.com/" />
     <link rel="author" href="humans.txt" />
     <link rel="manifest" href="manifest.json" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icons/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sandrapuerto.com/" />
+    <meta property="og:title" content="Sandra Puerto | Desarrollo y Dirección TI" />
+    <meta
+      property="og:description"
+      content="Desarrollo de software con conciencia de costo, riesgo y continuidad operativa."
+    />
+    <meta property="og:image" content="https://sandrapuerto.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sandra Puerto - Desarrollo de Software y Dirección TI" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sandra Puerto | Desarrollo y Dirección TI" />
+    <meta
+      name="twitter:description"
+      content="Desarrollo de software con conciencia de costo, riesgo y continuidad operativa."
+    />
+    <meta name="twitter:image" content="https://sandrapuerto.com/og-image.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -27,14 +56,24 @@
     <div id="noise-overlay"></div>
     <nav class="navbar">
       <div class="container nav-container">
-        <div class="logo">Sandra Puerto<span class="dot">.</span></div>
+        <a href="#hero" class="logo">Sandra Puerto<span class="dot">.</span></a>
+        <ul class="nav-links">
+          <li><a href="#especialidad">Enfoque</a></li>
+          <li><a href="#tecnologias">Tecnologías</a></li>
+          <li><a href="#productos">Arquitectura</a></li>
+          <li><a href="#competencias">Competencias</a></li>
+          <li><a href="#experiencia">Trayectoria</a></li>
+          <li><a href="#formacion">Formación</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+        </ul>
         <div
           class="nav-actions"
           style="display: flex; align-items: center; gap: 1rem"
         >
           <a
-            href="#"
+            href="https://linkedin.com/in/sandra-puerto"
             target="_blank"
+            rel="noopener noreferrer"
             data-link="linkedin"
             class="nav-icon"
             aria-label="LinkedIn"
@@ -48,6 +87,7 @@
                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
               /></svg
           ></a>
+          <a href="#contacto" class="btn-nav">Contacto</a>
         </div>
       </div>
     </nav>
@@ -60,14 +100,15 @@
             <span class="text-gradient">centro de costos</span> impredecible?
           </h1>
           <p class="subtitle animate-in delay-2">
-            Sistemas que fallan en el peor momento. Presupuestos tecnológicos
-            que suben sin justificación clara. La sensación de no tener el
-            control real sobre la infraestructura de su empresa.
+            Cuando su sistema deja de ser una herramienta estratégica y se convierte
+            en un centro de costos impredecible, la operación de su empresa sufre.
+            Sistemas que fallan en momentos críticos y presupuestos que suben sin
+            justificación reflejan falta de control sobre la infraestructura tecnológica.
           </p>
           <p class="subtitle animate-in delay-3">
-            Usted no necesita reinventar su empresa. Necesita que su tecnología
-            sea rentable, estable y no dependa de intermediarios que no
-            entienden su negocio.
+            Usted no necesita reinventar su empresa: necesita transformar ese sistema
+            en una verdadera herramienta rentable, predecible y estable, sin depender
+            de intermediarios que encarecen la operación.
           </p>
           <div
             class="hero-actions animate-in delay-3"
@@ -78,10 +119,11 @@
               margin-top: 1.5rem;
             "
           >
-            <a href="#" data-link="email" class="btn-primary">Contáctame</a
+            <a href="mailto:contacto@sandrapuerto.com" data-link="email" class="btn-primary">Contáctame</a
             ><a
-              href="#"
+              href="https://calendar.app.google/H3i9G1zKtFZY7krd6"
               target="_blank"
+              rel="noopener noreferrer"
               data-link="calendar"
               class="btn-secondary"
               >Charlemos</a
@@ -154,7 +196,7 @@
         </div>
         <div class="tech-marquee-wrapper fade-up delay-1">
           <div class="tech-marquee">
-            <div class="tech-item">
+            <div class="tech-item tech-php">
               <span
                 class="tech-icon"
                 style="
@@ -163,7 +205,7 @@
               ></span>
               PHP
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-laravel">
               <span
                 class="tech-icon"
                 style="
@@ -172,7 +214,7 @@
               ></span>
               Laravel
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-cloudflare">
               <span
                 class="tech-icon"
                 style="
@@ -181,7 +223,7 @@
               ></span>
               Cloudflare
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-proxmox">
               <span
                 class="tech-icon"
                 style="
@@ -190,7 +232,7 @@
               ></span>
               Proxmox
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-nextcloud">
               <span
                 class="tech-icon"
                 style="
@@ -199,7 +241,7 @@
               ></span>
               Nextcloud
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-linux">
               <span
                 class="tech-icon"
                 style="
@@ -208,7 +250,7 @@
               ></span>
               Linux
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-php">
               <span
                 class="tech-icon"
                 style="
@@ -217,7 +259,7 @@
               ></span>
               PHP
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-laravel">
               <span
                 class="tech-icon"
                 style="
@@ -226,7 +268,7 @@
               ></span>
               Laravel
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-cloudflare">
               <span
                 class="tech-icon"
                 style="
@@ -235,7 +277,7 @@
               ></span>
               Cloudflare
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-proxmox">
               <span
                 class="tech-icon"
                 style="
@@ -244,7 +286,7 @@
               ></span>
               Proxmox
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-nextcloud">
               <span
                 class="tech-icon"
                 style="
@@ -253,7 +295,7 @@
               ></span>
               Nextcloud
             </div>
-            <div class="tech-item">
+            <div class="tech-item tech-linux">
               <span
                 class="tech-icon"
                 style="
@@ -312,8 +354,9 @@
             </p>
             <div style="margin-bottom: 2.5rem">
               <a
-                href="#"
+                href="https://github.com/sandra-puerto/stratum"
                 target="_blank"
+                rel="noopener noreferrer"
                 data-link="stratum"
                 class="btn-secondary"
                 style="
@@ -468,7 +511,7 @@
                   <h3>Desarrolladora de Software</h3>
                   <span class="timeline-date">Mayo 2026 — Presente</span>
                 </div>
-                <h4>Distribuidora de Papel Jurado Torres</h4>
+                <div class="timeline-company">Distribuidora de Papel Jurado Torres S.A.S.</div>
                 <p>
                   Modernización de un ERP legacy mediante la creación de un
                   microframework propio. Se abordó el problema de raíz, logrando
@@ -484,7 +527,7 @@
                   <h3>Directora Interina de TI</h3>
                   <span class="timeline-date">Mayo 2026 — Sep 2026</span>
                 </div>
-                <h4>Servílogis Colombia</h4>
+                <div class="timeline-company">Servilogis Colombia S.A.S.</div>
                 <p>
                   De ejecutar a dirigir. Autonomía total en la toma de
                   decisiones técnicas validables solo por resultados.
@@ -500,7 +543,7 @@
                   <h3>Técnico de Control Interno</h3>
                   <span class="timeline-date">Jul 2025 — Oct 2025</span>
                 </div>
-                <h4>Serdempo</h4>
+                <div class="timeline-company">Serdempo S.A.S.</div>
                 <p>
                   Auditoría y verificación de activos tecnológicos críticos para
                   el proceso electoral 2026. Una experiencia de control, rigor y
@@ -515,7 +558,7 @@
                   <h3>Técnico de Soporte Nivel 3</h3>
                   <span class="timeline-date">Oct 2024 — Jun 2025</span>
                 </div>
-                <h4>Engine GTR</h4>
+                <div class="timeline-company">Engine GTR S.A.S.</div>
                 <p>
                   Resolución de incidentes críticos y gestión inicial de
                   indicadores OPEX/CAPEX, entendiendo por primera vez el peso
@@ -530,7 +573,7 @@
                   <h3>Practicante de TI</h3>
                   <span class="timeline-date">Abr 2024 — Oct 2024</span>
                 </div>
-                <h4>Internacional de Celulares</h4>
+                <div class="timeline-company">Internacional de Celulares S.A.</div>
                 <p>
                   Gestión integral de TI. Identificación de problemas
                   estructurales de conectividad y resolución mediante la
@@ -798,10 +841,10 @@
           <div class="faq-list glass-panel fade-up delay-1">
             <div class="faq-item">
               <div class="faq-question">
-                <h3>
+                <span class="faq-title">
                   ¿Tomas proyectos desde cero o prefieres mejorar sistemas que
                   ya existen?
-                </h3>
+                </span>
                 <span class="icon"
                   ><svg
                     width="24"
@@ -825,10 +868,10 @@
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                <h3>
+                <span class="faq-title">
                   ¿Por qué destacas tu experiencia en soporte si ahora eres
                   desarrolladora?
-                </h3>
+                </span>
                 <span class="icon"
                   ><svg
                     width="24"
@@ -853,7 +896,7 @@
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                <h3>No tenemos departamento de TI. ¿Puedes encargarte sola?</h3>
+                <span class="faq-title">No tenemos departamento de TI. ¿Puedes encargarte sola?</span>
                 <span class="icon"
                   ><svg
                     width="24"
@@ -868,7 +911,7 @@
               </div>
               <div class="faq-answer">
                 <p>
-                  Sí. Parte de mi experiencia en Servílogis fue exactamente esa:
+                  Sí. Parte de mi experiencia en Servilogis fue exactamente esa:
                   asumir la dirección técnica completa, tomar las decisiones
                   estructurales y ejecutarlas con autonomía, respondiendo
                   directamente por la reducción de costos y la continuidad
@@ -878,7 +921,7 @@
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                <h3>¿Qué modalidad de vinculación buscas?</h3>
+                <span class="faq-title">¿Qué modalidad de vinculación buscas?</span>
                 <span class="icon"
                   ><svg
                     width="24"
@@ -903,7 +946,7 @@
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                <h3>¿Trabajas con tecnologías distintas a PHP y Laravel?</h3>
+                <span class="faq-title">¿Trabajas con tecnologías distintas a PHP y Laravel?</span>
                 <span class="icon"
                   ><svg
                     width="24"
@@ -927,7 +970,7 @@
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                <h3>¿Cuál es tu disponibilidad para empezar?</h3>
+                <span class="faq-title">¿Cuál es tu disponibilidad para empezar?</span>
                 <span class="icon"
                   ><svg
                     width="24"
@@ -963,7 +1006,7 @@
               contratista, bajo condiciones específicas a convenir.
             </p>
             <div class="contact-actions" style="gap: 1rem">
-              <a href="#" data-link="email" class="btn-primary"
+              <a href="mailto:contacto@sandrapuerto.com" data-link="email" class="btn-primary"
                 ><span>Escribir un correo</span
                 ><svg
                   width="20"
@@ -975,8 +1018,9 @@
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" /></svg></a
               ><a
-                href="#"
+                href="https://calendar.app.google/H3i9G1zKtFZY7krd6"
                 target="_blank"
+                rel="noopener noreferrer"
                 data-link="calendar"
                 class="btn-secondary"
                 ><span>Charlemos</span></a
@@ -986,9 +1030,60 @@
         </div>
       </section>
     </main>
-    <footer>
-      <div class="container">
-        <p>&copy; 2026 Sandra Puerto. Desarrollo y Dirección TI.</p>
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">Sandra Puerto<span class="dot">.</span></a>
+          <p>
+            Desarrollo de software con conciencia de costo, riesgo y continuidad operativa.
+          </p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-title">Navegación</div>
+          <ul>
+            <li><a href="#especialidad">Enfoque</a></li>
+            <li><a href="#tecnologias">Tecnologías</a></li>
+            <li><a href="#productos">Arquitectura Stratum</a></li>
+            <li><a href="#competencias">Competencias</a></li>
+            <li><a href="#experiencia">Trayectoria</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-title">Contacto & Enlaces</div>
+          <ul>
+            <li>
+              <a href="https://linkedin.com/in/sandra-puerto" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/sandra-puerto" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/sandra-puerto/stratum" target="_blank" rel="noopener noreferrer">
+                Repositorio Stratum
+              </a>
+            </li>
+            <li>
+              <a href="https://calendar.app.google/H3i9G1zKtFZY7krd6" target="_blank" rel="noopener noreferrer">
+                Agendar Reunión
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contacto@sandrapuerto.com">
+                contacto@sandrapuerto.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Sandra Puerto. Todos los derechos reservados. Bogotá D.C., Colombia.</p>
       </div>
     </footer>
     <script src="js/app.js" defer></script>

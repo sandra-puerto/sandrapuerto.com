@@ -30,7 +30,7 @@ def minify_html(html):
     html = re.sub(r'>\s+<', '><', html)
     return html.strip()
 
-base_dir = r"c:\Users\sandra.puerto\opt\landing-sgpt\public"
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public"))
 
 # Minify CSS
 css_path = os.path.join(base_dir, 'css', 'styles.css')
