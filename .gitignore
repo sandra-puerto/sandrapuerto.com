@@ -1,0 +1,77 @@
+# ============================================================================
+# LANDING-SGPT — .gitignore
+# ============================================================================
+#
+# Standard ignore rules for environment secrets, editor metadata, 
+# OS generated files, and temporary build / runtime caches.
+# ============================================================================
+
+# --- Environment & Credentials ---
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# --- Python Runtime & Caching ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+
+# --- Operating System Files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- IDEs & Code Editors ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# --- Logs & Runtime Temporary Files ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tmp
+*.bak
+*.old
+
+# --- Docker Local Overrides ---
+docker-compose.override.yml
+docker-compose.local.yml

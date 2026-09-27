@@ -1,0 +1,12 @@
+/* TEAM */
+  Engineer: Sandra Puerto
+  Role: Especialista en Infraestructura TI
+  LinkedIn: https://linkedin.com/in/sandra-puerto
+  Email: contacto@ejemplo.com
+
+/* SITE */
+  Last update: 2026/09/24
+  Language: Spanish
+  Standards: HTML5, CSS3, ES6
+  Components: Vanilla CSS & JS (No heavy frameworks for max performance)
+  Performance Focus: 100/100 Lighthouse Target (FCP, LCP optimized)

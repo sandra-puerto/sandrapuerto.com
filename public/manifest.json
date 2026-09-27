@@ -1,0 +1,16 @@
+{
+  "name": "Sandra Puerto - Especialista TI",
+  "short_name": "Sandra Puerto",
+  "description": "Portafolio y servicios profesionales de Sandra Puerto en infraestructura tecnológica y reducción de costos.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#030712",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

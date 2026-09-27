@@ -1,0 +1,84 @@
+================================================================================
+LANDING-SGPT — LICENSE
+MIT License with Security Reporting Requirement
+================================================================================
+
+Copyright (c) 2026 Sandra Gabriela Puerto Torres
+All rights reserved.
+
+--------------------------------------------------------------------------------
+1. GRANT OF RIGHTS
+--------------------------------------------------------------------------------
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+--------------------------------------------------------------------------------
+2. CONDITIONS
+--------------------------------------------------------------------------------
+
+The grant of rights set forth in Section 1 is expressly conditioned upon
+compliance with the following:
+
+  (a) ATTRIBUTION.
+
+      The above copyright notice, this list of conditions, and the disclaimer
+      in Section 3 shall be included in all copies or substantial portions
+      of the Software.
+
+      Any derivative work, redistribution, or incorporation of the Software
+      into a larger work must preserve this notice in a location reasonably
+      visible to recipients of the work.
+
+  (b) SECURITY VULNERABILITY REPORTING.
+
+      Any person who discovers a security vulnerability in the Software shall
+      report it promptly and privately to the copyright holder at:
+
+          contacto@sandrapuerto.com
+
+      The report shall not be disclosed publicly prior to coordination with
+      the copyright holder. The copyright holder shall acknowledge receipt
+      within a reasonable timeframe and shall coordinate responsible
+      disclosure in good faith.
+
+      This condition applies to any deployment of the Software, whether
+      modified or unmodified, in source or compiled form.
+
+--------------------------------------------------------------------------------
+3. DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY
+--------------------------------------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+4. TERMINATION
+--------------------------------------------------------------------------------
+
+Any breach of the conditions set forth in Section 2 shall result in the
+automatic termination of the rights granted in Section 1. Upon termination,
+the licensee shall cease all use, reproduction, and distribution of the
+Software and shall destroy all copies in their possession.
+
+--------------------------------------------------------------------------------
+5. GOVERNING PRINCIPLE
+--------------------------------------------------------------------------------
+
+This license is intended to operate as a permissive license in the spirit
+of the MIT License, with the addition of a binding security reporting
+requirement. Where ambiguity exists, this license shall be construed in
+favor of the copyright holder.
+
+================================================================================
+END OF LICENSE
+================================================================================
