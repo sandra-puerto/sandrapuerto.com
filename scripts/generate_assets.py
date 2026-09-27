@@ -171,81 +171,287 @@ def create_og_image():
     base.save(og_path, format="PNG", optimize=True)
     print("Generated refined og-image.png (1200x630) in public/images/")
 
+def draw_rounded_bar(draw, x, y, w, h, radius, fill_color, bg_color=(30, 41, 59, 180)):
+    """Draw a rounded progress bar."""
+    draw.rounded_rectangle([x, y, x + w, y + h], radius=radius, fill=bg_color)
+    
+def draw_filled_bar(draw, x, y, total_w, h, radius, fill_pct, fill_color, bg_color=(30, 41, 59, 180)):
+    """Draw a rounded progress bar with a fill percentage."""
+    draw.rounded_rectangle([x, y, x + total_w, y + h], radius=radius, fill=bg_color)
+    fill_w = max(int(total_w * fill_pct), h)
+    draw.rounded_rectangle([x, y, x + fill_w, y + h], radius=radius, fill=fill_color)
+
 def create_linkedin_cover():
-    W, H = 1584, 396
+    W, H = 1200, 1200
     base = Image.new("RGBA", (W, H), (3, 7, 18, 255))
     
-    # 1. Ambient Glows
+    # ── 1. Rich multi-layered background ──
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     g_draw = ImageDraw.Draw(glow)
-    g_draw.ellipse([-100, -100, 600, 600], fill=(56, 189, 248, 55))
-    g_draw.ellipse([1000, 50, 1700, 600], fill=(16, 185, 129, 50))
-    glow = glow.filter(ImageFilter.GaussianBlur(90))
+    # Large cyan glow top-left
+    g_draw.ellipse([-200, -200, 700, 500], fill=(56, 189, 248, 65))
+    # Emerald glow bottom-right
+    g_draw.ellipse([600, 700, 1500, 1500], fill=(16, 185, 129, 55))
+    # Violet accent center
+    g_draw.ellipse([300, 300, 900, 900], fill=(139, 92, 246, 25))
+    # Warm amber hint top-right
+    g_draw.ellipse([800, -100, 1400, 400], fill=(245, 158, 11, 20))
+    glow = glow.filter(ImageFilter.GaussianBlur(120))
     base = Image.alpha_composite(base, glow)
     
-    # 2. Glassmorphism Card (Centered)
+    # ── 2. Geometric grid pattern for tech feel ──
+    grid_layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    grid_draw = ImageDraw.Draw(grid_layer)
+    grid_spacing = 60
+    for gx in range(0, W, grid_spacing):
+        grid_draw.line([(gx, 0), (gx, H)], fill=(255, 255, 255, 8), width=1)
+    for gy in range(0, H, grid_spacing):
+        grid_draw.line([(0, gy), (W, gy)], fill=(255, 255, 255, 8), width=1)
+    # Highlight some intersections
+    import random
+    random.seed(42)
+    for _ in range(25):
+        ix = random.randint(0, W // grid_spacing) * grid_spacing
+        iy = random.randint(0, H // grid_spacing) * grid_spacing
+        grid_draw.ellipse([ix - 3, iy - 3, ix + 3, iy + 3], fill=(56, 189, 248, 40))
+    base = Image.alpha_composite(base, grid_layer)
+    
+    # ── 3. Main content card (glassmorphism) ──
     card_layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     c_draw = ImageDraw.Draw(card_layer)
-    card_box = [60, 40, W - 60, H - 40]
-    c_draw.rounded_rectangle(card_box, radius=24, fill=(15, 23, 42, 220), outline=(255, 255, 255, 30), width=1)
+    margin = 50
+    c_draw.rounded_rectangle([margin, margin, W - margin, H - margin], 
+                             radius=32, fill=(15, 23, 42, 200), 
+                             outline=(255, 255, 255, 25), width=2)
     base = Image.alpha_composite(base, card_layer)
     
-    # 3. Transparent badges and overlays
+    # ── 4. Accent stripe at top of card ──
+    stripe = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    s_draw = ImageDraw.Draw(stripe)
+    # Gradient-like stripe using overlapping rects
+    stripe_y = margin
+    stripe_h = 6
+    for sx in range(margin, W - margin):
+        ratio = (sx - margin) / (W - 2 * margin)
+        r = int(56 + (16 - 56) * ratio)
+        g = int(189 + (185 - 189) * ratio)
+        b = int(248 + (129 - 248) * ratio)
+        s_draw.line([(sx, stripe_y), (sx, stripe_y + stripe_h)], fill=(r, g, b, 220))
+    base = Image.alpha_composite(base, stripe)
+    
+    # ── 5. Fonts ──
+    font_dir = "C:/Windows/Fonts"
+    f_tag = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 18)
+    f_name = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 72)
+    f_role = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 32)
+    f_headline = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 40)
+    f_metric_val = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 80)
+    f_metric_label = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 20)
+    f_desc = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 26)
+    f_tech = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 18)
+    f_url = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 22)
+    f_cta = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 28)
+    
+    # ── 6. Build overlays ──
     overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     o_draw = ImageDraw.Draw(overlay)
     
-    font_dir = "C:/Windows/Fonts"
-    f_badge = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 16)
-    f_title = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 64)
-    f_role = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 30)
-    f_desc = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 24)
-    f_url = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 22)
+    lx = margin + 60  # left content x
+    rx_end = W - margin - 60  # right edge
+    content_w = rx_end - lx
     
-    # Badge: DIAGNÓSTICO & SOLUCIÓN TI
+    # --- Top badge ---
     badge_text = "DIAGNÓSTICO & SOLUCIÓN TI"
-    badge_x, badge_y = 120, 80
-    bbox = f_badge.getbbox(badge_text)
-    bw, bh = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    badge_y = margin + 45
+    bb = f_tag.getbbox(badge_text)
+    bw, bh = bb[2] - bb[0], bb[3] - bb[1]
+    o_draw.rounded_rectangle([lx - 16, badge_y - 10, lx + bw + 16, badge_y + bh + 12], 
+                             radius=10, fill=(56, 189, 248, 35), outline=(56, 189, 248, 100), width=1)
     
-    o_draw.rounded_rectangle([badge_x - 16, badge_y - 10, badge_x + bw + 16, badge_y + bh + 10], 
-                             radius=8, fill=(56, 189, 248, 30), outline=(56, 189, 248, 90), width=1)
-    
-    # URL: sandrapuerto.com
+    # --- URL badge right ---
     url_text = "sandrapuerto.com"
-    u_bbox = f_url.getbbox(url_text)
-    uw = u_bbox[2] - u_bbox[0]
+    ub = f_url.getbbox(url_text)
+    uw = ub[2] - ub[0]
+    o_draw.rounded_rectangle([rx_end - uw - 16, badge_y - 10, rx_end + 16, badge_y + bh + 12], 
+                             radius=10, fill=(16, 185, 129, 25), outline=(16, 185, 129, 80), width=1)
+    
+    # --- Metric cards background ---
+    metrics_y = 430
+    card_w = (content_w - 40) // 3
+    card_h = 200
+    metric_colors = [
+        (56, 189, 248),   # cyan
+        (16, 185, 129),   # emerald
+        (139, 92, 246),   # violet
+    ]
+    for i in range(3):
+        cx = lx + i * (card_w + 20)
+        mc = metric_colors[i]
+        o_draw.rounded_rectangle([cx, metrics_y, cx + card_w, metrics_y + card_h],
+                                 radius=20, fill=(15, 23, 42, 240),
+                                 outline=(mc[0], mc[1], mc[2], 70), width=2)
+        # Top accent line on each card
+        for px in range(cx + 20, cx + card_w - 20):
+            o_draw.point((px, metrics_y + 1), fill=(mc[0], mc[1], mc[2], 150))
+            o_draw.point((px, metrics_y + 2), fill=(mc[0], mc[1], mc[2], 80))
+    
+    # --- Tech badges background ---
+    tech_y = 690
+    techs = [
+        ("PHP / Laravel", (255, 45, 32)),
+        ("Proxmox & Linux", (229, 112, 0)),
+        ("On-Premise Infra", (56, 189, 248)),
+        ("Zero Trust", (139, 92, 246)),
+        ("Docker & CI/CD", (36, 150, 237)),
+    ]
+    tx = lx
+    for t_text, t_color in techs:
+        tb = f_tech.getbbox(t_text)
+        tw = tb[2] - tb[0]
+        th = tb[3] - tb[1]
+        pill_w = tw + 40
+        pill_h = th + 26
+        o_draw.rounded_rectangle([tx, tech_y, tx + pill_w, tech_y + pill_h],
+                                 radius=pill_h // 2, fill=(t_color[0], t_color[1], t_color[2], 25),
+                                 outline=(t_color[0], t_color[1], t_color[2], 120), width=2)
+        tx += pill_w + 10
+    
+    # --- Divider line ---
+    div_y = 780
+    o_draw.line([(lx, div_y), (rx_end, div_y)], fill=(255, 255, 255, 20), width=1)
+    
+    # --- CTA button background ---
+    cta_y = 1030
+    cta_text = "→  Conoce más en sandrapuerto.com"
+    ctb = f_cta.getbbox(cta_text)
+    ctw = ctb[2] - ctb[0]
+    cth = ctb[3] - ctb[1]
+    cta_btn_w = ctw + 80
+    cta_btn_h = cth + 36
+    cta_x = (W - cta_btn_w) // 2
+    # Gradient-like button fill
+    for bx in range(cta_x, cta_x + cta_btn_w):
+        ratio = (bx - cta_x) / cta_btn_w
+        r = int(56 + (16 - 56) * ratio)
+        g = int(189 + (185 - 189) * ratio)
+        b = int(248 + (129 - 248) * ratio)
+        o_draw.line([(bx, cta_y), (bx, cta_y + cta_btn_h)], fill=(r, g, b, 200))
+    # Round the corners by overlaying rounded rect outline
+    o_draw.rounded_rectangle([cta_x, cta_y, cta_x + cta_btn_w, cta_y + cta_btn_h],
+                             radius=cta_btn_h // 2, outline=(255, 255, 255, 60), width=2)
+    # Mask corners: draw background-colored rects in corners then re-draw rounded
     
     base = Image.alpha_composite(base, overlay)
     
-    # 4. Text and opaque graphics
+    # ── 7. CTA button proper (with mask) ──
+    btn_mask = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    bm_draw = ImageDraw.Draw(btn_mask)
+    for bx in range(cta_x, cta_x + cta_btn_w):
+        ratio = (bx - cta_x) / cta_btn_w
+        r = int(56 + (16 - 56) * ratio)
+        g = int(189 + (185 - 189) * ratio)
+        b = int(248 + (129 - 248) * ratio)
+        bm_draw.line([(bx, cta_y), (bx, cta_y + cta_btn_h)], fill=(r, g, b, 230))
+    # Create mask from rounded rect
+    mask_img = Image.new("L", (W, H), 0)
+    mask_draw = ImageDraw.Draw(mask_img)
+    mask_draw.rounded_rectangle([cta_x, cta_y, cta_x + cta_btn_w, cta_y + cta_btn_h],
+                                radius=cta_btn_h // 2, fill=255)
+    # Composite with mask
+    base = Image.composite(Image.alpha_composite(base, btn_mask), base, mask_img)
+    
+    # ── 8. Draw all text ──
     draw = ImageDraw.Draw(base)
-    draw.text((badge_x, badge_y), badge_text, font=f_badge, fill="#38bdf8")
-    draw.text((W - 120 - uw, badge_y + 1), url_text, font=f_url, fill="#94a3b8")
+    
+    # Badge text
+    draw.text((lx, badge_y), badge_text, font=f_tag, fill="#38bdf8")
+    draw.text((rx_end - uw, badge_y), url_text, font=f_url, fill="#10b981")
     
     # Icon
     icon_img = create_base_icon(256)
-    icon_resized = icon_img.resize((120, 120), Image.Resampling.LANCZOS)
-    base.paste(icon_resized, (120, 150), icon_resized)
+    icon_resized = icon_img.resize((130, 130), Image.Resampling.LANCZOS)
+    icon_y = margin + 105
+    base.paste(icon_resized, (lx, icon_y), icon_resized)
     
-    # Title
-    title_x = 270
-    title_y = 150
-    draw.text((title_x, title_y), "Sandra Puerto", font=f_title, fill="#f8fafc")
-    sp_bbox = f_title.getbbox("Sandra Puerto")
-    dot_x = title_x + (sp_bbox[2] - sp_bbox[0]) + 4
-    draw.ellipse([dot_x, title_y + 42, dot_x + 14, title_y + 56], fill="#38bdf8")
+    # Name
+    name_x = lx + 155
+    name_y = icon_y + 10
+    draw.text((name_x, name_y), "Sandra Puerto", font=f_name, fill="#f8fafc")
+    sp_bbox = f_name.getbbox("Sandra Puerto")
+    dot_x = name_x + (sp_bbox[2] - sp_bbox[0]) + 6
+    draw.ellipse([dot_x, name_y + 48, dot_x + 16, name_y + 64], fill="#38bdf8")
     
     # Role
-    draw.text((title_x, 235), "Desarrollo de Software & Dirección TI", font=f_role, fill="#38bdf8")
+    draw.text((name_x, name_y + 90), "Desarrollo de Software & Dirección TI", font=f_role, fill="#38bdf8")
     
-    # Description lines
-    desc_y = 295
-    draw.text((120, desc_y), "Desarrollo backend con conciencia de costo, riesgo y continuidad operativa.", font=f_desc, fill="#e2e8f0")
-        
+    # Headline
+    headline_y = 330
+    draw.text((lx, headline_y), "¿Su sistema es una herramienta", font=f_headline, fill="#e2e8f0")
+    draw.text((lx, headline_y + 52), "o un centro de costos impredecible?", font=f_headline, fill="#94a3b8")
+    
+    # ── Metrics ──
+    metric_data = [
+        ("-60%", "Reducción\nen OPEX TI", (56, 189, 248), 0.60),
+        ("-50%", "Menos errores\nen producción", (16, 185, 129), 0.50),
+        ("-70%", "Menos código\nen cada release", (139, 92, 246), 0.70),
+    ]
+    
+    for i, (val, label, color, pct) in enumerate(metric_data):
+        cx = lx + i * (card_w + 20)
+        # Metric value
+        draw.text((cx + 28, metrics_y + 22), val, font=f_metric_val, fill=color)
+        # Progress bar
+        bar_y = metrics_y + 128
+        bar_w = card_w - 56
+        draw_filled_bar(draw, cx + 28, bar_y, bar_w, 12, 6, pct, 
+                       color + (200,), (30, 41, 59, 180))
+        # Label
+        draw.text((cx + 28, bar_y + 22), label, font=f_metric_label, fill="#94a3b8")
+    
+    # ── Tech badges text ──
+    tx = lx
+    for t_text, t_color in techs:
+        tb = f_tech.getbbox(t_text)
+        tw = tb[2] - tb[0]
+        th = tb[3] - tb[1]
+        pill_w = tw + 40
+        pill_h = th + 26
+        # Colored dot
+        dot_cy = tech_y + pill_h // 2
+        draw.ellipse([tx + 16, dot_cy - 5, tx + 26, dot_cy + 5], fill=t_color)
+        # Text
+        draw.text((tx + 34, tech_y + 12), t_text, font=f_tech, fill="#f1f5f9")
+        tx += pill_w + 10
+    
+    # ── Description block ──
+    desc_y = 820
+    draw.text((lx, desc_y), 
+              "Llegué al desarrollo backend después de operar, soportar", 
+              font=f_desc, fill="#cbd5e1")
+    draw.text((lx, desc_y + 38), 
+              "y dirigir infraestructura real. Mi enfoque no es solo escribir",
+              font=f_desc, fill="#cbd5e1")
+    draw.text((lx, desc_y + 76),
+              "código limpio, sino tomar decisiones con conciencia del",
+              font=f_desc, fill="#cbd5e1")
+    draw.text((lx, desc_y + 114),
+              "costo, riesgo y continuidad del negocio.",
+              font=f_desc, fill="#e2e8f0")
+    
+    # ── CTA button text ──
+    draw.text((cta_x + 40, cta_y + 14), cta_text, font=f_cta, fill="#030712")
+    
+    # ── Bottom bar ──
+    bottom_y = H - margin - 40
+    draw.text((lx, bottom_y), "Backend · Infraestructura · Dirección TI · Ciberseguridad", 
+              font=f_url, fill=(148, 163, 184, 150))
+    
+    # ── Save ──
     out_dir = os.path.abspath(os.path.join(base_dir, ".."))
     out_path = os.path.join(out_dir, "linkedin-cover.png")
-    base.save(out_path, format="PNG", optimize=True)
-    print(f"Generated linkedin-cover.png (1584x396) in project root")
+    final = base.convert("RGB")
+    final.save(out_path, format="PNG", optimize=True)
+    print(f"Generated linkedin-cover.png (1200x1200) in project root")
 
 if __name__ == "__main__":
     generate_favicons()
