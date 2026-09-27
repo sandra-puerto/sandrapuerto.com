@@ -1,12 +1,20 @@
 /* TEAM */
   Engineer: Sandra Puerto
-  Role: Especialista en Infraestructura TI
+  Role: Desarrollo de Software & Dirección TI
+  Location: Bogotá D.C., Colombia
+  Website: https://sandrapuerto.com
   LinkedIn: https://linkedin.com/in/sandra-puerto
-  Email: contacto@ejemplo.com
+  GitHub: https://github.com/sandra-puerto
+  Email: contacto@sandrapuerto.com
+
+/* ARCHITECTURE & STACK */
+  Pattern: Stratum Consumer Architecture
+  Backend: PHP 8.x, Laravel 11.x
+  Infrastructure: Linux, Docker, Proxmox, Nginx
+  Security: Cloudflare, Hardened Read-Only Container, Cap-Drop, Strict CSP
 
 /* SITE */
-  Last update: 2026/09/24
+  Last update: 2026/09/27
   Language: Spanish
-  Standards: HTML5, CSS3, ES6
-  Components: Vanilla CSS & JS (No heavy frameworks for max performance)
-  Performance Focus: 100/100 Lighthouse Target (FCP, LCP optimized)
+  Standards: HTML5, CSS3, ES6+
+  Components: Vanilla CSS & JS (Zero runtime overhead, 100/100 Lighthouse Target)

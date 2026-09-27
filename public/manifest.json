@@ -1,11 +1,13 @@
 {
-  "name": "Sandra Puerto - Especialista TI",
+  "name": "Sandra Puerto | Desarrollo y Dirección TI",
   "short_name": "Sandra Puerto",
-  "description": "Portafolio y servicios profesionales de Sandra Puerto en infraestructura tecnológica y reducción de costos.",
+  "description": "Desarrollo de software con conciencia de costo, riesgo y continuidad operativa.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#030712",
   "theme_color": "#030712",
+  "lang": "es",
   "icons": [
     {
       "src": "/icons/favicon.svg",
@@ -13,14 +15,26 @@
       "type": "image/svg+xml"
     },
     {
+      "src": "/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
       "src": "/icons/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/icons/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

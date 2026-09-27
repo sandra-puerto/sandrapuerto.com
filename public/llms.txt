@@ -1,20 +1,30 @@
-# Sandra Puerto - Especialista en Infraestructura TI
+# Sandra Puerto - Desarrollo de Software & Dirección TI
 
-Este sitio web representa el portafolio y los servicios profesionales de Sandra Puerto, especialista en diagnóstico, estabilización y reducción de costos en infraestructura tecnológica.
+Desarrollo de software con conciencia de costo, riesgo y continuidad operativa.
 
-## Propuesta de Valor
-Sistemas que fallan en el peor momento, presupuestos tecnológicos que suben sin justificación y falta de control sobre la infraestructura son problemas comunes. La solución de Sandra no implica reinventar la empresa, sino hacer que la tecnología sea rentable, estable y no dependa de intermediarios innecesarios.
+## Perfil Profesional
+Sandra Puerto combina más de una década de experiencia en operación real de infraestructura tecnológica, dirección técnica y desarrollo backend (PHP / Laravel). Toma decisiones técnicas con criterio financiero, orientadas a la reducción de OPEX, eliminación de dependencias innecesarias y garantía de estabilidad en producción.
 
-## Arquitectura Propia (Modelo Stratum)
-El modelo Stratum es una propuesta arquitectónica diseñada por Sandra. Permite que múltiples aplicaciones convivan en un solo servidor sin comprometer la seguridad y sin incurrir en sobrecostos. Es una solución ideal para empresas que buscan rentabilidad y control.
-Repositorio oficial: https://github.com/sandra-puerto/stratum
+## Especialidad y Enfoque
+- Desarrollo de software con conciencia operativa (PHP / Laravel).
+- Optimización y control de OPEX / CAPEX en infraestructura de TI.
+- Auditoría técnica, refactorización y rescate de arquitecturas sobredimensionadas.
+- Reducción comprobada de hasta -60% en OPEX tecnológico y -50% en errores productivos.
 
-## Competencias Técnicas Principales
-- PHP & Laravel (Desarrollo con conciencia operativa)
-- Proxmox & Linux (Infraestructura y Virtualización)
-- Cloudflare & Nextcloud (Seguridad, DNS y Colaboración)
-
-## Contacto y Enlaces
-- LinkedIn: https://linkedin.com/in/sandra-puerto
+## Arquitectura Stratum
+Patrón arquitectónico creado por Sandra Puerto que permite la convivencia de múltiples aplicaciones y servicios en servidores dedicados o virtualizados con aislamiento, seguridad por defecto (read-only, cap-drop) y mínimo costo operativo.
 - Repositorio Stratum: https://github.com/sandra-puerto/stratum
-- Email: contacto@ejemplo.com
+
+## Stack Técnico
+- Backend & Lenguajes: PHP, Laravel, SQL, JavaScript ES6+
+- Infraestructura & Virtualización: Linux, Docker, Proxmox VE, Nginx
+- Redes & Seguridad: Cloudflare, Nginx Proxy Manager, Hardening, CSP, DNS
+- Servicios & Colaboración: Nextcloud, PostgreSQL, Redis
+
+## Contacto Oficial
+- Sitio Web: https://sandrapuerto.com
+- LinkedIn: https://linkedin.com/in/sandra-puerto
+- GitHub: https://github.com/sandra-puerto
+- Repositorio Stratum: https://github.com/sandra-puerto/stratum
+- Agendar Reunión: https://calendar.app.google/H3i9G1zKtFZY7krd6
+- Email: contacto@sandrapuerto.com
