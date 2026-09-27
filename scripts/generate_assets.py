@@ -171,6 +171,83 @@ def create_og_image():
     base.save(og_path, format="PNG", optimize=True)
     print("Generated refined og-image.png (1200x630) in public/images/")
 
+def create_linkedin_cover():
+    W, H = 1584, 396
+    base = Image.new("RGBA", (W, H), (3, 7, 18, 255))
+    
+    # 1. Ambient Glows
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    g_draw = ImageDraw.Draw(glow)
+    g_draw.ellipse([-100, -100, 600, 600], fill=(56, 189, 248, 55))
+    g_draw.ellipse([1000, 50, 1700, 600], fill=(16, 185, 129, 50))
+    glow = glow.filter(ImageFilter.GaussianBlur(90))
+    base = Image.alpha_composite(base, glow)
+    
+    # 2. Glassmorphism Card (Centered)
+    card_layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    c_draw = ImageDraw.Draw(card_layer)
+    card_box = [60, 40, W - 60, H - 40]
+    c_draw.rounded_rectangle(card_box, radius=24, fill=(15, 23, 42, 220), outline=(255, 255, 255, 30), width=1)
+    base = Image.alpha_composite(base, card_layer)
+    
+    # 3. Transparent badges and overlays
+    overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    o_draw = ImageDraw.Draw(overlay)
+    
+    font_dir = "C:/Windows/Fonts"
+    f_badge = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 16)
+    f_title = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 64)
+    f_role = ImageFont.truetype(os.path.join(font_dir, "segoeuib.ttf"), 30)
+    f_desc = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 24)
+    f_url = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 22)
+    
+    # Badge: DIAGNÓSTICO & SOLUCIÓN TI
+    badge_text = "DIAGNÓSTICO & SOLUCIÓN TI"
+    badge_x, badge_y = 120, 80
+    bbox = f_badge.getbbox(badge_text)
+    bw, bh = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    
+    o_draw.rounded_rectangle([badge_x - 16, badge_y - 10, badge_x + bw + 16, badge_y + bh + 10], 
+                             radius=8, fill=(56, 189, 248, 30), outline=(56, 189, 248, 90), width=1)
+    
+    # URL: sandrapuerto.com
+    url_text = "sandrapuerto.com"
+    u_bbox = f_url.getbbox(url_text)
+    uw = u_bbox[2] - u_bbox[0]
+    
+    base = Image.alpha_composite(base, overlay)
+    
+    # 4. Text and opaque graphics
+    draw = ImageDraw.Draw(base)
+    draw.text((badge_x, badge_y), badge_text, font=f_badge, fill="#38bdf8")
+    draw.text((W - 120 - uw, badge_y + 1), url_text, font=f_url, fill="#94a3b8")
+    
+    # Icon
+    icon_img = create_base_icon(256)
+    icon_resized = icon_img.resize((120, 120), Image.Resampling.LANCZOS)
+    base.paste(icon_resized, (120, 150), icon_resized)
+    
+    # Title
+    title_x = 270
+    title_y = 150
+    draw.text((title_x, title_y), "Sandra Puerto", font=f_title, fill="#f8fafc")
+    sp_bbox = f_title.getbbox("Sandra Puerto")
+    dot_x = title_x + (sp_bbox[2] - sp_bbox[0]) + 4
+    draw.ellipse([dot_x, title_y + 42, dot_x + 14, title_y + 56], fill="#38bdf8")
+    
+    # Role
+    draw.text((title_x, 235), "Desarrollo de Software & Dirección TI", font=f_role, fill="#38bdf8")
+    
+    # Description lines
+    desc_y = 295
+    draw.text((120, desc_y), "Desarrollo backend con conciencia de costo, riesgo y continuidad operativa.", font=f_desc, fill="#e2e8f0")
+        
+    out_dir = os.path.abspath(os.path.join(base_dir, ".."))
+    out_path = os.path.join(out_dir, "linkedin-cover.png")
+    base.save(out_path, format="PNG", optimize=True)
+    print(f"Generated linkedin-cover.png (1584x396) in project root")
+
 if __name__ == "__main__":
     generate_favicons()
     create_og_image()
+    create_linkedin_cover()

@@ -66,9 +66,8 @@ graph TB
 landing-sgpt/
 ├── .env.example          # Template for environment configuration
 ├── .gitignore            # Git exclusion rules (secrets, OS, caches)
-├── docker-compose.yaml   # Hardened container orchestration specification
+├── docker-compose.yml    # Hardened container orchestration specification
 ├── LICENSE               # MIT open-source license
-├── minify.py             # Buildless asset minification utility
 ├── README.md             # Technical documentation and operations guide
 ├── SECURITY.md           # Security policy and disclosure process
 ├── CONTRIBUTING.md       # Contribution guidelines and standards
@@ -76,11 +75,13 @@ landing-sgpt/
 │   ├── nginx.conf        # Tuned event-loop, rate limiting & compression
 │   └── conf.d/
 │       └── default.conf  # Server block, security headers (CSP) & cache rules
+├── scripts/
+│   ├── generate_assets.py # Favicons (ICO, PNG, SVG) and OG social banner generator
+│   └── minify.py         # Buildless asset minification utility
 └── public/
     ├── index.html        # Main landing page (CSS keyframes, zero JS blocking)
     ├── 404.html          # Dynamic 404 error page matching brand design system
     ├── maintenance.html  # Standalone fallback & maintenance page for NPM
-    ├── favicon.svg       # Vector brand icon
     ├── manifest.json     # Progressive web manifest
     ├── robots.txt        # Web crawler directives
     ├── sitemap.xml       # Canonical search engine index map
@@ -88,8 +89,10 @@ landing-sgpt/
     ├── humans.txt        # Author, standards and tooling declarations
     ├── css/
     │   └── styles.css    # Central design system (variables, glassmorphism, responsive)
-    └── js/
-        └── app.js        # Fully documented runtime logic, observer & handlers
+    ├── js/
+    │   └── app.js        # Fully documented runtime logic, observer & handlers
+    ├── icons/            # Brand icons (SVG, ICO, PNG 16x16, 32x32, 180x180, 192x192, 512x512)
+    └── images/           # High-resolution social media banners (og-image.png)
 ```
 
 ---
