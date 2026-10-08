@@ -1,30 +1,30 @@
-# Sandra Puerto - Desarrollo de Software & Dirección TI
+# Sandra Puerto - Desarrolladora Backend & Infraestructura TI
 
-Desarrollo de software con conciencia de costo, riesgo y continuidad operativa.
+Perfil T-Shaped: Desarrolladora backend (PHP/Laravel) con amplia base operativa (Linux/Docker). Construyo aplicaciones eficientes con Clean Code y garantizo que su despliegue en infraestructura sea seguro y predecible.
 
 ## Perfil Profesional
-Sandra Puerto combina más de una década de experiencia en operación real de infraestructura tecnológica, dirección técnica y desarrollo backend (PHP / Laravel). Toma decisiones técnicas con criterio financiero, orientadas a la reducción de OPEX, eliminación de dependencias innecesarias y garantía de estabilidad en producción.
+Desarrolladora backend PHP y Laravel con experiencia en infraestructura TI, Linux y despliegue con Docker. Desarrollo aplicaciones con programación orientada a objetos, Clean Code y principio DRY, gestionando la administración segura de servidores bajo esquemas Zero Trust. Estudiante de Ingeniería de Software.
 
-## Especialidad y Enfoque
-- Desarrollo de software con conciencia operativa (PHP / Laravel).
-- Optimización y control de OPEX / CAPEX en infraestructura de TI.
-- Auditoría técnica, refactorización y rescate de arquitecturas sobredimensionadas.
-- Reducción comprobada de hasta -60% en OPEX tecnológico y -50% en errores productivos.
+## Especialidad y Enfoque (T-Shaped)
+- Backend: PHP, Laravel, Filament, Eloquent ORM, API REST, Patrones de Diseño.
+- Bases de Datos: PostgreSQL, MongoDB, Redis, SQL.
+- DevOps e Infraestructura: Docker, Linux (Ubuntu), Proxmox VE, Nginx Proxy Manager.
+- Seguridad: Zero Trust, Cloudflare Tunnel, VPN (Tailscale), Hardening, MFA/TOTP.
+- Operaciones TI: ITAM, GLPI, Soporte Técnico.
 
-## Arquitectura Stratum
-Patrón arquitectónico creado por Sandra Puerto que permite la convivencia de múltiples aplicaciones y servicios en servidores dedicados o virtualizados con aislamiento, seguridad por defecto (read-only, cap-drop) y mínimo costo operativo.
-- Repositorio Stratum: https://github.com/sandra-puerto/stratum
+## Proyectos Destacados
+1. Stratum Group: Arquitectura de despliegue Zero Trust que aísla servicios corporativos con Docker Compose y DMZ interna, sin puertos expuestos.
+2. CashFlow: Sistema contable alineado al PUC colombiano y normas NIIF construido con Laravel y PostgreSQL.
 
-## Stack Técnico
-- Backend & Lenguajes: PHP, Laravel, SQL, JavaScript ES6+
-- Infraestructura & Virtualización: Linux, Docker, Proxmox VE, Nginx
-- Redes & Seguridad: Cloudflare, Nginx Proxy Manager, Hardening, CSP, DNS
-- Servicios & Colaboración: Nextcloud, PostgreSQL, Redis
+## Métricas de Impacto
+- ~30% del tamaño del código legacy ocupan las nuevas implementaciones tras aplicar principios DRY.
+- +67% de capacidad de red lograda al mismo costo operativo mediante renegociación tecnológica.
+- 0 puertos expuestos en el host mediante arquitecturas de túneles y Proxys Inversos.
 
-## Contacto Oficial
+## Documentos y Contacto Oficial
 - Sitio Web: https://sandrapuerto.com
+- Descargar CV (PDF): https://sandrapuerto.com/docs/cv-sandra-puerto.pdf
 - LinkedIn: https://linkedin.com/in/sandra-puerto
 - GitHub: https://github.com/sandra-puerto
-- Repositorio Stratum: https://github.com/sandra-puerto/stratum
 - Agendar Reunión: https://calendar.app.google/H3i9G1zKtFZY7krd6
 - Email: contacto@sandrapuerto.com
