@@ -1,0 +1,4 @@
+Contact: mailto:contacto@sandrapuerto.com
+Expires: 2027-10-08T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://sandrapuerto.com/.well-known/security.txt

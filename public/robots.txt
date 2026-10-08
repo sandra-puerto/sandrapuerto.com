@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# Permitir explícitamente a rastreadores de IA para indexación
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://sandrapuerto.com/sitemap.xml
