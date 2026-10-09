@@ -26,9 +26,11 @@ def minify_js(js):
     return js.strip()
 
 def minify_html(html):
+    # Eliminar comentarios HTML
     html = re.sub(r'<!--(?!>).*?-->', '', html, flags=re.DOTALL)
-    html = re.sub(r'>\s+<', '><', html)
-    return html.strip()
+    # Eliminar espacios vacíos de inicio/fin de línea sin colapsar espacios entre palabras
+    lines = [line.strip() for line in html.splitlines() if line.strip()]
+    return '\n'.join(lines)
 
 base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public"))
 
