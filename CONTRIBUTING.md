@@ -27,8 +27,8 @@ This project strictly adheres to the **Stratum Consumer Architecture Pattern** a
    ```
 4. **Asset Validation:**
    Ensure HTML markup is valid and CSS adheres to the design tokens defined in `public/css/styles.css`.
-5. **Minification Verification:**
-   Run `python minify.py` to confirm scripts and stylesheets minify cleanly without syntax breaks.
+5. **Cache Busting:**
+   Run `python scripts/version_assets.py` after modifying any CSS/JS so HTML references get a new `?v=<hash>`. Verify with `python scripts/version_assets.py --check`. Never minify sources in place.
 6. **Commit Standards:**
    Write clear, imperative commit messages (e.g., `feat(ui): add responsive container scaling`, `fix(nginx): update CSP font origins`).
 7. **Submit a Pull Request:** Open a PR against the `main` branch with a clear description of the modifications.
