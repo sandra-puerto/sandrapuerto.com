@@ -529,60 +529,85 @@ p {
 .tech-icon {
     width: 36px;
     height: 36px;
-    display: inline-block;
-    vertical-align: middle;
-    flex-shrink: 0;
-    fill: currentColor;
-    transition: color var(--transition-smooth), transform var(--transition-smooth), filter var(--transition-smooth);
+    background-color: var(--text-secondary);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: background-color var(--transition-smooth), background var(--transition-smooth), filter var(--transition-smooth);
 }
 
-/* Colores de marca personalizados en hover */
+/* Colores de marca y máscaras vectoriales */
+.tech-item.tech-php .tech-icon {
+    -webkit-mask-image: url('/icons/tech/php.svg');
+    mask-image: url('/icons/tech/php.svg');
+}
 .tech-item.tech-php:hover .tech-icon {
-    color: #777BB4;
+    background-color: #777BB4;
     filter: drop-shadow(0 0 10px rgba(119, 123, 180, 0.55));
 }
 .tech-item.tech-php:hover {
     color: #c4c7eb;
 }
 
+.tech-item.tech-laravel .tech-icon {
+    -webkit-mask-image: url('/icons/tech/laravel.svg');
+    mask-image: url('/icons/tech/laravel.svg');
+}
 .tech-item.tech-laravel:hover .tech-icon {
-    color: #FF2D20;
+    background-color: #FF2D20;
     filter: drop-shadow(0 0 10px rgba(255, 45, 32, 0.55));
 }
 .tech-item.tech-laravel:hover {
     color: #ff857d;
 }
 
+.tech-item.tech-cloudflare .tech-icon {
+    -webkit-mask-image: url('/icons/tech/cloudflare.svg');
+    mask-image: url('/icons/tech/cloudflare.svg');
+}
 .tech-item.tech-cloudflare:hover .tech-icon {
-    color: #F38020;
+    background-color: #F38020;
     filter: drop-shadow(0 0 10px rgba(243, 128, 32, 0.55));
 }
 .tech-item.tech-cloudflare:hover {
     color: #ffaa5e;
 }
 
+.tech-item.tech-proxmox .tech-icon {
+    -webkit-mask-image: url('/icons/tech/proxmox.svg');
+    mask-image: url('/icons/tech/proxmox.svg');
+}
 .tech-item.tech-proxmox:hover .tech-icon {
-    color: #E57000;
+    background: linear-gradient(135deg, #FFB800 0%, #E57000 100%);
+    background-color: #E57000;
     filter: drop-shadow(0 0 10px rgba(229, 112, 0, 0.55));
 }
 .tech-item.tech-proxmox:hover {
     color: #ffbf66;
 }
 
+.tech-item.tech-nextcloud .tech-icon {
+    -webkit-mask-image: url('/icons/tech/nextcloud.svg');
+    mask-image: url('/icons/tech/nextcloud.svg');
+}
 .tech-item.tech-nextcloud:hover .tech-icon {
-    color: #0082C9;
+    background-color: #0082C9;
     filter: drop-shadow(0 0 10px rgba(0, 130, 201, 0.55));
 }
 .tech-item.tech-nextcloud:hover {
     color: #5ec4ff;
 }
 
-.tech-item.tech-linux:hover .tech-icon {
-    color: #FCC624;
-    filter: drop-shadow(0 0 10px rgba(252, 198, 36, 0.55));
+.tech-item.tech-linux .tech-icon {
+    -webkit-mask-image: url('/icons/tech/linux.svg');
+    mask-image: url('/icons/tech/linux.svg');
 }
-.tech-item.tech-linux:hover {
-    color: #fde27e;
+.tech-item.tech-linux:hover .tech-icon {
+    background-color: #FCC624;
+    filter: drop-shadow(0 0 10px rgba(252, 198, 36, 0.55));
 }
 .tech-item.tech-linux:hover {
     color: #fde27e;
