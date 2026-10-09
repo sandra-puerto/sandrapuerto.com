@@ -529,85 +529,60 @@ p {
 .tech-icon {
     width: 36px;
     height: 36px;
-    background-color: var(--text-secondary);
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    transition: background-color var(--transition-smooth), background var(--transition-smooth), filter var(--transition-smooth);
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+    fill: currentColor;
+    transition: color var(--transition-smooth), transform var(--transition-smooth), filter var(--transition-smooth);
 }
 
-/* Colores de marca y máscaras vectoriales */
-.tech-item.tech-php .tech-icon {
-    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/php.svg");
-    mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/php.svg");
-}
+/* Colores de marca personalizados en hover */
 .tech-item.tech-php:hover .tech-icon {
-    background-color: #777BB4;
+    color: #777BB4;
     filter: drop-shadow(0 0 10px rgba(119, 123, 180, 0.55));
 }
 .tech-item.tech-php:hover {
     color: #c4c7eb;
 }
 
-.tech-item.tech-laravel .tech-icon {
-    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/laravel.svg");
-    mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/laravel.svg");
-}
 .tech-item.tech-laravel:hover .tech-icon {
-    background-color: #FF2D20;
+    color: #FF2D20;
     filter: drop-shadow(0 0 10px rgba(255, 45, 32, 0.55));
 }
 .tech-item.tech-laravel:hover {
     color: #ff857d;
 }
 
-.tech-item.tech-cloudflare .tech-icon {
-    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cloudflare.svg");
-    mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cloudflare.svg");
-}
 .tech-item.tech-cloudflare:hover .tech-icon {
-    background-color: #F38020;
+    color: #F38020;
     filter: drop-shadow(0 0 10px rgba(243, 128, 32, 0.55));
 }
 .tech-item.tech-cloudflare:hover {
     color: #ffaa5e;
 }
 
-.tech-item.tech-proxmox .tech-icon {
-    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/proxmox.svg");
-    mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/proxmox.svg");
-}
 .tech-item.tech-proxmox:hover .tech-icon {
-    background: linear-gradient(135deg, #FFB800 0%, #E57000 100%);
-    background-color: #E57000;
+    color: #E57000;
     filter: drop-shadow(0 0 10px rgba(229, 112, 0, 0.55));
 }
 .tech-item.tech-proxmox:hover {
     color: #ffbf66;
 }
 
-.tech-item.tech-nextcloud .tech-icon {
-    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nextcloud.svg");
-    mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nextcloud.svg");
-}
 .tech-item.tech-nextcloud:hover .tech-icon {
-    background-color: #0082C9;
+    color: #0082C9;
     filter: drop-shadow(0 0 10px rgba(0, 130, 201, 0.55));
 }
 .tech-item.tech-nextcloud:hover {
     color: #5ec4ff;
 }
 
-.tech-item.tech-linux .tech-icon {
-    -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg");
-    mask-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg");
-}
 .tech-item.tech-linux:hover .tech-icon {
-    background-color: #FCC624;
+    color: #FCC624;
     filter: drop-shadow(0 0 10px rgba(252, 198, 36, 0.55));
+}
+.tech-item.tech-linux:hover {
+    color: #fde27e;
 }
 .tech-item.tech-linux:hover {
     color: #fde27e;
