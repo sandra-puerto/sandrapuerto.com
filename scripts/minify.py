@@ -52,13 +52,18 @@ if os.path.exists(js_path):
         f.write(minified)
     print("app.js minified.")
 
+templates_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "templates"))
+
 # Minify HTML files
-for file_name in ['index.html', '404.html', 'maintenance.html']:
-    html_path = os.path.join(base_dir, file_name)
-    if os.path.exists(html_path):
-        with open(html_path, 'r', encoding='utf-8') as f:
+for file_path in [
+    os.path.join(base_dir, 'index.html'),
+    os.path.join(templates_dir, '404.html'),
+    os.path.join(templates_dir, 'maintenance.html'),
+]:
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
         minified = minify_html(content)
-        with open(html_path, 'w', encoding='utf-8') as f:
+        with open(file_path, 'w', encoding='utf-8') as f:
             f.write(minified)
-        print(f"{file_name} minified.")
+        print(f"{os.path.basename(file_path)} minified.")

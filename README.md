@@ -75,13 +75,14 @@ landing-sgpt/
 │   ├── nginx.conf        # Tuned event-loop, rate limiting & compression
 │   └── conf.d/
 │       └── default.conf  # Server block, security headers (CSP) & cache rules
+├── templates/
+│   ├── 404.html          # Out-of-tree 404 error page (isolated from public webroot)
+│   └── maintenance.html  # Standalone fallback & maintenance template for NPM
 ├── scripts/
 │   ├── generate_assets.py # Favicons (ICO, PNG, SVG) and OG social banner generator
 │   └── minify.py         # Buildless asset minification utility
 └── public/
     ├── index.html        # Main landing page (CSS keyframes, zero JS blocking)
-    ├── 404.html          # Dynamic 404 error page matching brand design system
-    ├── maintenance.html  # Standalone fallback & maintenance page for NPM
     ├── manifest.json     # Progressive web manifest
     ├── robots.txt        # Web crawler directives
     ├── sitemap.xml       # Canonical search engine index map
@@ -171,12 +172,12 @@ In the NPM administrative dashboard, create a new **Proxy Host**:
 
 ## 6. Default Fallback & Maintenance Integration
 
-The project provides a self-contained, standalone fallback template at [`public/maintenance.html`](public/maintenance.html) containing embedded CSS and vector graphics.
+The project provides a self-contained, standalone fallback template at [`templates/maintenance.html`](templates/maintenance.html) containing embedded CSS and vector graphics.
 
 To configure NPM default host fallback:
 1. Navigate to **NPM Settings &rarr; Default Site**.
 2. Select **Custom Page**.
-3. Copy and paste the contents of [`public/maintenance.html`](public/maintenance.html) into the HTML field.
+3. Copy and paste the contents of [`templates/maintenance.html`](templates/maintenance.html) into the HTML field.
 
 ---
 

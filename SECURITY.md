@@ -33,4 +33,7 @@ This repository implements the following baseline hardening controls:
 * Total capability stripping (`cap_drop: [ALL]`) with minimal specific additions.
 * Prevention of runtime privilege escalation (`no-new-privileges: true`).
 * Ephemeral memory storage via `tmpfs` for caching, PID, and temporary file operations.
+* **Out-of-Tree Template Isolation:** Error and maintenance templates (`templates/404.html`, `templates/maintenance.html`) are physically decoupled from the public webroot (`public/`), preventing direct external access.
+* **Perimeter Hardening:** Strict denial of hidden dotfiles (`.git`, `.env`) and development/backup file extensions (`.bak`, `.sql`, `.conf`, `.sh`, `.py`, `.md`).
+* **Reverse Proxy Redirection Safety:** `port_in_redirect off` and `absolute_redirect off` to prevent internal port leaks behind Nginx Proxy Manager.
 * Strict Content Security Policy (`Content-Security-Policy`), Clickjacking prevention (`X-Frame-Options: DENY`), and MIME sniffing prevention (`X-Content-Type-Options: nosniff`).

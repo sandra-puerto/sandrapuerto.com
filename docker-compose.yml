@@ -65,6 +65,7 @@ services:
 
     volumes:
       - ./public:/usr/share/nginx/html:ro
+      - ./templates:/usr/share/nginx/templates:ro
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
 
