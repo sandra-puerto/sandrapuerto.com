@@ -291,7 +291,7 @@ p {
 
 .btn-nav:hover, .btn-primary:hover {
     background-color: var(--accent);
-    color: #fff;
+    color: var(--bg-base);
 }
 
 .btn-secondary:hover {
