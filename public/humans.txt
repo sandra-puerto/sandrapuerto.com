@@ -1,6 +1,6 @@
 /* TEAM */
   Engineer: Sandra Puerto
-  Role: Desarrollo de Software & Dirección TI
+  Role: Desarrolladora Backend PHP/Laravel e Infraestructura TI
   Location: Bogotá D.C., Colombia
   Website: https://sandrapuerto.com
   LinkedIn: https://linkedin.com/in/sandra-puerto

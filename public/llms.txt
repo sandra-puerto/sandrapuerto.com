@@ -1,30 +1,38 @@
-# Sandra Puerto - Desarrolladora Backend & Infraestructura TI
+# Sandra Puerto - Desarrolladora Backend PHP/Laravel e Infraestructura TI
 
-Perfil T-Shaped: Desarrolladora backend (PHP/Laravel) con amplia base operativa (Linux/Docker). Construyo aplicaciones eficientes con Clean Code y garantizo que su despliegue en infraestructura sea seguro y predecible.
+Desarrolladora backend PHP enfocada en Laravel, con experiencia práctica en infraestructura y operaciones TI. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
 
-## Perfil Profesional
-Desarrolladora backend PHP y Laravel con experiencia en infraestructura TI, Linux y despliegue con Docker. Desarrollo aplicaciones con programación orientada a objetos, Clean Code y principio DRY, gestionando la administración segura de servidores bajo esquemas Zero Trust. Estudiante de Ingeniería de Software.
+## Perfil
+Profesionalmente he desarrollado en PHP (incluido un ERP legacy en PHP 5.4) y en mis proyectos personales uso Laravel, aplicando POO, patrones de diseño, Clean Code y DRY. Además he administrado servidores Linux, virtualización con Proxmox y publicación segura con Cloudflare Tunnel, por lo que diseño pensando en el despliegue, la seguridad y el costo de operación. Busco un contrato laboral directo en un equipo de desarrollo.
 
-## Especialidad y Enfoque (T-Shaped)
-- Backend: PHP, Laravel, Filament, Eloquent ORM, API REST, Patrones de Diseño.
-- Bases de Datos: PostgreSQL, MongoDB, Redis, SQL.
-- DevOps e Infraestructura: Docker, Linux (Ubuntu), Proxmox VE, Nginx Proxy Manager.
-- Seguridad: Zero Trust, Cloudflare Tunnel, VPN (Tailscale), Hardening, MFA/TOTP.
-- Operaciones TI: ITAM, GLPI, Soporte Técnico.
+## Competencias
+- Backend: PHP, Laravel, Laravel Filament, Eloquent ORM, API REST, POO, patrones de diseño.
+- Datos y herramientas: PostgreSQL, MongoDB, Redis, SQL, Docker, Docker Compose, Git, GitHub.
+- Infraestructura: Linux (Ubuntu Server), Proxmox VE, Nginx Proxy Manager, Cloudflare Tunnel, Tailscale, ufw, llaves SSH, TOTP.
+- Operaciones TI: ITAM, GLPI, Microsoft 365, Active Directory, control presupuestario.
+- Frontend (nociones): Angular, React.
 
-## Proyectos Destacados
-1. Stratum Group: Arquitectura de despliegue Zero Trust que aísla servicios corporativos con Docker Compose y DMZ interna, sin puertos expuestos.
-2. CashFlow: Sistema contable alineado al PUC colombiano y normas NIIF construido con Laravel y PostgreSQL.
+## Proyectos personales
+1. Stratum Group (desde dic. 2025): arquitectura de despliegue que aísla servicios de varias organizaciones en contenedores comunicados por una DMZ interna, con acceso únicamente por Cloudflare Tunnel. https://github.com/sandra-puerto/stratum-core
+2. CashFlow (en desarrollo): sistema contable basado en el PUC colombiano y las normas NIIF, hecho con Laravel Filament y PostgreSQL. https://github.com/sandra-puerto/cashflow
 
-## Métricas de Impacto
-- ~30% del tamaño del código legacy ocupan las nuevas implementaciones tras aplicar principios DRY.
-- +67% de capacidad de red lograda al mismo costo operativo mediante renegociación tecnológica.
-- 0 puertos expuestos en el host mediante arquitecturas de túneles y Proxys Inversos.
+## Experiencia
+- Desarrolladora de Software, Distribuidora de Papel Jurado Torres S.A.S. (may. 2026 – oct. 2026)
+- Responsable de Infraestructura TI, contratista de medio tiempo, Servilogis Colombia S.A.S. (may. 2026 – sep. 2026)
+- Desarrolladora de Software Junior, Coco Labs S.A.S. (dic. 2025 – feb. 2026)
+- Técnica de Control Interno, Serdempo S.A.S. (jul. 2025 – oct. 2025)
+- Técnica de Soporte Nivel 3, Engine GTR S.A.S. (oct. 2024 – jun. 2025)
+- Practicante de TI, Internacional de Celulares S.A. (abr. 2024 – oct. 2024)
 
-## Documentos y Contacto Oficial
-- Sitio Web: https://sandrapuerto.com
-- Descargar CV (PDF): https://sandrapuerto.com/docs/cv-sandra-puerto.pdf
+## Resultados
+- El código nuevo ocupa cerca del 30% del código legacy equivalente, gracias a utilidades reutilizables (DRY).
+- +67% de capacidad de red para una sede al reemplazar dos enlaces de cobre de 300 Mb por una fibra dedicada de 1 Gb, al costo de uno solo de los enlaces anteriores.
+- 0 puertos de entrada abiertos en los servidores publicados; el tráfico entra solo por Cloudflare Tunnel.
+
+## Contacto
+- Sitio web: https://sandrapuerto.com
+- CV (PDF): https://sandrapuerto.com/docs/cv-sandra-puerto.pdf
 - LinkedIn: https://linkedin.com/in/sandra-puerto
 - GitHub: https://github.com/sandra-puerto
-- Agendar Reunión: https://calendar.app.google/H3i9G1zKtFZY7krd6
-- Email: contacto@sandrapuerto.com
+- Agendar una reunión: https://calendar.app.google/H3i9G1zKtFZY7krd6
+- Correo: contacto@sandrapuerto.com
