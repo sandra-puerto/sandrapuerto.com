@@ -1,9 +1,11 @@
 # Sandra Puerto - Administradora de Sistemas Junior
 
-> Administradora de sistemas (SysAdmin) junior con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Infraestructura segura, continuidad operativa y eficiencia de costos: servidores Linux, virtualización con Proxmox VE, Docker, ITAM y Zero Trust. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
+> Administradora de sistemas (SysAdmin) junior enfocada en costo, seguridad y continuidad operativa. Diseño arquitecturas de servicios sobre virtualización con Proxmox VE y servidores Linux, gestiono activos de TI (ITAM) e implemento despliegues Zero Trust sin puertos expuestos. Formación práctica en desarrollo de software con PHP y Laravel. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
 
 ## Perfil Profesional
-Administradora de sistemas (SysAdmin) junior con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Decido con base en costo, seguridad y operación: arquitectura de servicios, virtualización, ciclo de vida de los activos y despliegue seguro. Aplico principios de Zero Trust, separación de privilegios y segundo factor de autenticación (TOTP) para mantener entornos ordenados y seguros. Tengo autonomía para gestionar servidores y servicios, resolver incidentes y coordinar proveedores.
+Administradora de sistemas (SysAdmin) junior enfocada en costo, seguridad y continuidad operativa. Diseño arquitecturas de servicios sobre virtualización con Proxmox VE y servidores Linux, gestiono activos de TI (ITAM) e implemento despliegues Zero Trust sin puertos expuestos.
+
+Mi formación práctica en desarrollo de software con PHP y Laravel me permite mantener y simplificar los sistemas internos que corren sobre esa infraestructura, comprender su arquitectura de punta a punta y resolver incidentes con autonomía.
 
 ## Competencias Clave
 - Infraestructura y Virtualización: Linux (Ubuntu Server), Proxmox VE, Docker, Docker Compose, Nextcloud, Nginx Proxy Manager.
