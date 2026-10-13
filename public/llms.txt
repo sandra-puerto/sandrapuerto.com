@@ -1,6 +1,6 @@
 # Sandra Puerto - Analista de TI e Infraestructura
 
-Analista de TI e Infraestructura con formación práctica en desarrollo de software. Gestión de activos (ITAM), servidores, seguridad perimetral y optimización de costos. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
+Analista de TI e Infraestructura con formación en desarrollo de software. Infraestructura estable, TI en orden, al costo correcto: ITAM, Proxmox, Linux, Docker y Zero Trust. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
 
 ## Perfil Profesional
 Analista de TI con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Decido con base en costo, seguridad y operación: arquitectura de servicios, ciclo de vida de los activos, gestión de proveedores y despliegue seguro. Aplico principios de Zero Trust, separación de privilegios y segundo factor de autenticación (TOTP) para mantener entornos ordenados y seguros. Cuento con autonomía para gestionar entornos completos, resolver incidentes y coordinar proveedores.
