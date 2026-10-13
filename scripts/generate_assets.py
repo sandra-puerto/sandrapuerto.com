@@ -114,7 +114,7 @@ def create_og_image():
         ("Docker Compose", (56, 189, 248, 255)),
         ("Zero Trust & Cloudflare", (56, 189, 248, 255)),
         ("ITAM & GLPI", (16, 185, 129, 255)),
-        ("PHP & Laravel", (119, 123, 180, 255))
+        ("Nextcloud & Redes", (0, 130, 201, 255))
     ]
     
     tag_x = 95
@@ -157,7 +157,7 @@ def create_og_image():
     
     # Description lines
     desc_y = 310
-    draw.text((95, desc_y), "Infraestructura estable, TI en orden, al costo correcto.", font=f_desc, fill="#f1f5f9")
+    draw.text((95, desc_y), "Infraestructura segura, continuidad operativa y eficiencia de costos.", font=f_desc, fill="#f1f5f9")
     draw.text((95, desc_y + 38), "Servidores Linux, Proxmox VE, Docker, Zero Trust y gestión de activos (ITAM).", font=f_desc, fill="#94a3b8")
     
     # Draw tag text and dots
