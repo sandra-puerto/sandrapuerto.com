@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /docs/cv-sandra-puerto.pdf
 
 # Permitir explícitamente a rastreadores de IA para indexación
 User-agent: GPTBot

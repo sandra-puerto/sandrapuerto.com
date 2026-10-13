@@ -157,7 +157,7 @@ def create_og_image():
     
     # Description lines
     desc_y = 310
-    draw.text((95, desc_y), "Infraestructura segura, operaciones bajo control, al costo correcto.", font=f_desc, fill="#f1f5f9")
+    draw.text((95, desc_y), "Infraestructura segura, continuidad operativa y eficiencia de costos.", font=f_desc, fill="#f1f5f9")
     draw.text((95, desc_y + 38), "Servidores Linux, Proxmox VE, Docker, Zero Trust y gestión de activos (ITAM).", font=f_desc, fill="#94a3b8")
     
     # Draw tag text and dots
@@ -387,7 +387,7 @@ def create_linkedin_cover():
     
     # Headline — professional, direct, no drama
     headline_y = 330
-    draw.text((lx, headline_y), "Infraestructura segura, operaciones bajo control, al costo correcto.", font=f_headline, fill="#e2e8f0")
+    draw.text((lx, headline_y), "Infraestructura segura, continuidad operativa y eficiencia de costos.", font=f_headline, fill="#e2e8f0")
     draw.text((lx, headline_y + 48), "Servidores Linux, Proxmox VE, Zero Trust y gestión de activos (ITAM).", font=f_headline, fill="#94a3b8")
     
     # ── Metrics ──
