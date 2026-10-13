@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Allow: /docs/cv-sandra-puerto.pdf
 
-# Permitir explícitamente a rastreadores de IA para indexación
+# Permitir explícitamente a rastreadores de IA y motores de búsqueda modernos
 User-agent: GPTBot
 Allow: /
 
@@ -10,6 +10,15 @@ User-agent: ChatGPT-User
 Allow: /
 
 User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://sandrapuerto.com/sitemap.xml

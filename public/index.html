@@ -6,6 +6,9 @@
     <title>Sandra Puerto | Administradora de Sistemas Junior</title>
     <meta name="description" content="Administradora de sistemas (SysAdmin) junior: Linux, Proxmox VE, Docker, ITAM y Zero Trust, con base en desarrollo de software. Bogotá, Colombia." />
     <meta name="author" content="Sandra Puerto" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#030712" />
+    <meta name="color-scheme" content="dark" />
     <link rel="canonical" href="https://sandrapuerto.com/" />
     <link rel="author" href="/humans.txt" />
     <link rel="manifest" href="/manifest.json" />
@@ -17,13 +20,14 @@
 
     <!-- Open Graph / Redes Sociales -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sandra Puerto" />
     <meta property="og:url" content="https://sandrapuerto.com/" />
     <meta property="og:title" content="Sandra Puerto | Administradora de Sistemas Junior" />
     <meta property="og:description" content="Administradora de sistemas (SysAdmin) junior: Linux, Proxmox VE, Docker, ITAM y Zero Trust, con base en desarrollo de software. Bogotá, Colombia." />
     <meta property="og:image" content="https://sandrapuerto.com/images/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Sandra Puerto, administradora de sistemas junior" />
+    <meta property="og:image:alt" content="Sandra Puerto, Administradora de Sistemas Junior" />
     <meta property="og:locale" content="es_CO" />
 
     <!-- Twitter Card -->
@@ -31,6 +35,119 @@
     <meta name="twitter:title" content="Sandra Puerto | Administradora de Sistemas Junior" />
     <meta name="twitter:description" content="Administradora de sistemas (SysAdmin) junior: Linux, Proxmox VE, Docker, ITAM y Zero Trust, con base en desarrollo de software. Bogotá, Colombia." />
     <meta name="twitter:image" content="https://sandrapuerto.com/images/og-image.png" />
+    <meta name="twitter:image:alt" content="Sandra Puerto, Administradora de Sistemas Junior" />
+
+    <!-- Datos estructurados Schema.org (JSON-LD) para Google Rich Results y Knowledge Graph -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfilePage",
+          "@id": "https://sandrapuerto.com/#profilepage",
+          "url": "https://sandrapuerto.com/",
+          "name": "Sandra Puerto | Administradora de Sistemas Junior",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://sandrapuerto.com/#website",
+            "url": "https://sandrapuerto.com/",
+            "name": "Sandra Puerto",
+            "description": "Portafolio y perfil profesional de Sandra Puerto, Administradora de Sistemas Junior e Infraestructura TI.",
+            "inLanguage": "es-CO"
+          },
+          "about": {
+            "@id": "https://sandrapuerto.com/#person"
+          },
+          "mainEntity": {
+            "@id": "https://sandrapuerto.com/#person"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://sandrapuerto.com/#person",
+          "name": "Sandra Puerto",
+          "url": "https://sandrapuerto.com/",
+          "image": "https://sandrapuerto.com/images/og-image.png",
+          "jobTitle": "Administradora de Sistemas Junior",
+          "description": "Administradora de sistemas e infraestructura TI con foco en costo, seguridad y operación: Proxmox VE, Linux, Docker, ITAM y Zero Trust, con formación práctica en desarrollo de software.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bogotá",
+            "addressCountry": "CO"
+          },
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Universidad de La Salle"
+          },
+          "sameAs": [
+            "https://linkedin.com/in/sandra-puerto",
+            "https://github.com/sandra-puerto"
+          ],
+          "knowsAbout": [
+            "Administración de Sistemas (SysAdmin)",
+            "Linux (Ubuntu Server)",
+            "Virtualización Proxmox VE",
+            "Docker y Docker Compose",
+            "Cloudflare Zero Trust y Tunnels",
+            "Tailscale",
+            "Gestión de Activos de TI (ITAM)",
+            "GLPI",
+            "Microsoft 365",
+            "Active Directory",
+            "PHP y Laravel",
+            "PostgreSQL",
+            "Análisis CAPEX / OPEX en TI"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://sandrapuerto.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué valor aporta a una organización?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Administro tecnología con autonomía y criterio de costo, seguridad y operación: virtualización con Proxmox VE, contenedores en Linux, Microsoft 365 y Active Directory, perímetros Zero Trust y ciclo de vida de los activos (ITAM). Con base en PHP y Laravel, también puedo mantener y simplificar los sistemas que corren sobre esa infraestructura, de modo que en una organización pequeña una sola persona cubre ambas responsabilidades."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo se implementa la seguridad en la infraestructura?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Aplico Zero Trust y mínima exposición: publico los servicios con Cloudflare Tunnel y administro por túneles de Tailscale, sin abrir puertos de entrada en el servidor. Refuerzo el host con firewall estricto (UFW), SSH por llave cifrada y segundo factor (TOTP) para accesos con privilegios, y separo usuarios y servicios en zonas aisladas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo se respaldan y recuperan los servicios?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Genero respaldos completos de las máquinas virtuales con vzdump de Proxmox antes de los cambios grandes y guardo la copia fuera del servidor. Los he restaurado en la práctica para revertir ajustes antes de pasar a producción. Es un esquema manual, pensado para un entorno sin presupuesto adicional; el siguiente paso sería programarlo con las tareas de respaldo de Proxmox."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo influye el análisis financiero (CAPEX frente a OPEX) en las decisiones de TI?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cada decisión tecnológica debe justificarse por costo y sostenibilidad. En la práctica: evalué compra frente a arrendamiento de activos, participé en la pre-auditoría de facturación de servicios de TI, evité costos de almacenamiento SaaS con una plataforma privada (Nextcloud sobre Proxmox) y coordiné la modernización de un enlace que dio 67% más de capacidad por el costo de uno solo de los anteriores."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué tipo de cargo y contrato busca actualmente?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Busco contrato directo como Administradora de Sistemas Junior, SysAdmin o Soporte Nivel 3, con capacidad para gestionar servidores y servicios con autonomía, resolver incidentes y coordinar proveedores a largo plazo."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,8 +158,8 @@
     </noscript>
 
     <!-- El parámetro ?v= lo gestiona scripts/version_assets.py (no editar a mano) -->
-    <link rel="preload" href="/css/styles.css?v=13e89e6331" as="style" />
-    <link rel="stylesheet" href="/css/styles.css?v=13e89e6331" />
+    <link rel="preload" href="/css/styles.css?v=9e0aa58983" as="style" />
+    <link rel="stylesheet" href="/css/styles.css?v=9e0aa58983" />
   </head>
   <body>
     <div class="ambient-glow glow-1"></div>
@@ -75,7 +192,7 @@
             <span class="text-gradient">y eficiencia de costos</span>.
           </h1>
           <p class="subtitle animate-in delay-2">
-            Administradora de sistemas (SysAdmin) junior desde Bogotá, con foco en costo, seguridad y operación: arquitectura de servicios, virtualización con Proxmox VE, servidores Linux, gestión de activos (ITAM) y despliegues Zero Trust sin puertos expuestos.
+            Administradora de sistemas (SysAdmin) junior con foco en costo, seguridad y operación: arquitectura de servicios, virtualización con Proxmox VE, servidores Linux, gestión de activos (ITAM) y despliegues Zero Trust sin puertos expuestos.
           </p>
           <p class="subtitle animate-in delay-3">
             La formación práctica en desarrollo de software (PHP y Laravel) permite mantener y simplificar los sistemas internos que corren sobre esa infraestructura, entender la arquitectura técnica y resolver incidentes con autonomía.
@@ -143,29 +260,29 @@
           <div class="tech-marquee">
             <div class="tech-item tech-linux"><span class="tech-icon" aria-hidden="true"></span>Linux</div>
             <div class="tech-item tech-proxmox"><span class="tech-icon" aria-hidden="true"></span>Proxmox</div>
-            <div class="tech-item">Docker</div>
+            <div class="tech-item tech-docker"><span class="tech-icon" aria-hidden="true"></span>Docker</div>
             <div class="tech-item tech-cloudflare"><span class="tech-icon" aria-hidden="true"></span>Cloudflare</div>
-            <div class="tech-item">Tailscale</div>
+            <div class="tech-item tech-tailscale"><span class="tech-icon" aria-hidden="true"></span>Tailscale</div>
             <div class="tech-item tech-nextcloud"><span class="tech-icon" aria-hidden="true"></span>Nextcloud</div>
-            <div class="tech-item">Microsoft 365</div>
-            <div class="tech-item">Active Directory</div>
-            <div class="tech-item">GLPI</div>
-            <div class="tech-item">PHP</div>
-            <div class="tech-item">Laravel</div>
-            <div class="tech-item">PostgreSQL</div>
+            <div class="tech-item tech-m365"><span class="tech-icon" aria-hidden="true"></span>Microsoft 365</div>
+            <div class="tech-item tech-activedirectory"><span class="tech-icon" aria-hidden="true"></span>Active Directory</div>
+            <div class="tech-item tech-glpi"><span class="tech-icon" aria-hidden="true"></span>GLPI</div>
+            <div class="tech-item tech-php"><span class="tech-icon" aria-hidden="true"></span>PHP</div>
+            <div class="tech-item tech-laravel"><span class="tech-icon" aria-hidden="true"></span>Laravel</div>
+            <div class="tech-item tech-postgresql"><span class="tech-icon" aria-hidden="true"></span>PostgreSQL</div>
             <!-- Copia duplicada para el loop infinito del marquee (decorativa) -->
             <div class="tech-item tech-linux" aria-hidden="true"><span class="tech-icon"></span>Linux</div>
             <div class="tech-item tech-proxmox" aria-hidden="true"><span class="tech-icon"></span>Proxmox</div>
-            <div class="tech-item" aria-hidden="true">Docker</div>
+            <div class="tech-item tech-docker" aria-hidden="true"><span class="tech-icon"></span>Docker</div>
             <div class="tech-item tech-cloudflare" aria-hidden="true"><span class="tech-icon"></span>Cloudflare</div>
-            <div class="tech-item" aria-hidden="true">Tailscale</div>
+            <div class="tech-item tech-tailscale" aria-hidden="true"><span class="tech-icon"></span>Tailscale</div>
             <div class="tech-item tech-nextcloud" aria-hidden="true"><span class="tech-icon"></span>Nextcloud</div>
-            <div class="tech-item" aria-hidden="true">Microsoft 365</div>
-            <div class="tech-item" aria-hidden="true">Active Directory</div>
-            <div class="tech-item" aria-hidden="true">GLPI</div>
-            <div class="tech-item" aria-hidden="true">PHP</div>
-            <div class="tech-item" aria-hidden="true">Laravel</div>
-            <div class="tech-item" aria-hidden="true">PostgreSQL</div>
+            <div class="tech-item tech-m365" aria-hidden="true"><span class="tech-icon"></span>Microsoft 365</div>
+            <div class="tech-item tech-activedirectory" aria-hidden="true"><span class="tech-icon"></span>Active Directory</div>
+            <div class="tech-item tech-glpi" aria-hidden="true"><span class="tech-icon"></span>GLPI</div>
+            <div class="tech-item tech-php" aria-hidden="true"><span class="tech-icon"></span>PHP</div>
+            <div class="tech-item tech-laravel" aria-hidden="true"><span class="tech-icon"></span>Laravel</div>
+            <div class="tech-item tech-postgresql" aria-hidden="true"><span class="tech-icon"></span>PostgreSQL</div>
           </div>
         </div>
       </section>
@@ -288,9 +405,10 @@
                   <span class="timeline-date">May 2026 – Oct 2026</span>
                 </div>
                 <div class="timeline-company">Distribuidora de Papel Jurado Torres S.A.S. | Bogotá D.C.</div>
-                <p>
-                  Desarrollo de componentes para un sistema ERP legacy en PHP 5.4 y de utilidades reutilizables bajo el principio DRY: el código nuevo ocupa aproximadamente el 30% del tamaño del código legacy equivalente. El cargo incluye funciones de soporte y administración de TI: compras de tecnología, soporte a sedes físicas y mantenimiento de equipos.
-                </p>
+                <ul>
+                  <li><strong>Optimización ERP:</strong> desarrollo de componentes y utilidades reutilizables bajo principio DRY en PHP 5.4 (~30% del tamaño del código legacy equivalente).</li>
+                  <li><strong>Operación y soporte TI:</strong> compras de tecnología, soporte técnico a sedes físicas y mantenimiento de equipos.</li>
+                </ul>
               </div>
             </div>
             <div class="timeline-item fade-up glass-panel delay-1">
@@ -301,9 +419,10 @@
                   <span class="timeline-date">May 2026 – Sep 2026</span>
                 </div>
                 <div class="timeline-company">Servilogis Colombia S.A.S. | Bogotá D.C. · Contratista, medio tiempo</div>
-                <p>
-                  Diseño e implementación autónoma de un almacenamiento centralizado privado con Nextcloud, virtualizado en Ubuntu Server sobre Proxmox VE, que habilitó servicios colaborativos locales y evitó costos recurrentes de almacenamiento SaaS. Entorno asegurado con publicación por Cloudflare Tunnel sin puertos de entrada abiertos, bloqueo perimetral estricto con UFW, acceso administrativo por Tailscale, SSH por llave cifrada, segundo factor (TOTP) para accesos con privilegios y separación de usuarios.
-                </p>
+                <ul>
+                  <li><strong>Almacenamiento privado:</strong> diseño e implementación autónoma de Nextcloud sobre Proxmox VE en Ubuntu Server, eliminando sobrecostos de suscripciones SaaS.</li>
+                  <li><strong>Seguridad y Zero Trust:</strong> publicación por Cloudflare Tunnel sin puertos expuestos, firewall estricto con UFW, acceso por Tailscale, llaves SSH y segundo factor (TOTP).</li>
+                </ul>
               </div>
             </div>
             <div class="timeline-item fade-up glass-panel delay-2">
@@ -314,9 +433,9 @@
                   <span class="timeline-date">Jul 2025 – Oct 2025</span>
                 </div>
                 <div class="timeline-company">Serdempo S.A.S. (tercerizado vía Thomas Greg &amp; Sons Colombia S.A.) | Bogotá D.C.</div>
-                <p>
-                  Registro y verificación de activos de hardware del proceso electoral 2026, con trazabilidad en un proyecto de alcance nacional.
-                </p>
+                <ul>
+                  <li><strong>Trazabilidad de activos:</strong> registro y verificación técnica de hardware para el proceso electoral 2026 en proyecto de alcance nacional.</li>
+                </ul>
               </div>
             </div>
             <div class="timeline-item fade-up glass-panel delay-1">
@@ -327,9 +446,10 @@
                   <span class="timeline-date">Oct 2024 – Jun 2025</span>
                 </div>
                 <div class="timeline-company">Engine GTR S.A.S. | Bogotá D.C.</div>
-                <p>
-                  Continuidad en la administración operativa y técnica de la sede donde se inició como practicante en Internacional de Celulares, ahora como personal tercerizado. Gestión autónoma, con responsabilidades por encima del cargo, del ciclo de vida de los activos (ITAM), las compras de TI y la relación con proveedores, evaluando compra frente a arrendamiento (CAPEX / OPEX). Solución definitiva a los reinicios recurrentes del router de la sede (~100 equipos): ajuste de reservas DHCP y, al persistir la falla, compra de un equipo nuevo.
-                </p>
+                <ul>
+                  <li><strong>Gestión de activos (ITAM):</strong> control autónomo del ciclo de vida de hardware, compras de TI, relación con proveedores y evaluación financiera CAPEX / OPEX.</li>
+                  <li><strong>Operación y redes:</strong> solución definitiva a reinicios recurrentes del router de sede (~100 equipos) vía DHCP y renovación; caja menor y pre-auditoría de facturación TI.</li>
+                </ul>
               </div>
             </div>
             <div class="timeline-item fade-up glass-panel delay-2">
@@ -340,9 +460,10 @@
                   <span class="timeline-date">Abr 2024 – Oct 2024</span>
                 </div>
                 <div class="timeline-company">Internacional de Celulares S.A. | Bogotá D.C.</div>
-                <p>
-                  Soporte técnico y administración de TI de la sede administrativa, con funciones por encima del cargo y reporte directo a la dirección del área; incidentes gestionados en GLPI. Administración de usuarios y correo en Microsoft 365, identidades en Active Directory (Windows Server) y servicio DHCP. Evaluación y coordinación de la modernización del enlace principal: dos conexiones de cobre de 300 Mb reemplazadas por una fibra óptica dedicada de 1 Gb, con cerca de 67% más de capacidad por el costo mensual de uno solo de los anteriores.
-                </p>
+                <ul>
+                  <li><strong>Administración de servicios:</strong> soporte técnico con GLPI, gestión de usuarios y correo en Microsoft 365, identidades en Active Directory y servicio DHCP.</li>
+                  <li><strong>Modernización de red:</strong> evaluación y migración del enlace principal a fibra óptica dedicada de 1 Gb (+67% de capacidad) manteniendo el costo de un solo enlace previo.</li>
+                </ul>
               </div>
             </div>
           </div>

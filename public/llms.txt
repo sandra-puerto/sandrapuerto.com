@@ -1,6 +1,6 @@
 # Sandra Puerto - Administradora de Sistemas Junior
 
-Administradora de sistemas (SysAdmin) junior con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Infraestructura segura, continuidad operativa y eficiencia de costos: servidores Linux, virtualización con Proxmox VE, Docker, ITAM y Zero Trust. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
+> Administradora de sistemas (SysAdmin) junior con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Infraestructura segura, continuidad operativa y eficiencia de costos: servidores Linux, virtualización con Proxmox VE, Docker, ITAM y Zero Trust. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
 
 ## Perfil Profesional
 Administradora de sistemas (SysAdmin) junior con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Decido con base en costo, seguridad y operación: arquitectura de servicios, virtualización, ciclo de vida de los activos y despliegue seguro. Aplico principios de Zero Trust, separación de privilegios y segundo factor de autenticación (TOTP) para mantener entornos ordenados y seguros. Tengo autonomía para gestionar servidores y servicios, resolver incidentes y coordinar proveedores.
@@ -12,8 +12,8 @@ Administradora de sistemas (SysAdmin) junior con enfoque integral en la administ
 - Desarrollo de Software: PHP y Laravel (Filament, Eloquent), APIs REST y modelado en PostgreSQL, Clean Code, DRY y simplificación de sistemas heredados.
 
 ## Proyectos Técnicos
-1. Stratum Group (desde dic. 2025): Arquitectura de despliegue para aislar servicios corporativos multiorganización mediante contenedores en islas comunicadas por una DMZ interna y enrutamiento con Nginx. Ingreso exclusivo por Cloudflare Tunnel sin puertos expuestos en el host. https://github.com/sandra-puerto/stratum-core
-2. CashFlow (en desarrollo): Sistema contable basado en el Plan Único de Cuentas (PUC) colombiano y normas NIIF, con modelado relacional en PostgreSQL y panel sobre Laravel. https://github.com/sandra-puerto/cashflow
+- [Stratum Group](https://github.com/sandra-puerto/stratum-core): Arquitectura de despliegue para aislar servicios corporativos multiorganización mediante contenedores en islas comunicadas por una DMZ interna y enrutamiento con Nginx. Ingreso exclusivo por Cloudflare Tunnel sin puertos expuestos en el host.
+- [CashFlow](https://github.com/sandra-puerto/cashflow): Sistema contable basado en el Plan Único de Cuentas (PUC) colombiano y normas NIIF, con modelado relacional en PostgreSQL y panel sobre Laravel.
 
 ## Experiencia Laboral
 - Desarrollador de Software, Distribuidora de Papel Jurado Torres S.A.S. (may. 2026 – oct. 2026): Componentes y utilidades reutilizables ERP en PHP 5.4 bajo principio DRY (~30% del tamaño legacy equivalente); compras y administración de TI.
@@ -32,10 +32,10 @@ Administradora de sistemas (SysAdmin) junior con enfoque integral en la administ
 - +67% de capacidad de red corporativa (fibra óptica 1 Gb) manteniendo el costo de un solo enlace previo.
 - 0 suscripciones SaaS de almacenamiento: almacenamiento corporativo privado en Nextcloud sobre Proxmox VE, sin pagos recurrentes.
 
-## Contacto
-- Sitio web: https://sandrapuerto.com
-- CV (PDF): https://sandrapuerto.com/docs/cv-sandra-puerto.pdf
-- LinkedIn: https://linkedin.com/in/sandra-puerto
-- GitHub: https://github.com/sandra-puerto
-- Agendar una reunión: https://calendar.app.google/H3i9G1zKtFZY7krd6
-- Correo: contacto@sandrapuerto.com
+## Enlaces y Recursos
+- [Sitio Web Oficial](https://sandrapuerto.com): Portafolio profesional de Sandra Puerto
+- [Currículum Vitae (PDF)](https://sandrapuerto.com/docs/cv-sandra-puerto.pdf): Descarga de CV actualizado
+- [Perfil en LinkedIn](https://linkedin.com/in/sandra-puerto): Trayectoria profesional y red de contactos
+- [Perfil en GitHub](https://github.com/sandra-puerto): Repositorios y proyectos técnicos
+- [Agendar una reunión](https://calendar.app.google/H3i9G1zKtFZY7krd6): Agenda de Google Calendar
+- [Contacto por Correo](mailto:contacto@sandrapuerto.com): Canal de comunicación directo

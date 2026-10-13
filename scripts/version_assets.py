@@ -44,7 +44,7 @@ HTML_FILES = [
 
 # Coincide con href/src a /css/*.css o /js/*.js con o sin ?v= previo
 ASSET_RE = re.compile(
-    r'(?P<attr>(?:href|src)=")(?P<path>/(?:css|js)/[\w.\-/]+\.(?:css|js))(?:\?v=[\w\-]*)?(?P<end>")'
+    r'(?P<attr>(?:href|src)=")(?P<path>/(?:css|js)/[\w.\-/]+\.(?:css|js))(?:\?v=[\w.\-]*)?(?P<end>")'
 )
 
 

@@ -26,7 +26,7 @@
     
     --text-primary: #f9fafb;
     --text-secondary: #9ca3af;
-    --text-muted: #6b7280;
+    --text-muted: #94a3b8;
     
     --accent: #38bdf8; 
     --accent-glow: rgba(56, 189, 248, 0.5);
@@ -531,7 +531,7 @@ p {
 .tech-marquee {
     display: inline-flex;
     width: max-content;
-    animation: marquee 30s linear infinite;
+    animation: marquee 55s linear infinite;
 }
 .tech-marquee:hover {
     animation-play-state: paused;
@@ -568,6 +568,42 @@ p {
 }
 
 /* Máscaras de iconos (SVGs monocromos en /icons/tech/) */
+.tech-item.tech-linux .tech-icon {
+    -webkit-mask-image: url('../icons/tech/linux.svg');
+    mask-image: url('../icons/tech/linux.svg');
+}
+.tech-item.tech-proxmox .tech-icon {
+    -webkit-mask-image: url('../icons/tech/proxmox.svg');
+    mask-image: url('../icons/tech/proxmox.svg');
+}
+.tech-item.tech-docker .tech-icon {
+    -webkit-mask-image: url('../icons/tech/docker.svg');
+    mask-image: url('../icons/tech/docker.svg');
+}
+.tech-item.tech-cloudflare .tech-icon {
+    -webkit-mask-image: url('../icons/tech/cloudflare.svg');
+    mask-image: url('../icons/tech/cloudflare.svg');
+}
+.tech-item.tech-tailscale .tech-icon {
+    -webkit-mask-image: url('../icons/tech/tailscale.svg');
+    mask-image: url('../icons/tech/tailscale.svg');
+}
+.tech-item.tech-nextcloud .tech-icon {
+    -webkit-mask-image: url('../icons/tech/nextcloud.svg');
+    mask-image: url('../icons/tech/nextcloud.svg');
+}
+.tech-item.tech-m365 .tech-icon {
+    -webkit-mask-image: url('../icons/tech/m365.svg');
+    mask-image: url('../icons/tech/m365.svg');
+}
+.tech-item.tech-activedirectory .tech-icon {
+    -webkit-mask-image: url('../icons/tech/activedirectory.svg');
+    mask-image: url('../icons/tech/activedirectory.svg');
+}
+.tech-item.tech-glpi .tech-icon {
+    -webkit-mask-image: url('../icons/tech/glpi.svg');
+    mask-image: url('../icons/tech/glpi.svg');
+}
 .tech-item.tech-php .tech-icon {
     -webkit-mask-image: url('../icons/tech/php.svg');
     mask-image: url('../icons/tech/php.svg');
@@ -576,24 +612,85 @@ p {
     -webkit-mask-image: url('../icons/tech/laravel.svg');
     mask-image: url('../icons/tech/laravel.svg');
 }
-.tech-item.tech-cloudflare .tech-icon {
-    -webkit-mask-image: url('../icons/tech/cloudflare.svg');
-    mask-image: url('../icons/tech/cloudflare.svg');
-}
-.tech-item.tech-proxmox .tech-icon {
-    -webkit-mask-image: url('../icons/tech/proxmox.svg');
-    mask-image: url('../icons/tech/proxmox.svg');
-}
-.tech-item.tech-nextcloud .tech-icon {
-    -webkit-mask-image: url('../icons/tech/nextcloud.svg');
-    mask-image: url('../icons/tech/nextcloud.svg');
-}
-.tech-item.tech-linux .tech-icon {
-    -webkit-mask-image: url('../icons/tech/linux.svg');
-    mask-image: url('../icons/tech/linux.svg');
+.tech-item.tech-postgresql .tech-icon {
+    -webkit-mask-image: url('../icons/tech/postgresql.svg');
+    mask-image: url('../icons/tech/postgresql.svg');
 }
 
 /* Colores de marca personalizados en hover */
+.tech-item.tech-linux:hover .tech-icon {
+    background-color: #FCC624;
+    filter: drop-shadow(0 0 10px rgba(252, 198, 36, 0.55));
+}
+.tech-item.tech-linux:hover {
+    color: #fde27e;
+}
+
+.tech-item.tech-proxmox:hover .tech-icon {
+    background: linear-gradient(135deg, #FFB800 0%, #E57000 100%);
+    background-color: #E57000;
+    filter: drop-shadow(0 0 10px rgba(229, 112, 0, 0.55));
+}
+.tech-item.tech-proxmox:hover {
+    color: #ffbf66;
+}
+
+.tech-item.tech-docker:hover .tech-icon {
+    background-color: #2496ED;
+    filter: drop-shadow(0 0 10px rgba(36, 150, 237, 0.55));
+}
+.tech-item.tech-docker:hover {
+    color: #70baff;
+}
+
+.tech-item.tech-cloudflare:hover .tech-icon {
+    background-color: #F38020;
+    filter: drop-shadow(0 0 10px rgba(243, 128, 32, 0.55));
+}
+.tech-item.tech-cloudflare:hover {
+    color: #ffaa5e;
+}
+
+.tech-item.tech-tailscale:hover .tech-icon {
+    background-color: #4B5563;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45));
+}
+.tech-item.tech-tailscale:hover {
+    color: #e2e8f0;
+}
+
+.tech-item.tech-nextcloud:hover .tech-icon {
+    background-color: #0082C9;
+    filter: drop-shadow(0 0 10px rgba(0, 130, 201, 0.55));
+}
+.tech-item.tech-nextcloud:hover {
+    color: #5ec4ff;
+}
+
+.tech-item.tech-m365:hover .tech-icon {
+    background-color: #D83B01;
+    filter: drop-shadow(0 0 10px rgba(216, 59, 1, 0.55));
+}
+.tech-item.tech-m365:hover {
+    color: #ff8c69;
+}
+
+.tech-item.tech-activedirectory:hover .tech-icon {
+    background-color: #00A4EF;
+    filter: drop-shadow(0 0 10px rgba(0, 164, 239, 0.55));
+}
+.tech-item.tech-activedirectory:hover {
+    color: #66ccff;
+}
+
+.tech-item.tech-glpi:hover .tech-icon {
+    background-color: #00A5F3;
+    filter: drop-shadow(0 0 10px rgba(0, 165, 243, 0.55));
+}
+.tech-item.tech-glpi:hover {
+    color: #7cd2fb;
+}
+
 .tech-item.tech-php:hover .tech-icon {
     background-color: #777BB4;
     filter: drop-shadow(0 0 10px rgba(119, 123, 180, 0.55));
@@ -610,37 +707,12 @@ p {
     color: #ff857d;
 }
 
-.tech-item.tech-cloudflare:hover .tech-icon {
-    background-color: #F38020;
-    filter: drop-shadow(0 0 10px rgba(243, 128, 32, 0.55));
+.tech-item.tech-postgresql:hover .tech-icon {
+    background-color: #336791;
+    filter: drop-shadow(0 0 10px rgba(51, 103, 145, 0.55));
 }
-.tech-item.tech-cloudflare:hover {
-    color: #ffaa5e;
-}
-
-.tech-item.tech-proxmox:hover .tech-icon {
-    background: linear-gradient(135deg, #FFB800 0%, #E57000 100%);
-    background-color: #E57000;
-    filter: drop-shadow(0 0 10px rgba(229, 112, 0, 0.55));
-}
-.tech-item.tech-proxmox:hover {
-    color: #ffbf66;
-}
-
-.tech-item.tech-nextcloud:hover .tech-icon {
-    background-color: #0082C9;
-    filter: drop-shadow(0 0 10px rgba(0, 130, 201, 0.55));
-}
-.tech-item.tech-nextcloud:hover {
-    color: #5ec4ff;
-}
-
-.tech-item.tech-linux:hover .tech-icon {
-    background-color: #FCC624;
-    filter: drop-shadow(0 0 10px rgba(252, 198, 36, 0.55));
-}
-.tech-item.tech-linux:hover {
-    color: #fde27e;
+.tech-item.tech-postgresql:hover {
+    color: #8bbce0;
 }
 
 @keyframes marquee {
@@ -820,7 +892,39 @@ p {
 }
 
 .timeline-content p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.timeline-content ul {
+    list-style: none;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.timeline-content li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.timeline-content li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.timeline-content li strong {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 /* FAQ */
@@ -999,7 +1103,7 @@ p {
 footer {
     padding: 3.5rem 0 2rem;
     border-top: 1px solid var(--border);
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     background: rgba(3, 7, 18, 0.4);
 }
@@ -1019,7 +1123,7 @@ footer {
 }
 
 .footer-brand p {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     margin-top: 0.8rem;
     max-width: 320px;
@@ -1060,7 +1164,7 @@ footer {
     padding-top: 1.5rem;
     text-align: center;
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 /* =========================================
