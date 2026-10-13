@@ -153,12 +153,12 @@ def create_og_image():
     draw.ellipse([dot_x, title_y + 36, dot_x + 12, title_y + 48], fill="#38bdf8")
     
     # Role
-    draw.text((title_x, 235), "Administradora de Sistemas e Infraestructura TI", font=f_role, fill="#38bdf8")
+    draw.text((title_x, 235), "Administradora de Sistemas Junior", font=f_role, fill="#38bdf8")
     
     # Description lines
     desc_y = 310
     draw.text((95, desc_y), "Infraestructura segura, continuidad operativa y eficiencia de costos.", font=f_desc, fill="#f1f5f9")
-    draw.text((95, desc_y + 38), "Servidores Linux, Proxmox VE, Docker, ITAM, Zero Trust y base en PHP & Laravel.", font=f_desc, fill="#94a3b8")
+    draw.text((95, desc_y + 38), "Servidores Linux, Proxmox VE, Docker, ITAM, Zero Trust y base en desarrollo de software.", font=f_desc, fill="#94a3b8")
     
     # Draw tag text and dots
     for tx, ty, tw, th, t_text, t_color in tag_elements:

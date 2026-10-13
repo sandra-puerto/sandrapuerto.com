@@ -1,14 +1,14 @@
-# Sandra Puerto - Administradora de Sistemas e Infraestructura TI
+# Sandra Puerto - Administradora de Sistemas Junior
 
-Administradora de sistemas e infraestructura TI con base en PHP y Laravel: Linux, Proxmox, Docker, ITAM y Zero Trust. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
+Administradora de sistemas (SysAdmin) junior con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Infraestructura segura, continuidad operativa y eficiencia de costos: servidores Linux, virtualización con Proxmox VE, Docker, ITAM y Zero Trust. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
 
 ## Perfil Profesional
-Administración de sistemas para organizaciones pequeñas, desde Bogotá, con foco en costo, seguridad y operación: servidores Linux, virtualización con Proxmox, gestión de activos (ITAM) y despliegues Zero Trust sin puertos expuestos. Con base en desarrollo de software (PHP y Laravel), también mantengo y simplifico los sistemas internos que corren sobre esa infraestructura, y resuelvo incidentes con autonomía.
+Administradora de sistemas (SysAdmin) junior con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Decido con base en costo, seguridad y operación: arquitectura de servicios, virtualización, ciclo de vida de los activos y despliegue seguro. Aplico principios de Zero Trust, separación de privilegios y segundo factor de autenticación (TOTP) para mantener entornos ordenados y seguros. Tengo autonomía para gestionar servidores y servicios, resolver incidentes y coordinar proveedores.
 
 ## Competencias Clave
-- Infraestructura y Virtualización: Linux (Ubuntu Server), Proxmox VE, Docker y Docker Compose (Dockge), Nextcloud, Nginx Proxy Manager, respaldo/restauración de VMs con vzdump, monitoreo básico con Glances.
-- Operaciones TI: Gestión de activos tecnológicos (ITAM) con GLPI, usuarios y correo en Microsoft 365, Active Directory (Windows Server), compras y proveedores de TI, evaluación de compra frente a arrendamiento (CAPEX / OPEX).
-- Redes y Seguridad: Cloudflare Tunnel, Zero Trust, Tailscale, firewall (UFW), llaves SSH, TOTP, DHCP, evaluación y modernización de enlaces de red.
+- Infraestructura y Virtualización: Linux (Ubuntu Server), Proxmox VE, Docker, Docker Compose, Nextcloud, Nginx Proxy Manager.
+- Operaciones TI: Gestión de activos tecnológicos (ITAM), GLPI, usuarios y correo en Microsoft 365, Active Directory (Windows Server) y DHCP, compras y proveedores de TI, evaluación de compra frente a arrendamiento (CAPEX / OPEX).
+- Redes y Seguridad: Cloudflare Tunnel, Zero Trust, Tailscale, firewall (ufw), llaves SSH, TOTP, DHCP, evaluación de enlaces de red.
 - Desarrollo de Software: PHP y Laravel (Filament, Eloquent), APIs REST y modelado en PostgreSQL, Clean Code, DRY y simplificación de sistemas heredados.
 
 ## Proyectos Técnicos
@@ -16,11 +16,16 @@ Administración de sistemas para organizaciones pequeñas, desde Bogotá, con fo
 2. CashFlow (en desarrollo): Sistema contable basado en el Plan Único de Cuentas (PUC) colombiano y normas NIIF, con modelado relacional en PostgreSQL y panel sobre Laravel. https://github.com/sandra-puerto/cashflow
 
 ## Experiencia Laboral
-- Ingeniero de Software, Distribuidora de Papel Jurado Torres S.A.S. (may. 2026 – oct. 2026): Componentes y utilidades reutilizables ERP en PHP 5.4 bajo principio DRY (~30% del tamaño legacy equivalente); compras y administración de TI.
-- Responsable única de Infraestructura TI (contratista, medio tiempo), Servilogis Colombia S.A.S. (may. 2026 – sep. 2026): Almacenamiento privado Nextcloud en Ubuntu Server sobre Proxmox VE; Cloudflare Tunnel sin puertos abiertos, UFW, Tailscale y TOTP.
+- Desarrollador de Software, Distribuidora de Papel Jurado Torres S.A.S. (may. 2026 – oct. 2026): Componentes y utilidades reutilizables ERP en PHP 5.4 bajo principio DRY (~30% del tamaño legacy equivalente); compras y administración de TI.
+- Responsable única de Infraestructura TI (contratista, medio tiempo), Servilogis Colombia S.A.S. (may. 2026 – sep. 2026): Almacenamiento privado Nextcloud en Ubuntu Server sobre Proxmox VE; Cloudflare Tunnel sin puertos abiertos, ufw, Tailscale y TOTP.
 - Técnico de Control Interno, Serdempo S.A.S. / Thomas Greg & Sons (jul. 2025 – oct. 2025): Verificación técnica y trazabilidad de activos de hardware para elecciones nacionales 2026.
 - Técnico de Soporte Nivel 3, Engine GTR S.A.S. (oct. 2024 – jun. 2025): ITAM, proveedores, CAPEX / OPEX, caja menor, soporte a usuarios y resolución de fallas de red DHCP.
 - Practicante de TI, Internacional de Celulares S.A. (abr. 2024 – oct. 2024): Soporte de sede con reporte a dirección, GLPI, Microsoft 365, Active Directory, DHCP y migración de enlaces a fibra óptica dedicada (+67% capacidad al costo de un solo enlace previo).
+
+## Educación
+- Ingeniería de Software (Homologación), Universidad de La Salle (en curso).
+- Tecnólogo en Análisis y Desarrollo de Software (con Tarjeta Profesional), SENA (ene. 2023 – nov. 2024, promedio 4.5).
+- Técnico en Programación de Software, SENA (ene. 2021 – dic. 2022, promedio 4.5).
 
 ## Resultados Medibles
 - 0 puertos de entrada abiertos en los servidores publicados (Cloudflare Tunnel y Zero Trust).

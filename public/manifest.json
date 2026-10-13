@@ -1,7 +1,7 @@
 {
-  "name": "Sandra Puerto | Administradora de Sistemas e Infraestructura TI",
+  "name": "Sandra Puerto | Administradora de Sistemas Junior",
   "short_name": "Sandra Puerto",
-  "description": "Administradora de sistemas e infraestructura TI con base en PHP y Laravel: Linux, Proxmox, Docker, ITAM y Zero Trust. Bogotá, Colombia.",
+  "description": "Administradora de sistemas (SysAdmin) junior: Linux, Proxmox VE, Docker, ITAM y Zero Trust, con base en desarrollo de software. Bogotá, Colombia.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
