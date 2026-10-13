@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 — Ruta No Encontrada | Sandra Puerto</title>
-  <meta name="description" content="La página o recurso al que intenta acceder no existe en esta infraestructura." />
+  <title>404 — Página No Encontrada | Sandra Puerto</title>
+  <meta name="description" content="El enlace o recurso solicitado no existe o fue reubicado en este servidor." />
   <meta name="author" content="Sandra Puerto" />
   <meta name="robots" content="noindex, follow" />
   <link rel="author" href="/humans.txt" />
@@ -56,6 +56,8 @@
       flex-direction: column;
       justify-content: space-between;
       position: relative;
+      margin: 0;
+      padding: 0;
     }
 
     /* Ambient Light Glows */
@@ -105,21 +107,28 @@
       z-index: 0;
     }
 
-    /* Navbar — Clean & Proportionate */
+    /* Navbar — Symmetric Height (64px) in-flow */
     .navbar {
-      position: relative;
-      top: auto;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
       z-index: 10;
       width: 100%;
+      height: 64px;
       flex-shrink: 0;
-      padding: 0.9rem 0;
+      padding: 0 !important;
+      display: flex;
+      align-items: center;
       background: rgba(3, 7, 18, 0.65);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-glass);
+      box-sizing: border-box;
     }
 
     .nav-container {
+      width: 100%;
       max-width: 1300px;
       margin: 0 auto;
       padding: 0 1.5rem;
@@ -167,15 +176,18 @@
       }
     }
 
-    /* Main Container (Perfect Vertical Centering) */
+    /* Main Container (Mathematically Centered at 50% Viewport) */
     main {
       position: relative;
       z-index: 10;
-      flex: 1;
+      flex: 1 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1.25rem;
+      padding: 1.5rem;
+      width: 100%;
+      min-height: 0;
+      box-sizing: border-box;
     }
 
     .error-card {
@@ -366,17 +378,29 @@
       transform: translateY(-1px);
     }
 
-    /* Footer */
+    /* Footer — Symmetric Height (64px) in-flow */
     footer {
-      position: relative;
+      position: relative !important;
+      bottom: auto !important;
+      left: auto !important;
+      right: auto !important;
       z-index: 10;
       width: 100%;
+      height: 64px;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-top: 1px solid var(--border-glass);
-      padding: 1rem 1.5rem;
+      padding: 0 1.5rem;
       text-align: center;
       color: #64748b;
       font-size: 0.82rem;
+      box-sizing: border-box;
+    }
+
+    footer p {
+      margin: 0;
     }
 
     @media (max-width: 640px) {
@@ -424,15 +448,15 @@
       <div class="badge-error">
         <span class="status-dot-red"></span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span>Error 404 • Ruta no encontrada</span>
+        <span>Error 404 &bull; Recurso no encontrado</span>
       </div>
 
       <h1 class="error-title">
-        Ruta fuera de <span class="text-gradient">infraestructura</span>
+        P&aacute;gina no <span class="text-gradient">encontrada</span>
       </h1>
 
       <p class="error-desc">
-        El recurso solicitado no existe o fue reubicado. Si llegó aquí por un enlace externo, puede regresar al portal principal o comunicarse directamente.
+        El recurso o enlace solicitado no existe en este servidor o fue reubicado. Puedes regresar al inicio o explorar las secciones principales del portafolio.
       </p>
 
       <div class="action-group">
@@ -447,12 +471,13 @@
       </div>
 
       <div class="card-nav-section">
-        <span class="card-nav-label">Navegación rápida sugerida</span>
+        <span class="card-nav-label">Navegaci&oacute;n r&aacute;pida</span>
         <div class="card-nav-links">
           <a href="/#especialidad" class="nav-pill">Enfoque</a>
           <a href="/#proyectos" class="nav-pill">Proyectos</a>
           <a href="/#tecnologias" class="nav-pill">Tecnologías</a>
           <a href="/#competencias" class="nav-pill">Competencias</a>
+          <a href="/#experiencia" class="nav-pill">Experiencia</a>
           <a href="/#faq" class="nav-pill">Preguntas</a>
         </div>
       </div>
