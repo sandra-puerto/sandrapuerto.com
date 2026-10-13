@@ -445,4 +445,3 @@ def create_linkedin_cover():
 if __name__ == "__main__":
     generate_favicons()
     create_og_image()
-    create_linkedin_cover()
