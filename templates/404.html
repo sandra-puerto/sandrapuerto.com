@@ -41,14 +41,14 @@
 
     html, body {
       height: 100%;
-      min-height: 100vh;
-      min-height: 100dvh;
+      height: 100vh;
+      height: 100dvh;
       background-color: var(--bg-dark);
       color: var(--text-main);
       font-family: var(--font-body);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     body {
@@ -58,11 +58,22 @@
       position: relative;
       margin: 0;
       padding: 0;
+      height: 100%;
+      min-height: 100dvh;
+      box-sizing: border-box;
     }
 
-    /* Ambient Light Glows */
+    @media (max-height: 560px) {
+      html, body {
+        height: auto;
+        min-height: 100dvh;
+        overflow-y: auto;
+      }
+    }
+
+    /* Ambient Light Glows (Fixed to completely prevent document overflow) */
     .ambient-glow {
-      position: absolute;
+      position: fixed !important;
       border-radius: 50%;
       filter: blur(140px);
       pointer-events: none;
@@ -79,7 +90,7 @@
     }
 
     .glow-2 {
-      bottom: -60px;
+      bottom: -40px;
       right: 15%;
       width: min(500px, 75vw);
       height: min(350px, 35vh);
@@ -97,7 +108,7 @@
 
     /* High-Tech Grid Pattern */
     .grid-pattern {
-      position: absolute;
+      position: fixed !important;
       inset: 0;
       background-image:
         linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
@@ -107,7 +118,7 @@
       z-index: 0;
     }
 
-    /* Navbar — Symmetric Height (64px) in-flow */
+    /* Navbar — Symmetric Height (60px) in-flow */
     .navbar {
       position: relative !important;
       top: auto !important;
@@ -115,7 +126,7 @@
       right: auto !important;
       z-index: 10;
       width: 100%;
-      height: 64px;
+      height: 60px;
       flex-shrink: 0;
       padding: 0 !important;
       display: flex;
@@ -176,15 +187,15 @@
       }
     }
 
-    /* Main Container (Mathematically Centered at 50% Viewport) */
+    /* Main Container (Mathematically Centered at 50% Viewport, Zero Scroll) */
     main {
       position: relative;
       z-index: 10;
-      flex: 1 0 auto;
+      flex: 1 1 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem;
+      padding: 0.75rem 1.25rem;
       width: 100%;
       min-height: 0;
       box-sizing: border-box;
@@ -192,16 +203,17 @@
 
     .error-card {
       width: 100%;
-      max-width: 680px;
+      max-width: 720px;
       background: var(--bg-surface);
       border: 1px solid var(--border-glass);
       border-radius: 1.25rem;
-      padding: clamp(2rem, 4.5vh, 2.85rem) clamp(1.5rem, 4vw, 2.75rem);
+      padding: clamp(1.5rem, 3.2vh, 2.35rem) clamp(1.25rem, 3.5vw, 2.5rem);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       text-align: center;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px -10px rgba(56, 189, 248, 0.08);
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
     }
 
     .error-card:hover {
@@ -214,16 +226,16 @@
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      padding: 0.35rem 0.95rem;
+      padding: 0.32rem 0.9rem;
       background: var(--accent-red-glow);
       border: 1px solid rgba(239, 68, 68, 0.3);
       border-radius: 9999px;
       color: #f87171;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      margin-bottom: 0.95rem;
     }
 
     .status-dot-red {
@@ -249,12 +261,12 @@
     /* Heading */
     h1.error-title {
       font-family: var(--font-heading);
-      font-size: clamp(2.1rem, 4.2vw, 3.1rem);
+      font-size: clamp(2rem, 3.8vw, 2.85rem);
       font-weight: 700;
       line-height: 1.15;
       letter-spacing: -0.03em;
       color: var(--text-main);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .text-gradient {
@@ -267,10 +279,10 @@
     /* Description */
     p.error-desc {
       color: var(--text-muted);
-      font-size: clamp(0.95rem, 1.8vw, 1.05rem);
-      line-height: 1.6;
+      font-size: clamp(0.92rem, 1.6vw, 1rem);
+      line-height: 1.55;
       max-width: 530px;
-      margin: 0 auto 1.85rem auto;
+      margin: 0 auto 1.35rem auto;
       font-weight: 300;
     }
 
@@ -279,9 +291,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.85rem;
       flex-wrap: wrap;
-      margin-bottom: 2rem;
+      margin-bottom: 1.35rem;
     }
 
     .btn-action-primary {
@@ -293,7 +305,7 @@
       font-family: var(--font-heading);
       font-size: 0.95rem;
       font-weight: 600;
-      padding: 0.75rem 1.65rem;
+      padding: 0.7rem 1.6rem;
       border-radius: 0.75rem;
       border: none;
       cursor: pointer;
@@ -319,7 +331,7 @@
       font-family: var(--font-heading);
       font-size: 0.95rem;
       font-weight: 600;
-      padding: 0.75rem 1.5rem;
+      padding: 0.7rem 1.45rem;
       border-radius: 0.75rem;
       cursor: pointer;
       text-decoration: none;
@@ -336,16 +348,16 @@
     /* Sub-navigation inside Card (Pill Badges) */
     .card-nav-section {
       border-top: 1px solid var(--border-glass);
-      padding-top: 1.5rem;
+      padding-top: 1.15rem;
     }
 
     .card-nav-label {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #64748b;
       font-weight: 600;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.65rem;
       display: block;
     }
 
@@ -353,20 +365,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.65rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
     }
 
     .nav-pill {
       display: inline-flex;
       align-items: center;
-      padding: 0.35rem 0.85rem;
+      padding: 0.3rem 0.75rem;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border-glass);
       border-radius: 9999px;
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 500;
       transition: all 0.2s ease;
     }
@@ -378,7 +390,7 @@
       transform: translateY(-1px);
     }
 
-    /* Footer — Symmetric Height (64px) in-flow */
+    /* Footer — Symmetric Height (60px) in-flow */
     footer {
       position: relative !important;
       bottom: auto !important;
@@ -386,7 +398,7 @@
       right: auto !important;
       z-index: 10;
       width: 100%;
-      height: 64px;
+      height: 60px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
