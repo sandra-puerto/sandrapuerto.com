@@ -1,6 +1,6 @@
 /* TEAM */
   Engineer: Sandra Puerto
-  Role: Analista de TI e Infraestructura · Servidores, Seguridad y Activos
+  Role: Administradora de Sistemas e Infraestructura TI · Activos, Servidores y Seguridad
   Location: Bogotá D.C., Colombia
   Website: https://sandrapuerto.com
   LinkedIn: https://linkedin.com/in/sandra-puerto

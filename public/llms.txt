@@ -1,14 +1,15 @@
-# Sandra Puerto - Analista de TI e Infraestructura
+# Sandra Puerto - Administradora de Sistemas e Infraestructura TI
 
-Analista de TI e Infraestructura con formación en desarrollo de software. Infraestructura segura, continuidad operativa y eficiencia de costos: ITAM, Proxmox, Linux, Docker y Zero Trust. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
+Administradora de sistemas e infraestructura TI con base en PHP y Laravel: Linux, Proxmox, Docker, ITAM y Zero Trust. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
 
 ## Perfil Profesional
-Analista de TI con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Decido con base en costo, seguridad y operación: arquitectura de servicios, ciclo de vida de los activos, gestión de proveedores y despliegue seguro. Aplico principios de Zero Trust, separación de privilegios y segundo factor de autenticación (TOTP) para mantener entornos ordenados y seguros. Cuento con autonomía para gestionar entornos completos, resolver incidentes y coordinar proveedores.
+Administración de sistemas para organizaciones pequeñas, desde Bogotá, con foco en costo, seguridad y operación: servidores Linux, virtualización con Proxmox, gestión de activos (ITAM) y despliegues Zero Trust sin puertos expuestos. Con base en desarrollo de software (PHP y Laravel), también mantengo y simplifico los sistemas internos que corren sobre esa infraestructura, y resuelvo incidentes con autonomía.
 
 ## Competencias Clave
-- Infraestructura y Virtualización: Linux (Ubuntu Server), Proxmox VE, Docker, Docker Compose, Nextcloud, Nginx Proxy Manager.
-- Operaciones TI: Gestión de activos tecnológicos (ITAM), GLPI, usuarios y correo en Microsoft 365, Active Directory (Windows Server), compras y proveedores de TI, evaluación de compra frente a arrendamiento (CAPEX / OPEX).
+- Infraestructura y Virtualización: Linux (Ubuntu Server), Proxmox VE, Docker y Docker Compose (Dockge), Nextcloud, Nginx Proxy Manager, respaldo/restauración de VMs con vzdump, monitoreo básico con Glances.
+- Operaciones TI: Gestión de activos tecnológicos (ITAM) con GLPI, usuarios y correo en Microsoft 365, Active Directory (Windows Server), compras y proveedores de TI, evaluación de compra frente a arrendamiento (CAPEX / OPEX).
 - Redes y Seguridad: Cloudflare Tunnel, Zero Trust, Tailscale, firewall (UFW), llaves SSH, TOTP, DHCP, evaluación y modernización de enlaces de red.
+- Desarrollo de Software: PHP y Laravel (Filament, Eloquent), APIs REST y modelado en PostgreSQL, Clean Code, DRY y simplificación de sistemas heredados.
 
 ## Proyectos Técnicos
 1. Stratum Group (desde dic. 2025): Arquitectura de despliegue para aislar servicios corporativos multiorganización mediante contenedores en islas comunicadas por una DMZ interna y enrutamiento con Nginx. Ingreso exclusivo por Cloudflare Tunnel sin puertos expuestos en el host. https://github.com/sandra-puerto/stratum-core
@@ -24,7 +25,7 @@ Analista de TI con enfoque integral en la administración de tecnología y forma
 ## Resultados Medibles
 - 0 puertos de entrada abiertos en los servidores publicados (Cloudflare Tunnel y Zero Trust).
 - +67% de capacidad de red corporativa (fibra óptica 1 Gb) manteniendo el costo de un solo enlace previo.
-- 100% de almacenamiento corporativo privado y autónomo en Nextcloud sobre Proxmox VE, evitando costos recurrentes de almacenamiento SaaS.
+- 0 suscripciones SaaS de almacenamiento: almacenamiento corporativo privado en Nextcloud sobre Proxmox VE, sin pagos recurrentes.
 
 ## Contacto
 - Sitio web: https://sandrapuerto.com
