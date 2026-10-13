@@ -1,6 +1,6 @@
 /* TEAM */
   Engineer: Sandra Puerto
-  Role: Desarrolladora Backend PHP/Laravel e Infraestructura TI
+  Role: Analista de TI e Infraestructura · Servidores, Seguridad y Activos
   Location: Bogotá D.C., Colombia
   Website: https://sandrapuerto.com
   LinkedIn: https://linkedin.com/in/sandra-puerto
@@ -9,12 +9,11 @@
 
 /* ARCHITECTURE & STACK */
   Pattern: Stratum Consumer Architecture
-  Backend: PHP 8.x, Laravel 11.x
-  Infrastructure: Linux, Docker, Proxmox, Nginx
-  Security: Cloudflare, Hardened Read-Only Container, Cap-Drop, Strict CSP
+  Infrastructure: Linux (Ubuntu Server), Docker, Proxmox VE, Nginx
+  Security: Cloudflare Tunnel, Zero Trust, UFW, Tailscale, TOTP, Strict CSP
 
 /* SITE */
-  Last update: 2026/09/27
+  Last update: 2026/10/12
   Language: Spanish
   Standards: HTML5, CSS3, ES6+
   Components: Vanilla CSS & JS (Zero runtime overhead, 100/100 Lighthouse Target)

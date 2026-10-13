@@ -1,33 +1,31 @@
-# Sandra Puerto - Desarrolladora Backend PHP/Laravel e Infraestructura TI
+# Sandra Puerto - Analista de TI e Infraestructura
 
-Desarrolladora backend PHP enfocada en Laravel, con experiencia práctica en infraestructura y operaciones TI. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
+Analista de TI e Infraestructura con formación práctica en desarrollo de software. Gestión de activos (ITAM), servidores, seguridad perimetral y optimización de costos. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
 
-## Perfil
-Profesionalmente he desarrollado en PHP (incluido un ERP legacy en PHP 5.4) y en mis proyectos personales uso Laravel, aplicando POO, patrones de diseño, Clean Code y DRY. Además he administrado servidores Linux, virtualización con Proxmox y publicación segura con Cloudflare Tunnel, por lo que diseño pensando en el despliegue, la seguridad y el costo de operación. Busco un contrato laboral directo en un equipo de desarrollo.
+## Perfil Profesional
+Analista de TI con enfoque integral en la administración de tecnología y formación práctica en desarrollo de software. Decido con base en costo, seguridad y operación: arquitectura de servicios, ciclo de vida de los activos, gestión de proveedores y despliegue seguro. Aplico principios de Zero Trust, separación de privilegios y segundo factor de autenticación (TOTP) para mantener entornos ordenados y seguros. Cuento con autonomía para gestionar entornos completos, resolver incidentes y coordinar proveedores.
 
-## Competencias
-- Backend: PHP, Laravel, Laravel Filament, Eloquent ORM, API REST, POO, patrones de diseño.
-- Datos y herramientas: PostgreSQL, MongoDB, Redis, SQL, Docker, Docker Compose, Git, GitHub.
-- Infraestructura: Linux (Ubuntu Server), Proxmox VE, Nginx Proxy Manager, Cloudflare Tunnel, Tailscale, ufw, llaves SSH, TOTP.
-- Operaciones TI: ITAM, GLPI, Microsoft 365, Active Directory, control presupuestario.
-- Frontend (nociones): Angular, React.
+## Competencias Clave
+- Infraestructura y Virtualización: Linux (Ubuntu Server), Proxmox VE, Docker, Docker Compose, Nextcloud, Nginx Proxy Manager.
+- Operaciones TI: Gestión de activos tecnológicos (ITAM), GLPI, usuarios y correo en Microsoft 365, Active Directory (Windows Server), compras y proveedores de TI, evaluación de compra frente a arrendamiento (CAPEX / OPEX).
+- Redes y Seguridad: Cloudflare Tunnel, Zero Trust, Tailscale, firewall (UFW), llaves SSH, TOTP, DHCP, evaluación y modernización de enlaces de red.
+- Desarrollo y Datos: PHP, Laravel, PostgreSQL, MongoDB, Redis, Git, GitHub, Clean Code, DRY.
 
-## Proyectos personales
-1. Stratum Group (desde dic. 2025): arquitectura de despliegue que aísla servicios de varias organizaciones en contenedores comunicados por una DMZ interna, con acceso únicamente por Cloudflare Tunnel. https://github.com/sandra-puerto/stratum-core
-2. CashFlow (en desarrollo): sistema contable basado en el PUC colombiano y las normas NIIF, hecho con Laravel Filament y PostgreSQL. https://github.com/sandra-puerto/cashflow
+## Proyectos Técnicos
+1. Stratum Group (desde dic. 2025): Arquitectura de despliegue para aislar servicios corporativos multiorganización mediante contenedores en islas comunicadas por una DMZ interna y enrutamiento con Nginx. Ingreso exclusivo por Cloudflare Tunnel sin puertos expuestos en el host. https://github.com/sandra-puerto/stratum-core
+2. CashFlow (en desarrollo): Sistema contable basado en el Plan Único de Cuentas (PUC) colombiano y normas NIIF, con modelado relacional en PostgreSQL y panel sobre Laravel. https://github.com/sandra-puerto/cashflow
 
-## Experiencia
-- Desarrolladora de Software, Distribuidora de Papel Jurado Torres S.A.S. (may. 2026 – oct. 2026)
-- Responsable de Infraestructura TI, contratista de medio tiempo, Servilogis Colombia S.A.S. (may. 2026 – sep. 2026)
-- Desarrolladora de Software Junior, Coco Labs S.A.S. (dic. 2025 – feb. 2026)
-- Técnica de Control Interno, Serdempo S.A.S. (jul. 2025 – oct. 2025)
-- Técnica de Soporte Nivel 3, Engine GTR S.A.S. (oct. 2024 – jun. 2025)
-- Practicante de TI, Internacional de Celulares S.A. (abr. 2024 – oct. 2024)
+## Experiencia Laboral
+- Ingeniero de Software, Distribuidora de Papel Jurado Torres S.A.S. (may. 2026 – oct. 2026): Componentes y utilidades reutilizables ERP en PHP 5.4 bajo principio DRY (~30% del tamaño legacy equivalente); compras y administración de TI.
+- Responsable única de Infraestructura TI (contratista, medio tiempo), Servilogis Colombia S.A.S. (may. 2026 – sep. 2026): Almacenamiento privado Nextcloud en Ubuntu Server sobre Proxmox VE; Cloudflare Tunnel sin puertos abiertos, UFW, Tailscale y TOTP.
+- Técnico de Control Interno, Serdempo S.A.S. / Thomas Greg & Sons (jul. 2025 – oct. 2025): Verificación técnica y trazabilidad de activos de hardware para elecciones nacionales 2026.
+- Técnico de Soporte Nivel 3, Engine GTR S.A.S. (oct. 2024 – jun. 2025): ITAM, proveedores, CAPEX / OPEX, caja menor, soporte a usuarios y resolución de fallas de red DHCP.
+- Practicante de TI, Internacional de Celulares S.A. (abr. 2024 – oct. 2024): Soporte de sede con reporte a dirección, GLPI, Microsoft 365, Active Directory, DHCP y migración de enlaces a fibra óptica dedicada (+67% capacidad al costo de un solo enlace previo).
 
-## Resultados
-- El código nuevo ocupa cerca del 30% del código legacy equivalente, gracias a utilidades reutilizables (DRY).
-- +67% de capacidad de red para una sede al reemplazar dos enlaces de cobre de 300 Mb por una fibra dedicada de 1 Gb, al costo de uno solo de los enlaces anteriores.
-- 0 puertos de entrada abiertos en los servidores publicados; el tráfico entra solo por Cloudflare Tunnel.
+## Resultados Medibles
+- 0 puertos de entrada abiertos en los servidores publicados (Cloudflare Tunnel y Zero Trust).
+- +67% de capacidad de red corporativa (fibra óptica 1 Gb) manteniendo el costo de un solo enlace previo.
+- ~30% del tamaño habitual ocupa el código nuevo en ERP gracias a librerías reutilizables bajo principio DRY.
 
 ## Contacto
 - Sitio web: https://sandrapuerto.com
