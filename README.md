@@ -205,7 +205,7 @@ python scripts/version_assets.py --check  # CI / pre-commit: exits 1 if stale
 
 **Landing SGPT** was engineered by **Sandra Gabriela Puerto Torres** under the Stratum ecosystem design principles.
 
-* **Role:** Backend Developer & Technical Infrastructure Director
+* **Role:** IT & Infrastructure Analyst | Software Engineering Student
 * **Core Philosophy:** *High-performance, zero-dependency components leveraging robust container hardening and isolation.*
 * **Website:** [https://sandrapuerto.com](https://sandrapuerto.com)
 

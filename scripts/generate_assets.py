@@ -94,8 +94,8 @@ def create_og_image():
     f_tag = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 16)
     f_url = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 18)
     
-    # Badge: DIAGNÓSTICO & SOLUCIÓN TI
-    badge_text = "DIAGNÓSTICO & SOLUCIÓN TI"
+    # Badge: SERVIDORES · SEGURIDAD · ACTIVOS
+    badge_text = "SERVIDORES · SEGURIDAD · ACTIVOS"
     badge_x, badge_y = 95, 88
     bbox = f_badge.getbbox(badge_text)
     bw, bh = bbox[2] - bbox[0], bbox[3] - bbox[1]
@@ -110,11 +110,11 @@ def create_og_image():
     
     # Tags at bottom
     tags = [
-        ("PHP / Laravel", (119, 123, 180, 255)),
-        ("Infraestructura On-Premises", (56, 189, 248, 255)),
-        ("Proxmox & Linux", (229, 112, 0, 255)),
-        ("Reducción OPEX (-60%)", (16, 185, 129, 255)),
-        ("Ciberseguridad & Zero Trust", (56, 189, 248, 255))
+        ("Linux & Proxmox", (229, 112, 0, 255)),
+        ("Docker Compose", (56, 189, 248, 255)),
+        ("Zero Trust & Cloudflare", (56, 189, 248, 255)),
+        ("ITAM & GLPI", (16, 185, 129, 255)),
+        ("PHP & Laravel", (119, 123, 180, 255))
     ]
     
     tag_x = 95
@@ -153,12 +153,12 @@ def create_og_image():
     draw.ellipse([dot_x, title_y + 36, dot_x + 12, title_y + 48], fill="#38bdf8")
     
     # Role
-    draw.text((title_x, 235), "Desarrollo de Software & Dirección TI", font=f_role, fill="#38bdf8")
+    draw.text((title_x, 235), "Analista de TI e Infraestructura", font=f_role, fill="#38bdf8")
     
     # Description lines
     desc_y = 310
-    draw.text((95, desc_y), "Sistemas que fallan en el peor momento y presupuestos que suben sin justificación.", font=f_desc, fill="#94a3b8")
-    draw.text((95, desc_y + 38), "Desarrollo backend con conciencia de costo, riesgo y continuidad operativa.", font=f_desc, fill="#e2e8f0")
+    draw.text((95, desc_y), "Infraestructura segura, operaciones bajo control, al costo correcto.", font=f_desc, fill="#f1f5f9")
+    draw.text((95, desc_y + 38), "Servidores Linux, Proxmox VE, Docker, Zero Trust y gestión de activos (ITAM).", font=f_desc, fill="#94a3b8")
     
     # Draw tag text and dots
     for tx, ty, tw, th, t_text, t_color in tag_elements:
@@ -383,18 +383,18 @@ def create_linkedin_cover():
     draw.ellipse([dot_x, name_y + 40, dot_x + 14, name_y + 54], fill="#38bdf8")
     
     # Role
-    draw.text((name_x, name_y + 78), "Desarrollo de Software & Dirección TI", font=f_role, fill="#38bdf8")
+    draw.text((name_x, name_y + 78), "Analista de TI e Infraestructura", font=f_role, fill="#38bdf8")
     
     # Headline — professional, direct, no drama
     headline_y = 330
-    draw.text((lx, headline_y), "Backend, infraestructura y control de costos TI.", font=f_headline, fill="#e2e8f0")
-    draw.text((lx, headline_y + 48), "Resultados medibles en entornos productivos reales.", font=f_headline, fill="#94a3b8")
+    draw.text((lx, headline_y), "Infraestructura segura, operaciones bajo control, al costo correcto.", font=f_headline, fill="#e2e8f0")
+    draw.text((lx, headline_y + 48), "Servidores Linux, Proxmox VE, Zero Trust y gestión de activos (ITAM).", font=f_headline, fill="#94a3b8")
     
     # ── Metrics ──
     metric_data = [
-        ("-60%", "OPEX tecnológico\ntras rediseño", (56, 189, 248), 0.60),
-        ("-50%", "Errores en\nproducción", (16, 185, 129), 0.50),
-        ("-70%", "Tamaño de nuevas\nimplementaciones", (139, 92, 246), 0.70),
+        ("0", "Puertos abiertos\nZero Trust", (56, 189, 248), 0.95),
+        ("+67%", "Capacidad de red\nmismo costo", (16, 185, 129), 0.67),
+        ("~30%", "Tamaño relativo\ncódigo ERP DRY", (139, 92, 246), 0.70),
     ]
     
     for i, (val, label, color, pct) in enumerate(metric_data):
@@ -418,13 +418,13 @@ def create_linkedin_cover():
     # ── Description — short, factual, no self-praise ──
     desc_y = 810
     draw.text((lx, desc_y), 
-              "Desarrollo backend con experiencia en operación real de", 
+              "Administración de infraestructura tecnológica con criterio de costo,", 
               font=f_desc, fill="#cbd5e1")
     draw.text((lx, desc_y + 36), 
-              "infraestructura. Decisiones técnicas con criterio financiero",
+              "seguridad y operación. Servidores Linux, virtualización en Proxmox,", 
               font=f_desc, fill="#cbd5e1")
     draw.text((lx, desc_y + 72),
-              "y enfoque en continuidad operativa.",
+              "Zero Trust, ITAM y formación práctica en desarrollo de software.", 
               font=f_desc, fill="#e2e8f0")
     
     # ── CTA button text ──
