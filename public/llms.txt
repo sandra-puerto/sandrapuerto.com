@@ -1,24 +1,24 @@
 # Sandra Puerto - Administradora de Sistemas Junior
 
-> Administradora de sistemas (SysAdmin) junior enfocada en costo, seguridad y continuidad operativa. Diseño arquitecturas de servicios sobre virtualización con Proxmox VE y servidores Linux, gestiono activos de TI (ITAM) e implemento despliegues Zero Trust sin puertos expuestos. Formación práctica en desarrollo de software con PHP y Laravel. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
+> Administradora de sistemas (SysAdmin) junior. Diseño arquitecturas de servicios sobre entornos de virtualización con Proxmox VE y servidores Linux, administro activos de TI (ITAM) e implemento despliegues Zero Trust sin puertos expuestos. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
 
 ## Perfil Profesional
-Administradora de sistemas (SysAdmin) junior enfocada en costo, seguridad y continuidad operativa. Diseño arquitecturas de servicios sobre virtualización con Proxmox VE y servidores Linux, gestiono activos de TI (ITAM) e implemento despliegues Zero Trust sin puertos expuestos.
+Administradora de sistemas (SysAdmin) junior. Diseño arquitecturas de servicios sobre entornos de virtualización con Proxmox VE y servidores Linux, administro activos de TI (ITAM) e implemento despliegues Zero Trust sin puertos expuestos.
 
-Mi formación práctica en desarrollo de software con PHP y Laravel me permite mantener y simplificar los sistemas internos que corren sobre esa infraestructura, comprender su arquitectura de punta a punta y resolver incidentes con autonomía.
+Opero plataformas corporativas y resuelvo incidentes con autonomía técnica, garantizando la estabilidad y el máximo rendimiento del entorno tecnológico.
 
 ## Competencias Clave
 - Infraestructura y Virtualización: Linux (Ubuntu Server), Proxmox VE, Docker, Docker Compose, Nextcloud, Nginx Proxy Manager.
 - Operaciones TI: Gestión de activos tecnológicos (ITAM), GLPI, usuarios y correo en Microsoft 365, Active Directory (Windows Server) y DHCP, compras y proveedores de TI, evaluación de compra frente a arrendamiento (CAPEX / OPEX).
 - Redes y Seguridad: Cloudflare Tunnel, Zero Trust, Tailscale, firewall (ufw), llaves SSH, TOTP, DHCP, evaluación de enlaces de red.
-- Desarrollo de Software: PHP y Laravel (Filament, Eloquent), APIs REST y modelado en PostgreSQL, Clean Code, DRY y simplificación de sistemas heredados.
+- Continuidad Operativa y Soporte: Soporte Nivel 3 a usuarios y sedes, resolución de incidencias y mantenimiento preventivo de servidores Linux.
 
 ## Proyectos Técnicos
 - [Stratum Group](https://github.com/sandra-puerto/stratum-core): Arquitectura de despliegue para aislar servicios corporativos multiorganización mediante contenedores en islas comunicadas por una DMZ interna y enrutamiento con Nginx. Ingreso exclusivo por Cloudflare Tunnel sin puertos expuestos en el host.
 - [CashFlow](https://github.com/sandra-puerto/cashflow): Sistema contable basado en el Plan Único de Cuentas (PUC) colombiano y normas NIIF, con modelado relacional en PostgreSQL y panel sobre Laravel.
 
 ## Experiencia Laboral
-- Desarrollador de Software, Distribuidora de Papel Jurado Torres S.A.S. (may. 2026 – oct. 2026): Componentes y utilidades reutilizables ERP en PHP 5.4 bajo principio DRY (~30% del tamaño legacy equivalente); compras y administración de TI.
+- Soporte Técnico y Operaciones TI, Distribuidora de Papel Jurado Torres S.A.S. (may. 2026 – oct. 2026): Compras de tecnología, soporte técnico a sedes físicas, mantenimiento de equipos de cómputo y depuración de utilidades del sistema ERP interno.
 - Responsable única de Infraestructura TI (contratista, medio tiempo), Servilogis Colombia S.A.S. (may. 2026 – sep. 2026): Almacenamiento privado Nextcloud en Ubuntu Server sobre Proxmox VE; Cloudflare Tunnel sin puertos abiertos, ufw, Tailscale y TOTP.
 - Técnico de Control Interno, Serdempo S.A.S. / Thomas Greg & Sons (jul. 2025 – oct. 2025): Verificación técnica y trazabilidad de activos de hardware para elecciones nacionales 2026.
 - Técnico de Soporte Nivel 3, Engine GTR S.A.S. (oct. 2024 – jun. 2025): ITAM, proveedores, CAPEX / OPEX, caja menor, soporte a usuarios y resolución de fallas de red DHCP.

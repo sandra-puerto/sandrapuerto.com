@@ -10,7 +10,7 @@
 #                     `?v=<sha256[:10]>` de su contenido actual.
 #
 # Por qué existe:
-#   Nginx sirve CSS/JS con `Cache-Control: immutable` (7 días) y Cloudflare
+#   Nginx sirve CSS/JS con `Cache-Control: immutable` (1 año) y Cloudflare
 #   los cachea en el edge. Sin una URL nueva por versión, navegador y CDN
 #   siguen sirviendo la copia vieja aunque el archivo cambie en el servidor.
 #
