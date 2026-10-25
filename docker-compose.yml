@@ -75,9 +75,9 @@ services:
     read_only: true
 
     tmpfs:
-      - /var/cache/nginx:size=64m,mode=0755
-      - /var/run:size=8m,mode=0755
-      - /tmp:size=16m,mode=1777
+      - /var/cache/nginx:size=64m,mode=0755,nosuid,nodev,noexec
+      - /var/run:size=8m,mode=0755,nosuid,nodev,noexec
+      - /tmp:size=16m,mode=1777,nosuid,nodev,noexec
 
     security_opt:
       - no-new-privileges:true
