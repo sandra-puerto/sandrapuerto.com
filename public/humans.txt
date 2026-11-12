@@ -1,6 +1,6 @@
 /* TEAM */
-  Engineer: Sandra Puerto
-  Role: Administradora de Sistemas e Infraestructura TI · Infraestructura y Seguridad
+  Engineer: Sandra Gabriela Puerto Torres
+  Role: Desarrolladora Backend Junior | SQL y Automatización de Procesos | Tecnóloga SENA COPNIA
   Location: Bogotá D.C., Colombia
   Website: https://sandrapuerto.com
   LinkedIn: https://linkedin.com/in/sandra-puerto
@@ -8,12 +8,12 @@
   Email: contacto@sandrapuerto.com
 
 /* ARCHITECTURE & STACK */
-  Pattern: Stratum Consumer Architecture
-  Infrastructure: Linux (Ubuntu Server), Docker, Proxmox VE, Nginx
-  Security: Cloudflare Tunnel, Zero Trust, UFW, Tailscale, TOTP, Strict CSP
+  Pattern: Stratum Sovereign Consumer Architecture (v2.0)
+  Backend & Databases: PostgreSQL, SQL, PHP, Laravel, Python, Docker
+  Infrastructure: Linux (Ubuntu Server), Proxmox VE, Nginx, Cloudflare Tunnel, Zero Trust
 
 /* SITE */
-  Last update: 2026/10/13
+  Last update: 2026/11/12
   Language: Spanish
   Standards: HTML5, CSS3, ES6+
   Components: Vanilla CSS & JS (Zero runtime overhead, 100/100 Lighthouse Target)

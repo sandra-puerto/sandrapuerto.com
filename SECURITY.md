@@ -6,6 +6,7 @@ Security updates and patches are actively applied to the following versions:
 
 | Version | Supported          |
 | :------ | :----------------- |
+| 2.0.x   | :white_check_mark: |
 | 1.0.x   | :white_check_mark: |
 | < 1.0.0 | :x:                |
 

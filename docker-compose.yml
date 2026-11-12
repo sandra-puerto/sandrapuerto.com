@@ -1,44 +1,38 @@
 # ============================================================================
 # LANDING-SGPT — static content delivery
-# Stratum consumer pattern.
+# Stratum sovereign consumer pattern (v2.0)
 # ============================================================================
 #
 # Component ......... landing-sgpt
-# Function .......... Static content delivery behind Nginx Proxy Manager.
-# Pattern ........... Stratum consumer
+# Function .......... Static content delivery behind Stratum Gateway / NPM.
+# Pattern ........... Stratum Sovereign Consumer (Tier 3 / Perimeter Consumer)
 # Artifact .......... docker-compose.yml
-# Revision .......... 1.0.2
+# Revision .......... 2.0.0
 # Status ............ Production
 #
 # ----------------------------------------------------------------------------
-# 1. OVERVIEW
+# 1. ARCHITECTURAL OVERVIEW
 # ----------------------------------------------------------------------------
-# This project serves a static site. It follows the Stratum consumer
-# pattern:
+# This project serves the personal and portfolio site sandrapuerto.com.
+# It implements the Stratum Sovereign Consumer pattern:
 #
-#   - It does not provision networks.
-#   - It consumes stratum_dmz as an external network.
-#   - Its containers are named after the project, not after Stratum.
-#   - It references the platform only through the shared network.
-#
-# ----------------------------------------------------------------------------
-# 2. NETWORK TOPOLOGY
-# ----------------------------------------------------------------------------
-#   stratum_dmz (external)
-#     Shared Demilitarized Zone. Provisioned by stratum/dmz.
-#     Consumed here to receive inbound traffic from NPM.
+#   - It does not provision platform networks.
+#   - It attaches to an external Stratum network:
+#       * Perimeter DMZ (default): `stratum_dmz`
+#       * Organization Island (Tier 3): `stratum_${TENANT_ORG}_internal`
+#   - Exposes zero host ports (0.0.0.0 unbound).
+#   - Operates with an immutable, read-only root filesystem and dropped capabilities.
+#   - Exposes dual network aliases:
+#       * `landing-sgpt-web` (legacy gateway compatibility)
+#       * `stratum-app-${TENANT_ORG:-sgpt}-web` (Stratum CLI route standard)
 #
 # ----------------------------------------------------------------------------
-# 3. DEPLOYMENT ORDER
+# 2. STRATUM CLI INGRESS ROUTING
 # ----------------------------------------------------------------------------
-#   1. stratum/dmz/         -> provisions stratum_dmz
-#   2. stratum/gateway/     -> NPM operational
-#   3. landing-sgpt/ (this) -> consumes stratum_dmz
+# To expose this service through a Stratum Organization Boundary Router:
 #
-# After deployment, configure a Proxy Host in the NPM panel:
-#   Forward Hostname ... landing-sgpt-web
-#   Forward Port ....... 80
-#   Scheme ............. http
+#   stratum route add sgpt web stratum-app-sgpt-web:80 --domain sandrapuerto.com
+#
 # ============================================================================
 
 x-defaults: &defaults
@@ -56,8 +50,8 @@ services:
 
   web:
     <<: *defaults
-    image: nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
-    container_name: landing-sgpt-web
+    image: ${NGINX_IMAGE:-nginx:latest}
+    container_name: stratum-app-${TENANT_ORG:-sgpt}-web
     init: true
 
     environment:
@@ -70,7 +64,11 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
 
     networks:
-      - stratum_dmz
+      stratum_network:
+        aliases:
+          - landing-sgpt-web
+          - stratum-app-${TENANT_ORG:-sgpt}-web
+          - web
 
     read_only: true
 
@@ -104,13 +102,19 @@ services:
     stop_grace_period: 10s
 
     labels:
+      org.opencontainers.image.authors: "Sandra Gabriela Puerto Torres <contacto@sandrapuerto.com>"
+      org.opencontainers.image.vendor: "Isora Cloud Group"
+      com.isora.website: "https://sandrapuerto.com"
+      com.isora.security: "security@isora.com.co"
+      com.stratum-core.component: "consumer-workload"
+      com.stratum-core.organization: "${TENANT_ORG:-sgpt}"
+      com.stratum-core.revision: "2.0.0"
+      com.stratum-core.slogan: "Isolation by design, not by discipline."
       com.sandrapuerto.project: "landing-sgpt"
-      com.sandrapuerto.pattern: "stratum-consumer"
       com.sandrapuerto.role: "static-server"
-      com.sandrapuerto.revision: "1.0.2"
 
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost/healthz"]
+      test: ["CMD", "curl", "-fsS", "http://localhost/healthz"]
       interval: 30s
       start_interval: 2s
       timeout: 5s
@@ -118,6 +122,6 @@ services:
       start_period: 10s
 
 networks:
-  stratum_dmz:
-    name: ${STRATUM_DMZ_NETWORK:-stratum_dmz}
+  stratum_network:
+    name: ${STRATUM_NETWORK:-${STRATUM_DMZ_NETWORK:-stratum_dmz}}
     external: true

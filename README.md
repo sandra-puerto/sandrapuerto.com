@@ -1,22 +1,25 @@
 # Landing SGPT — High-Performance Static Infrastructure Service
 
-[![Nginx](https://img.shields.io/badge/Nginx-Alpine%20Hardened-009639?style=flat-square&logo=nginx&logoColor=white)](https://nginx.org)
+[![Nginx](https://img.shields.io/badge/Nginx-Latest%20Hardened-009639?style=flat-square&logo=nginx&logoColor=white)](https://nginx.org)
 [![Docker](https://img.shields.io/badge/Docker-Compose%20v2-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Architecture](https://img.shields.io/badge/Architecture-Stratum%20Consumer-4f46e5?style=flat-square)](https://github.com)
+[![Architecture](https://img.shields.io/badge/Architecture-Stratum%20Consumer%20v2.0-4f46e5?style=flat-square)](https://stratum.isora.com.co)
 [![Security](https://img.shields.io/badge/Security-Read--Only%20%7C%20Cap--Drop-emerald?style=flat-square)](SECURITY.md)
 [![License: MIT Custom](https://img.shields.io/badge/License-MIT%20Custom-yellow.svg?style=flat-square)](LICENSE)
 [![Author](https://img.shields.io/badge/Architect-Sandra%20Gabriela%20Puerto%20Torres-f59e0b?style=flat-square)](https://sandrapuerto.com)
 
-High-performance, zero-dependency static web delivery service engineered under the **Stratum Consumer Architecture Pattern**. Built with vanilla web standards (HTML5, CSS3, JavaScript ES6+), encapsulated within a hardened, immutable Nginx container, and optimized for sub-millisecond static asset delivery behind reverse proxy gateways (such as Nginx Proxy Manager).
+High-performance, zero-dependency static web delivery service engineered under the **Stratum Sovereign Consumer Architecture Pattern (v2.0)**. Built with vanilla web standards (HTML5, CSS3, JavaScript ES6+), encapsulated within a hardened, immutable Nginx container, and optimized for sub-millisecond static asset delivery behind reverse proxy gateways (Nginx Proxy Manager or Stratum-Org boundary router).
 
 ---
 
 ## 1. Architectural Overview
 
-This component operates strictly as a **Stratum Consumer**:
-* **Zero Infrastructure Provisioning:** It does not create or manage global networks; it attaches to the shared platform DMZ (`stratum_dmz`) as an external consumer.
-* **Non-Exposed Host Ports:** All incoming traffic is routed internally through isolated bridge networks via the central gateway, eliminating host port collisions.
+This component operates as a **Stratum Sovereign Consumer**:
+* **Zero Infrastructure Provisioning:** It does not create or manage global platform networks; it attaches to an external Stratum network:
+  * **Perimeter DMZ:** Shared platform DMZ (`stratum_dmz`) behind the ingress gateway.
+  * **Tenant Island (Tier 3):** Dedicated organization private network (`stratum_${TENANT_ORG}_internal`) behind `stratum-org`.
+* **Non-Exposed Host Ports:** All incoming traffic is routed internally through isolated bridge networks via the central gateway or organization router, eliminating host port collisions (*Zero Host Ports*).
 * **Deterministic Immutability:** The web server runs with an immutable, read-only root filesystem (`read_only: true`), temporary in-memory mounts (`tmpfs`), and dropped Linux capabilities.
+* **Dual Resolution Aliases:** Exposes both `landing-sgpt-web` (legacy/NPM gateway) and `stratum-app-${TENANT_ORG:-sgpt}-web` (Stratum CLI route standard).
 
 ```mermaid
 graph TB
@@ -140,10 +143,14 @@ cp .env.example .env
 
 Review the values in `.env`:
 ```ini
+# Tenant / Organization Slug
+TENANT_ORG=sgpt
+
 # Timezone identifier
 TZ=America/Bogota
 
-# Shared DMZ external network name
+# Shared DMZ or Tenant Island network name
+STRATUM_NETWORK=stratum_dmz
 STRATUM_DMZ_NETWORK=stratum_dmz
 ```
 
@@ -159,11 +166,18 @@ docker compose ps
 docker compose logs -f
 ```
 
-### Step 3: Gateway Configuration (Nginx Proxy Manager)
+### Step 3: Ingress Routing (Stratum CLI or Nginx Proxy Manager)
+
+**Option A — Stratum-CLI Organization Island Route:**
+```bash
+stratum route add sgpt web stratum-app-sgpt-web:80 --domain sandrapuerto.com
+```
+
+**Option B — Direct Gateway Configuration (Nginx Proxy Manager):**
 In the NPM administrative dashboard, create a new **Proxy Host**:
-* **Domain Names:** `your-domain.com`
+* **Domain Names:** `sandrapuerto.com`
 * **Scheme:** `http`
-* **Forward Hostname / IP:** `landing-sgpt-web`
+* **Forward Hostname / IP:** `landing-sgpt-web` *(or `stratum-app-sgpt-web`)*
 * **Forward Port:** `80`
 * **Block Common Exploits:** `Enabled`
 * **Websockets Support:** `Enabled` (optional)
@@ -205,7 +219,7 @@ python scripts/version_assets.py --check  # CI / pre-commit: exits 1 if stale
 
 **Landing SGPT** was engineered by **Sandra Gabriela Puerto Torres** under the Stratum ecosystem design principles.
 
-* **Role:** IT & Infrastructure Analyst | Software Engineering Student
+* **Role:** Desarrolladora Backend Junior | SQL y Automatización de Procesos | Tecnóloga SENA COPNIA
 * **Core Philosophy:** *High-performance, zero-dependency components leveraging robust container hardening and isolation.*
 * **Website:** [https://sandrapuerto.com](https://sandrapuerto.com)
 

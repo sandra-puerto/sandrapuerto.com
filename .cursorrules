@@ -1,0 +1,22 @@
+# .cursorrules — Landing SGPT (sandrapuerto.com) Rules for AI and IDE
+
+# 1. Architectural Guardrails (Stratum Sovereign Consumer v2.0)
+- Zero host ports (`0.0.0.0` or `127.0.0.1`) may be published in `docker-compose.yml` in production.
+- Always use `:latest` tags (`${NGINX_IMAGE:-nginx:latest}`) for Docker images instead of pinning specific SHA digests so the repository can operate unattended.
+- Service attaches to an external Stratum network via `${STRATUM_NETWORK}` (`stratum_dmz` for perimeter DMZ or `stratum_${TENANT_ORG}_internal` for tenant island).
+- Maintain dual network aliases: `landing-sgpt-web` (legacy NPM compatibility) and `stratum-app-${TENANT_ORG:-sgpt}-web` (Stratum CLI route standard).
+- Execution boundaries:
+  * Immutable root filesystem (`read_only: true`).
+  * Volatile mounts (`tmpfs`) on `/var/cache/nginx`, `/var/run`, and `/tmp` with `nosuid,nodev,noexec`.
+  * Enforce `no-new-privileges: true` and `cap_drop: [ALL]` with minimal explicit capabilities.
+- Cache-Busting Invariant:
+  * Whenever any CSS or JS file in `public/` is modified, `python scripts/version_assets.py` MUST be executed so `?v=<sha256>` query parameters in HTML stay synchronized.
+  * CI verifies this via `python scripts/version_assets.py --check`.
+
+# 2. Content & Naming Conventions
+- Visually for users (browser `<title>`, navbar logo, footer brand): use `Sandra Puerto`.
+- In metadata (`meta author`, Open Graph, Twitter Card, JSON-LD `Person.name`), `llms.txt`, `humans.txt`, `robots.txt`, and footer copyright: use full legal name `Sandra Gabriela Puerto Torres`.
+
+# 3. Metadata & Licensing
+- Product: Landing SGPT — Stratum Sovereign Multi-Tenant Architecture Consumer.
+- Author: Sandra Gabriela Puerto Torres (https://sandrapuerto.com).

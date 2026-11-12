@@ -94,8 +94,8 @@ def create_og_image():
     f_tag = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 16)
     f_url = ImageFont.truetype(os.path.join(font_dir, "segoeui.ttf"), 18)
     
-    # Badge: SERVIDORES · SEGURIDAD · ACTIVOS
-    badge_text = "SERVIDORES · SEGURIDAD · ACTIVOS"
+    # Badge: BACKEND · SQL AVANZADO · AUTOMATIZACIÓN
+    badge_text = "BACKEND · SQL AVANZADO · AUTOMATIZACIÓN"
     badge_x, badge_y = 95, 88
     bbox = f_badge.getbbox(badge_text)
     bw, bh = bbox[2] - bbox[0], bbox[3] - bbox[1]
@@ -110,11 +110,11 @@ def create_og_image():
     
     # Tags at bottom
     tags = [
-        ("Linux & Proxmox", (229, 112, 0, 255)),
-        ("Docker Compose", (56, 189, 248, 255)),
-        ("Zero Trust & Cloudflare", (56, 189, 248, 255)),
-        ("ITAM & GLPI", (16, 185, 129, 255)),
-        ("PHP & Laravel", (119, 123, 180, 255))
+        ("PostgreSQL & SQL", (51, 103, 145, 255)),
+        ("PHP & Laravel", (255, 45, 32, 255)),
+        ("Python & DRY", (56, 189, 248, 255)),
+        ("Docker Compose", (36, 150, 237, 255)),
+        ("Linux & Zero Trust", (16, 185, 129, 255))
     ]
     
     tag_x = 95
@@ -153,12 +153,12 @@ def create_og_image():
     draw.ellipse([dot_x, title_y + 36, dot_x + 12, title_y + 48], fill="#38bdf8")
     
     # Role
-    draw.text((title_x, 235), "Administradora de Sistemas e Infraestructura TI", font=f_role, fill="#38bdf8")
+    draw.text((title_x, 235), "Desarrolladora Backend Junior · SQL y Automatización", font=f_role, fill="#38bdf8")
     
     # Description lines
     desc_y = 310
-    draw.text((95, desc_y), "Infraestructura segura, continuidad operativa y eficiencia de costos.", font=f_desc, fill="#f1f5f9")
-    draw.text((95, desc_y + 38), "Linux, Proxmox VE, Docker, ITAM, Zero Trust y base en PHP y Laravel.", font=f_desc, fill="#94a3b8")
+    draw.text((95, desc_y), "Desarrollo backend, modelado relacional (NIIF/PUC) y calidad de datos.", font=f_desc, fill="#f1f5f9")
+    draw.text((95, desc_y + 38), "PostgreSQL, PHP, Laravel, Python, refactorización DRY y operación TI.", font=f_desc, fill="#94a3b8")
     
     # Draw tag text and dots
     for tx, ty, tw, th, t_text, t_color in tag_elements:

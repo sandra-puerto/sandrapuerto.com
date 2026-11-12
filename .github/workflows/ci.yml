@@ -1,0 +1,258 @@
+name: Continuous Integration & Self-Hosted Deployment
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  # --------------------------------------------------------------------------
+  # 1. Compose Specification & Security Invariants Validation
+  # --------------------------------------------------------------------------
+  validate-compose:
+    name: Docker Compose & Stratum Security Invariants
+    runs-on: ${{ vars.CI_RUNNER || 'self-hosted' }}
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Prepare Temporary Environment File
+        run: cp .env.example .env.ci
+
+      - name: Validate Default Compose Configuration
+        run: docker compose --env-file .env.ci config --quiet
+
+      - name: Validate Custom Tenant Network Override
+        run: |
+          echo "STRATUM_NETWORK=stratum_sgpt_internal" >> .env.ci
+          echo "TENANT_ORG=sgpt" >> .env.ci
+          docker compose --env-file .env.ci config --quiet
+          rm -f .env.ci
+
+      - name: Verify No Secrets Tracked in Git
+        run: |
+          if git ls-files | grep -E '^\.env$|\.key$|\.secret$|\.pem$'; then
+            echo "Error: Sensitive secret files tracked in Git!"
+            exit 1
+          fi
+
+      - name: Verify Zero Host Ports Invariant
+        run: |
+          if grep -E '^\s+-\s+"?[0-9]+:[0-9]+"?' docker-compose.yml; then
+            echo "Error: Unbound physical host ports found in docker-compose.yml!"
+            exit 1
+          fi
+
+      - name: Verify Unattended Latest Image Tag Invariant
+        run: |
+          if grep -q '@sha256:' docker-compose.yml; then
+            echo "Error: Pinned SHA256 digest found in docker-compose.yml; use :latest for unattended operation!"
+            exit 1
+          fi
+
+      - name: Verify Hardened Read-Only & Capability Dropping
+        run: |
+          grep -q 'read_only: true' docker-compose.yml || { echo "Error: read_only: true missing!"; exit 1; }
+          grep -q 'cap_drop:' docker-compose.yml && grep -q -- '- ALL' docker-compose.yml || { echo "Error: cap_drop: [ALL] missing!"; exit 1; }
+
+  # --------------------------------------------------------------------------
+  # 2. Asset Fingerprints & Static Files Quality (Toolcache-Free for Self-Hosted)
+  # --------------------------------------------------------------------------
+  lint-and-assets:
+    name: Asset Fingerprints & Syntax Verification
+    runs-on: ${{ vars.CI_RUNNER || 'self-hosted' }}
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Verify Asset Cache-Busting Fingerprints
+        run: |
+          PY_BIN=$(command -v python3 || command -v python)
+          "$PY_BIN" scripts/version_assets.py --check
+
+      - name: Validate Web Manifest JSON Syntax
+        run: |
+          PY_BIN=$(command -v python3 || command -v python)
+          "$PY_BIN" -m json.tool public/manifest.json > /dev/null
+
+  # --------------------------------------------------------------------------
+  # 3. Nginx Configuration Syntax Testing
+  # --------------------------------------------------------------------------
+  nginx-syntax-test:
+    name: Nginx Configuration Syntax Verification
+    runs-on: ${{ vars.CI_RUNNER || 'self-hosted' }}
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Test Nginx Config Syntax in Container
+        run: |
+          docker run --rm \
+            -v "$PWD/nginx/nginx.conf:/etc/nginx/nginx.conf:ro" \
+            -v "$PWD/nginx/conf.d:/etc/nginx/conf.d:ro" \
+            -v "$PWD/public:/usr/share/nginx/html:ro" \
+            -v "$PWD/templates:/usr/share/nginx/templates:ro" \
+            nginx:latest nginx -t
+
+  # --------------------------------------------------------------------------
+  # 4. Isolated Runtime Smoke Test (Safe for Shared Self-Hosted Production Host)
+  # --------------------------------------------------------------------------
+  docker-smoke-test:
+    name: Isolated Docker Runtime Smoke & Security Test
+    runs-on: ${{ vars.CI_RUNNER || 'self-hosted' }}
+    needs: [validate-compose, lint-and-assets, nginx-syntax-test]
+    env:
+      COMPOSE_PROJECT_NAME: ci-smoke-sgpt-${{ github.run_id }}
+      TENANT_ORG: ci-smoke-${{ github.run_id }}
+      STRATUM_NETWORK: stratum_ci_smoke_${{ github.run_id }}
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Provision Isolated Ephemeral Smoke Network
+        run: |
+          docker network inspect "$STRATUM_NETWORK" >/dev/null 2>&1 || docker network create "$STRATUM_NETWORK"
+
+      - name: Launch Isolated Smoke Container Stack
+        run: |
+          docker compose -p "$COMPOSE_PROJECT_NAME" up -d
+
+      - name: Wait for Isolated Container Healthcheck
+        run: |
+          CONTAINER_NAME="stratum-app-${TENANT_ORG}-web"
+          echo "Waiting for $CONTAINER_NAME to report healthy..."
+          for i in $(seq 1 30); do
+            STATUS=$(docker inspect --format='{{json .State.Health.Status}}' "$CONTAINER_NAME" 2>/dev/null || echo '"unknown"')
+            if [ "$STATUS" = '"healthy"' ]; then
+              echo "Container $CONTAINER_NAME is healthy!"
+              break
+            fi
+            if [ "$i" -eq 30 ]; then
+              echo "Error: Container $CONTAINER_NAME did not become healthy in time."
+              docker compose -p "$COMPOSE_PROJECT_NAME" logs
+              exit 1
+            fi
+            echo "Attempt $i/30: current status is $STATUS. Standing by..."
+            sleep 1
+          done
+
+      - name: Execute Live Smoke & Security Assertions
+        run: |
+          # 1. Health Endpoint Test
+          echo "--- Testing Healthcheck Endpoint ---"
+          HEALTH=$(docker compose -p "$COMPOSE_PROJECT_NAME" exec -T web curl -fsS http://localhost/healthz)
+          [ "$HEALTH" = "ok" ] || { echo "Healthcheck failed: $HEALTH"; exit 1; }
+          echo "Healthcheck OK!"
+
+          # 2. Root HTTP 200 & Security Headers Test
+          echo "--- Testing Root Index HTTP 200 & Security Headers ---"
+          HEADERS=$(docker compose -p "$COMPOSE_PROJECT_NAME" exec -T web curl -sI http://localhost/)
+          ROOT_CODE=$(echo "$HEADERS" | awk '/^HTTP\// {print $2}' | tr -d '\r' | tail -1)
+          [ "$ROOT_CODE" = "200" ] || { echo "Root page returned HTTP $ROOT_CODE"; exit 1; }
+          echo "$HEADERS" | grep -iq "X-Content-Type-Options: nosniff" || { echo "Missing X-Content-Type-Options header"; exit 1; }
+          echo "$HEADERS" | grep -iq "X-Frame-Options: DENY" || { echo "Missing X-Frame-Options header"; exit 1; }
+          echo "$HEADERS" | grep -iq "Content-Security-Policy:" || { echo "Missing Content-Security-Policy header"; exit 1; }
+          echo "Root page returned HTTP 200 OK with all security headers!"
+
+          # 3. HTTP Method Restriction (POST must return 405)
+          echo "--- Testing Method Filter (POST -> 405) ---"
+          POST_STATUS=$(docker compose -p "$COMPOSE_PROJECT_NAME" exec -T web curl -s -o /dev/null -w "%{http_code}" -X POST http://localhost/)
+          [ "$POST_STATUS" = "405" ] || { echo "POST returned HTTP $POST_STATUS instead of 405"; exit 1; }
+          echo "POST rejected with HTTP 405 Method Not Allowed!"
+
+          # 4. Canonical Redirect (index.html -> 301)
+          echo "--- Testing Canonical Redirect (index.html -> 301) ---"
+          INDEX_CODE=$(docker compose -p "$COMPOSE_PROJECT_NAME" exec -T web curl -s -o /dev/null -w "%{http_code}" http://localhost/index.html)
+          [ "$INDEX_CODE" = "301" ] || { echo "/index.html returned $INDEX_CODE instead of 301"; exit 1; }
+          echo "Canonical 301 redirect verified!"
+
+          # 5. Sensitive File Access Block (.env must be 404 / denied)
+          echo "--- Testing Hidden File Blocking (.env -> 404) ---"
+          ENV_STATUS=$(docker compose -p "$COMPOSE_PROJECT_NAME" exec -T web curl -s -o /dev/null -w "%{http_code}" http://localhost/.env)
+          [ "$ENV_STATUS" = "404" ] || { echo "/.env returned $ENV_STATUS instead of 404"; exit 1; }
+          echo "Hidden file blocked with HTTP 404!"
+
+      - name: Teardown Isolated Smoke Stack
+        if: always()
+        run: |
+          docker compose -p "$COMPOSE_PROJECT_NAME" down -v || true
+          docker network rm "$STRATUM_NETWORK" || true
+
+  # --------------------------------------------------------------------------
+  # 5. Continuous Deployment (Self-Hosted Production Rollout)
+  # --------------------------------------------------------------------------
+  deploy:
+    name: Self-Hosted Production Deployment
+    runs-on: ${{ vars.DEPLOY_RUNNER || 'self-hosted' }}
+    needs: [docker-smoke-test]
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    steps:
+      - name: Checkout Production Revision
+        uses: actions/checkout@v4
+
+      - name: Synchronize & Deploy Consumer Workload
+        run: |
+          # Resolve persistent deployment directory outside the ephemeral runner _work folder
+          TARGET_DIR="${{ vars.DEPLOY_PATH }}"
+          if [ -z "$TARGET_DIR" ]; then
+            if [ -d "/opt/stratum" ] && [ -w "/opt/stratum" ]; then
+              TARGET_DIR="/opt/stratum/landing-sgpt"
+            else
+              TARGET_DIR="$HOME/stratum/landing-sgpt"
+            fi
+          fi
+
+          echo "Syncing production files to persistent directory: $TARGET_DIR"
+          mkdir -p "$TARGET_DIR"
+          if command -v rsync >/dev/null 2>&1; then
+            rsync -a --delete --exclude='.git' --exclude='.env' ./ "$TARGET_DIR/"
+          else
+            find "$TARGET_DIR" -mindepth 1 -maxdepth 1 ! -name '.env' -exec rm -rf {} +
+            cp -a public templates nginx scripts docker-compose.yml .env.example README.md "$TARGET_DIR/"
+          fi
+          cd "$TARGET_DIR"
+
+          # Ensure production .env exists without overwriting existing custom configuration
+          if [ ! -f .env ]; then
+            cp .env.example .env
+          fi
+
+          # Resolve target Stratum external network from .env
+          TENANT=$(grep -E '^TENANT_ORG=' .env | cut -d '=' -f 2 | tr -d '\r"'"'" || true)
+          TENANT=${TENANT:-sgpt}
+          STRATUM_NET=$(grep -E '^STRATUM_NETWORK=' .env | cut -d '=' -f 2 | tr -d '\r"'"'" || true)
+          STRATUM_NET=${STRATUM_NET:-stratum_dmz}
+
+          echo "Ensuring external Stratum network '$STRATUM_NET' exists..."
+          docker network inspect "$STRATUM_NET" >/dev/null 2>&1 || docker network create "$STRATUM_NET"
+
+          echo "Pulling latest unattended Nginx image..."
+          docker compose pull --quiet
+
+          echo "Applying production stack (landing-sgpt)..."
+          docker compose up -d --remove-orphans
+
+          # Reload Nginx gracefully in case container remained running with updated bind-mounted files
+          docker compose exec -T web nginx -s reload || true
+
+          PROD_CONTAINER="stratum-app-${TENANT}-web"
+          echo "Verifying production container '$PROD_CONTAINER' health..."
+          for i in $(seq 1 30); do
+            STATUS=$(docker inspect --format='{{json .State.Health.Status}}' "$PROD_CONTAINER" 2>/dev/null || echo '"unknown"')
+            if [ "$STATUS" = '"healthy"' ]; then
+              echo "Production deployment verified: $PROD_CONTAINER is HEALTHY on $STRATUM_NET!"
+              exit 0
+            fi
+            sleep 1
+          done
+
+          echo "Error: Production container $PROD_CONTAINER failed healthcheck after rollout!"
+          docker compose logs --tail=50
+          exit 1

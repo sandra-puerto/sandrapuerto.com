@@ -1,43 +1,43 @@
-# Sandra Puerto - Administradora de Sistemas Junior
+# Sandra Gabriela Puerto Torres - Desarrolladora Backend Junior | SQL y Automatización de Procesos
 
-> Administradora de sistemas (SysAdmin) junior. Diseño arquitecturas de servicios sobre entornos de virtualización con Proxmox VE y servidores Linux, administro activos de TI (ITAM) e implemento despliegues Zero Trust sin puertos expuestos. Bogotá D.C., Colombia. Estudiante de Ingeniería de Software en la Universidad de La Salle.
+> Desarrolladora Backend Junior | SQL y Automatización de Procesos | Tecnóloga SENA COPNIA. Bogotá D.C., Colombia. Tecnóloga en Análisis y Desarrollo de Software (Tarjeta Profesional COPNIA) y estudiante de Ingeniería de Software (en homologación) en la Universidad de La Salle.
 
 ## Perfil Profesional
-Administradora de sistemas (SysAdmin) junior. Diseño arquitecturas de servicios sobre entornos de virtualización con Proxmox VE y servidores Linux, administro activos de TI (ITAM) e implemento despliegues Zero Trust sin puertos expuestos.
-
-Opero plataformas corporativas y resuelvo incidentes con autonomía técnica, garantizando la estabilidad y el máximo rendimiento del entorno tecnológico.
+Tecnóloga en Análisis y Desarrollo de Software (Tarjeta Profesional COPNIA) y estudiante de Ingeniería de Software (en homologación) con experiencia práctica en bases de datos relacionales (PostgreSQL), programación backend, automatización de procesos y fundamentos de algoritmia en Python, además de operación de entornos productivos de TI. He optimizado código bajo principios de reutilización (DRY) en sistemas legacy, diseñado modelos relacionales para sistemas financieros bajo normativa NIIF/PUC, y asegurado la integridad y trazabilidad de información en entornos corporativos (GLPI, Active Directory, Microsoft 365). Enfocada en aportar en desarrollo backend y gestión/calidad de datos con SQL avanzado como eje central.
 
 ## Competencias Clave
-- Infraestructura y Virtualización: Linux (Ubuntu Server), Proxmox VE, Docker, Docker Compose, Nextcloud, Nginx Proxy Manager.
-- Operaciones TI: Gestión de activos tecnológicos (ITAM), GLPI, usuarios y correo en Microsoft 365, Active Directory (Windows Server) y DHCP, compras y proveedores de TI, evaluación de compra frente a arrendamiento (CAPEX / OPEX).
-- Redes y Seguridad: Cloudflare Tunnel, Zero Trust, Tailscale, firewall (ufw), llaves SSH, TOTP, DHCP, evaluación de enlaces de red.
-- Continuidad Operativa y Soporte: Soporte Nivel 3 a usuarios y sedes, resolución de incidencias y mantenimiento preventivo de servidores Linux.
-
-## Proyectos Técnicos
-- [Stratum Group](https://github.com/sandra-puerto/stratum-core): Arquitectura de despliegue para aislar servicios corporativos multiorganización mediante contenedores en islas comunicadas por una DMZ interna y enrutamiento con Nginx. Ingreso exclusivo por Cloudflare Tunnel sin puertos expuestos en el host.
-- [CashFlow](https://github.com/sandra-puerto/cashflow): Sistema contable basado en el Plan Único de Cuentas (PUC) colombiano y normas NIIF, con modelado relacional en PostgreSQL y panel sobre Laravel.
+- Bases de Datos y SQL: PostgreSQL, modelado relacional, consultas complejas (JOINs, GROUP BY, subconsultas), transacciones e integridad referencial, diseño de esquemas financieros bajo normativa NIIF/PUC y validación de calidad de datos.
+- Desarrollo y Automatización: Lógica backend y reglas de negocio, automatización de procesos, refactorización bajo principios DRY, manejo de JSON/APIs, control de versiones (Git/GitHub) y contenedores (Docker / Docker Compose).
+- Operación y Calidad de Datos: Gestión de incidentes en producción (GLPI), seguimiento de indicadores de efectividad (casos abiertos/cerrados, tiempo promedio de resolución), integridad y trazabilidad de registros (Active Directory, Microsoft 365, ITAM).
 
 ## Experiencia Laboral
-- Soporte Técnico y Operaciones TI, Distribuidora de Papel Jurado Torres S.A.S. (may. 2026 – oct. 2026): Compras de tecnología, soporte técnico a sedes físicas, mantenimiento de equipos de cómputo y depuración de utilidades del sistema ERP interno.
-- Responsable única de Infraestructura TI (contratista, medio tiempo), Servilogis Colombia S.A.S. (may. 2026 – sep. 2026): Almacenamiento privado Nextcloud en Ubuntu Server sobre Proxmox VE; Cloudflare Tunnel sin puertos abiertos, ufw, Tailscale y TOTP.
-- Técnico de Control Interno, Serdempo S.A.S. / Thomas Greg & Sons (jul. 2025 – oct. 2025): Verificación técnica y trazabilidad de activos de hardware para elecciones nacionales 2026.
-- Técnico de Soporte Nivel 3, Engine GTR S.A.S. (oct. 2024 – jun. 2025): ITAM, proveedores, CAPEX / OPEX, caja menor, soporte a usuarios y resolución de fallas de red DHCP.
-- Practicante de TI, Internacional de Celulares S.A. (abr. 2024 – oct. 2024): Soporte de sede con reporte a dirección, GLPI, Microsoft 365, Active Directory, DHCP y migración de enlaces a fibra óptica dedicada (+67% capacidad al costo de un solo enlace previo).
+- Desarrollador de Software, Distribuidora de Papel Jurado Torres S.A.S. (May 2026 – Oct 2026): Desarrollé componentes para un sistema ERP legacy en PHP 5.4 y estandaricé casi toda la lógica en utilidades reutilizables bajo el principio DRY, por lo que las nuevas implementaciones ocupan aproximadamente el 30% del código original equivalente. Ejecuté labores de administración operativa de TI y soporte técnico a sedes contempladas dentro del alcance del contrato.
+- Responsable única de Infraestructura TI (contratista, medio tiempo), Servilogis Colombia S.A.S. (May 2026 – Sep 2026): Diseñé e implementé de forma autónoma una solución de almacenamiento centralizado privado mediante Nextcloud virtualizado en Ubuntu Server sobre Proxmox, habilitando servicios colaborativos locales y evitando costos recurrentes de almacenamiento SaaS. Aseguré el entorno: publicación mediante Cloudflare Tunnel sin puertos de entrada abiertos, bloqueo perimetral estricto con ufw, túnel administrativo por Tailscale, autenticación SSH por llave cifrada, segundo factor (TOTP) para accesos con privilegios y separación de usuarios.
+- Técnico de Control Interno, Serdempo S.A.S. (tercerizado vía Thomas Greg & Sons Colombia S.A.) (Jul 2025 – Oct 2025): Registré y verifiqué activos de hardware del proceso electoral 2026, manteniendo su trazabilidad en un proyecto de alcance nacional.
+- Técnico de Soporte Nivel 3, Engine GTR S.A.S. (Oct 2024 – Jun 2025): Gestioné el ciclo de vida de activos tecnológicos (ITAM), evaluación CAPEX/OPEX con proveedores y pre-auditoría de facturación de servicios de TI para la sede administrativa. Diagnostiqué y resolví fallos críticos de conectividad de red (ajustes de reservas DHCP y renovación de infraestructura para cerca de 100 equipos) y brindé soporte técnico especializado.
+- Practicante de TI, Internacional de Celulares S.A. (Abr 2024 – Oct 2024): Gestioné incidentes operativos a través de GLPI y administré identidades, correo y servicios de red en Active Directory (Windows Server), Microsoft 365 y DHCP. Evalué y coordiné la migración a fibra óptica dedicada de 1 Gb, incrementando la capacidad de red de la sede en aproximadamente 67% sin aumentar el costo mensual.
+
+## Proyectos
+- [Stratum Group](https://stratum.isora.com.co) (Dic 2025 – Presente | Docker Compose, Cloudflare Tunnel, Nginx Proxy Manager, PostgreSQL, MongoDB, Redis): Diseñé la propuesta arquitectónica de Stratum Sovereign Suite, un ecosistema de infraestructura multiinquilino que aloja múltiples organizaciones en un mismo servidor sin la complejidad de Kubernetes. Garantiza entornos herméticos por cliente (red interna, memoria dedicada y persistencia aisladas), maximizando la densidad de servidores y reduciendo los costos operativos de la nube.
+- [CashFlow](https://github.com/isora-cloud-group/CashFlow) (En desarrollo, uso personal | Laravel, PostgreSQL): Sistema de gestión contable basado en el Plan Único de Cuentas (PUC) colombiano y normas NIIF, con modelado relacional de entidades financieras y un panel administrativo sobre Laravel.
 
 ## Educación
-- Ingeniería de Software (Homologación), Universidad de La Salle (en curso).
-- Tecnólogo en Análisis y Desarrollo de Software (con Tarjeta Profesional), SENA (ene. 2023 – nov. 2024, promedio 4.5).
-- Técnico en Programación de Software, SENA (ene. 2021 – dic. 2022, promedio 4.5).
+- Ingeniería de Software (Homologación), Universidad de La Salle | Bogotá D.C. (En curso).
+- Tecnóloga en Análisis y Desarrollo de Software (Tarjeta Profesional COPNIA), Servicio Nacional de Aprendizaje (SENA) | Bogotá D.C. (Ene 2023 – Nov 2024, GPA: 4.5, Énfasis: Arquitectura de software, patrones de diseño y bases de datos relacionales SQL).
+- Técnico en Programación de Software, Servicio Nacional de Aprendizaje (SENA) | Bogotá D.C. (Ene 2021 – Dic 2022, GPA: 4.5, Énfasis: Estructuras de datos y programación orientada a objetos).
 
-## Resultados Medibles
-- 0 puertos de entrada abiertos en los servidores publicados (Cloudflare Tunnel y Zero Trust).
-- +67% de capacidad de red corporativa (fibra óptica 1 Gb) manteniendo el costo de un solo enlace previo.
-- 0 suscripciones SaaS de almacenamiento: almacenamiento corporativo privado en Nextcloud sobre Proxmox VE, sin pagos recurrentes.
+## Certificaciones
+- API REST con Laravel | Platzi (Ago 2024)
+- Básico de Manejo de Datos en Laravel con Eloquent ORM | Platzi (Ago 2024)
+- Introducción a Laravel 9 | Platzi (Ago 2024)
+- PHP con Laravel | Platzi (Ago 2024)
+- Programación Básica | Platzi (Jul 2024)
+- Introducción a Python | CREAHANA (Ago 2023)
 
-## Enlaces y Recursos
-- [Sitio Web Oficial](https://sandrapuerto.com): Portafolio profesional de Sandra Puerto
-- [Currículum Vitae (PDF)](https://sandrapuerto.com/docs/cv-sandra-puerto.pdf): Descarga de CV actualizado
-- [Perfil en LinkedIn](https://linkedin.com/in/sandra-puerto): Trayectoria profesional y red de contactos
-- [Perfil en GitHub](https://github.com/sandra-puerto): Repositorios y proyectos técnicos
-- [Agendar una reunión](https://calendar.app.google/H3i9G1zKtFZY7krd6): Agenda de Google Calendar
-- [Contacto por Correo](mailto:contacto@sandrapuerto.com): Canal de comunicación directo
+## Enlaces y Contacto
+- [Sitio Web Oficial](https://sandrapuerto.com)
+- [Currículum Vitae (PDF)](https://sandrapuerto.com/docs/cv-sandra-puerto.pdf)
+- [LinkedIn](https://linkedin.com/in/sandra-puerto)
+- [GitHub](https://github.com/sandra-puerto)
+- [Correo](mailto:contacto@sandrapuerto.com)
+- Teléfono: +57 300 741 0404
