@@ -86,6 +86,29 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Accessibility & Anchor Offsets */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 1000;
+    padding: 0.6rem 1rem;
+    background: #fff;
+    color: #000;
+    border-radius: 0 0 8px 0;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+section[id] {
+    scroll-margin-top: 90px;
+}
+
 /* Background Effects */
 .ambient-glow {
     position: fixed;
