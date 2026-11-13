@@ -257,7 +257,7 @@ def create_linkedin_cover():
     content_w = rx_end - lx
     
     # --- Top badge ---
-    badge_text = "SOFTWARE & INFRAESTRUCTURA TI"
+    badge_text = "BACKEND JUNIOR · SQL & AUTOMATIZACIÓN"
     badge_y = margin + 40
     bb = f_tag.getbbox(badge_text)
     bw, bh = bb[2] - bb[0], bb[3] - bb[1]
@@ -294,11 +294,11 @@ def create_linkedin_cover():
     # --- Tech badges ---
     tech_y = 690
     techs = [
+        ("PostgreSQL & SQL", (51, 103, 145)),
+        ("Python & DRY", (56, 189, 248)),
         ("PHP / Laravel", (255, 45, 32)),
-        ("Proxmox & Linux", (229, 112, 0)),
-        ("On-Premise", (56, 189, 248)),
-        ("Zero Trust", (139, 92, 246)),
-        ("Docker", (36, 150, 237)),
+        ("Docker Compose", (36, 150, 237)),
+        ("Zero Trust", (16, 185, 129)),
     ]
     # Calculate total width to center the row
     total_pills_w = 0
@@ -383,12 +383,12 @@ def create_linkedin_cover():
     draw.ellipse([dot_x, name_y + 40, dot_x + 14, name_y + 54], fill="#38bdf8")
     
     # Role
-    draw.text((name_x, name_y + 78), "Analista de TI e Infraestructura", font=f_role, fill="#38bdf8")
+    draw.text((name_x, name_y + 78), "Desarrolladora Backend Junior · SQL y Automatización", font=f_role, fill="#38bdf8")
     
     # Headline — professional, direct, no drama
     headline_y = 330
-    draw.text((lx, headline_y), "Infraestructura segura, continuidad operativa y eficiencia de costos.", font=f_headline, fill="#e2e8f0")
-    draw.text((lx, headline_y + 48), "Servidores Linux, Proxmox VE, Zero Trust y gestión de activos (ITAM).", font=f_headline, fill="#94a3b8")
+    draw.text((lx, headline_y), "Desarrollo backend, modelado relacional (NIIF/PUC) y calidad de datos.", font=f_headline, fill="#e2e8f0")
+    draw.text((lx, headline_y + 48), "PostgreSQL, Python, PHP/Laravel, refactorización DRY y entornos TI.", font=f_headline, fill="#94a3b8")
     
     # ── Metrics ──
     metric_data = [
@@ -418,13 +418,13 @@ def create_linkedin_cover():
     # ── Description — short, factual, no self-praise ──
     desc_y = 810
     draw.text((lx, desc_y), 
-              "Administración de infraestructura tecnológica con criterio de costo,", 
+              "Tecnóloga en Análisis y Desarrollo de Software (COPNIA) y estudiante de", 
               font=f_desc, fill="#cbd5e1")
     draw.text((lx, desc_y + 36), 
-              "seguridad y operación. Servidores Linux, virtualización en Proxmox,", 
+              "Ingeniería de Software. Experiencia en PostgreSQL, Python, Laravel, DRY", 
               font=f_desc, fill="#cbd5e1")
     draw.text((lx, desc_y + 72),
-              "Zero Trust, ITAM y formación práctica en desarrollo de software.", 
+              "y operación segura de entornos productivos Linux, Docker y Zero Trust.", 
               font=f_desc, fill="#e2e8f0")
     
     # ── CTA button text ──
@@ -432,7 +432,7 @@ def create_linkedin_cover():
     
     # ── Bottom bar ──
     bottom_y = H - margin - 38
-    draw.text((lx, bottom_y), "PHP · Laravel · Proxmox · Linux · Docker · Ciberseguridad", 
+    draw.text((lx, bottom_y), "PostgreSQL · Python · PHP · Laravel · Docker · Linux", 
               font=f_bottom, fill=(148, 163, 184, 120))
     
     # ── Save ──

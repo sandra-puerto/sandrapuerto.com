@@ -78,13 +78,8 @@
     </noscript>
 
     <!-- El parámetro ?v= lo gestiona scripts/version_assets.py (no editar a mano) -->
-    <link rel="preload" href="/css/styles.css?v=4ee7bd1b64" as="style" />
-    <link rel="stylesheet" href="/css/styles.css?v=4ee7bd1b64" />
-    <style>
-      .skip-link{position:absolute;left:-9999px;top:0;z-index:1000;padding:.6rem 1rem;background:#fff;color:#000;border-radius:0 0 8px 0}
-      .skip-link:focus{left:0}
-      section[id]{scroll-margin-top:90px}
-    </style>
+    <link rel="preload" href="/css/styles.css?v=e35d33ab6b" as="style" />
+    <link rel="stylesheet" href="/css/styles.css?v=e35d33ab6b" />
   </head>
   <body>
     <a href="#main" class="skip-link">Saltar al contenido</a>
@@ -94,6 +89,7 @@
       <div class="container nav-container">
         <a href="#hero" class="logo">Sandra Puerto<span class="dot">.</span></a>
         <ul class="nav-links">
+          <li><a href="#tecnologias">Tecnologías</a></li>
           <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#competencias">Competencias</a></li>
@@ -144,6 +140,37 @@
               <span class="metric-value text-gradient">+67%</span>
               <span class="metric-label">de capacidad de red corporativa con fibra dedicada de 1 Gb, sin aumentar el costo mensual</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tecnologias" class="tecnologias section">
+        <div class="container">
+          <h2 class="section-title fade-up">Tecnologías y herramientas clave</h2>
+        </div>
+        <div class="tech-marquee-wrapper fade-up delay-1">
+          <div class="tech-marquee">
+            <div class="tech-item tech-postgresql"><span class="tech-icon" aria-hidden="true"></span>PostgreSQL</div>
+            <div class="tech-item tech-python"><span class="tech-icon" aria-hidden="true"></span>Python</div>
+            <div class="tech-item tech-laravel"><span class="tech-icon" aria-hidden="true"></span>Laravel</div>
+            <div class="tech-item tech-docker"><span class="tech-icon" aria-hidden="true"></span>Docker</div>
+            <div class="tech-item tech-linux"><span class="tech-icon" aria-hidden="true"></span>Linux</div>
+            <div class="tech-item tech-cloudflare"><span class="tech-icon" aria-hidden="true"></span>Cloudflare</div>
+            <div class="tech-item tech-nextcloud"><span class="tech-icon" aria-hidden="true"></span>Nextcloud</div>
+            <div class="tech-item tech-glpi"><span class="tech-icon" aria-hidden="true"></span>GLPI</div>
+            <div class="tech-item tech-activedirectory"><span class="tech-icon" aria-hidden="true"></span>Active Directory</div>
+            <div class="tech-item tech-m365"><span class="tech-icon" aria-hidden="true"></span>Microsoft 365</div>
+            <!-- Copia duplicada para el loop infinito del marquee (decorativa) -->
+            <div class="tech-item tech-postgresql" aria-hidden="true"><span class="tech-icon"></span>PostgreSQL</div>
+            <div class="tech-item tech-python" aria-hidden="true"><span class="tech-icon"></span>Python</div>
+            <div class="tech-item tech-laravel" aria-hidden="true"><span class="tech-icon"></span>Laravel</div>
+            <div class="tech-item tech-docker" aria-hidden="true"><span class="tech-icon"></span>Docker</div>
+            <div class="tech-item tech-linux" aria-hidden="true"><span class="tech-icon"></span>Linux</div>
+            <div class="tech-item tech-cloudflare" aria-hidden="true"><span class="tech-icon"></span>Cloudflare</div>
+            <div class="tech-item tech-nextcloud" aria-hidden="true"><span class="tech-icon"></span>Nextcloud</div>
+            <div class="tech-item tech-glpi" aria-hidden="true"><span class="tech-icon"></span>GLPI</div>
+            <div class="tech-item tech-activedirectory" aria-hidden="true"><span class="tech-icon"></span>Active Directory</div>
+            <div class="tech-item tech-m365" aria-hidden="true"><span class="tech-icon"></span>Microsoft 365</div>
           </div>
         </div>
       </section>
@@ -292,7 +319,7 @@
                 <li>Administración de identidades, correo y activos (Active Directory, Microsoft 365, ITAM)</li>
               </ul>
             </div>
-            <div class="comp-card glass-panel delay-1">
+            <div class="comp-card glass-panel fade-up delay-1">
               <h3>Entornos Productivos e Infraestructura TI</h3>
               <ul>
                 <li>Servidores Linux (Ubuntu Server), virtualización con Proxmox y almacenamiento privado (Nextcloud)</li>
@@ -447,6 +474,7 @@
         <div class="footer-col">
           <div class="footer-title">Navegación</div>
           <ul>
+            <li><a href="#tecnologias">Tecnologías</a></li>
             <li><a href="#experiencia">Experiencia</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#competencias">Competencias</a></li>
@@ -469,6 +497,6 @@
         <p>&copy; 2026 Sandra Gabriela Puerto Torres. Bogotá D.C., Colombia.</p>
       </div>
     </footer>
-    <script src="/js/app.js?v=2dd4ec4661" defer></script>
+    <script src="/js/app.js?v=5c3b291725" defer></script>
   </body>
 </html>

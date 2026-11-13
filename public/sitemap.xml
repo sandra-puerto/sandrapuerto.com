@@ -4,15 +4,15 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sandrapuerto.com/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://sandrapuerto.com/"/>
     <xhtml:link rel="alternate" hreflang="es-CO" href="https://sandrapuerto.com/"/>
     <image:image>
       <image:loc>https://sandrapuerto.com/images/og-image.png</image:loc>
-      <image:title>Sandra Puerto - Administradora de Sistemas e Infraestructura TI</image:title>
-      <image:caption>Infraestructura segura, continuidad operativa y eficiencia de costos.</image:caption>
+      <image:title>Sandra Gabriela Puerto Torres - Desarrolladora Backend Junior · SQL y Automatización</image:title>
+      <image:caption>Desarrollo backend, modelado relacional (NIIF/PUC), calidad de datos con SQL y entornos productivos de TI.</image:caption>
     </image:image>
   </url>
   <url>

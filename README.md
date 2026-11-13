@@ -95,6 +95,7 @@ landing-sgpt/
     │   └── styles.css    # Central design system (variables, glassmorphism, responsive)
     ├── js/
     │   └── app.js        # Fully documented runtime logic, observer & handlers
+    ├── docs/             # CV PDF and professional recommendation letters
     ├── icons/            # Brand icons (SVG, ICO, PNG 16x16, 32x32, 180x180, 192x192, 512x512)
     └── images/           # High-resolution social media banners (og-image.png)
 ```
