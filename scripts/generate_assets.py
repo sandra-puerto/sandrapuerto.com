@@ -157,7 +157,7 @@ def create_og_image():
     
     # Description lines
     desc_y = 310
-    draw.text((95, desc_y), "Desarrollo backend, modelado relacional (NIIF/PUC) y calidad de datos.", font=f_desc, fill="#f1f5f9")
+    draw.text((95, desc_y), "Desarrollo backend, gestión de datos con SQL y automatización de procesos.", font=f_desc, fill="#f1f5f9")
     draw.text((95, desc_y + 38), "PostgreSQL, PHP, Laravel, Python, refactorización DRY y operación TI.", font=f_desc, fill="#94a3b8")
     
     # Draw tag text and dots
@@ -387,7 +387,7 @@ def create_linkedin_cover():
     
     # Headline — professional, direct, no drama
     headline_y = 330
-    draw.text((lx, headline_y), "Desarrollo backend, modelado relacional (NIIF/PUC) y calidad de datos.", font=f_headline, fill="#e2e8f0")
+    draw.text((lx, headline_y), "Desarrollo backend, gestión de datos con SQL y automatización de procesos.", font=f_headline, fill="#e2e8f0")
     draw.text((lx, headline_y + 48), "PostgreSQL, Python, PHP/Laravel, refactorización DRY y entornos TI.", font=f_headline, fill="#94a3b8")
     
     # ── Metrics ──
